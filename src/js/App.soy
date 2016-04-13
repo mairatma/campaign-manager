@@ -5,7 +5,14 @@
  * @param campaigns
  */
 {template .render}
-	<div class="campaign-manager">
-		{length($campaigns)}
+	<div class="campaign-manager container">
+		<div class="row">
+			<button class="btn btn-primary pull-right">New Campaign</button>
+			<h2>Campaign Manager</h2>
+		</div>
+
+		{call Dashboard.render}
+			{param campaigns: $campaigns /}
+		{/call}
 	</div>
 {/template}

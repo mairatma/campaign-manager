@@ -4,24 +4,26 @@ import Soy from 'metal-soy/src/Soy';
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from App.soy.
+// This file was automatically generated from Card.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace App.
+ * @fileoverview Templates in namespace Card.
  * @public
  */
 
-goog.module('App.incrementaldom');
+goog.module('Card.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
 /** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
-goog.require('goog.i18n.bidi');
-/** @suppress {extraRequire} */
 goog.require('goog.asserts');
+/** @suppress {extraRequire} */
+goog.require('soy.asserts');
+/** @suppress {extraRequire} */
+goog.require('goog.i18n.bidi');
 var IncrementalDom = goog.require('incrementaldom');
 var ie_open = IncrementalDom.elementOpen;
 var ie_close = IncrementalDom.elementClose;
@@ -31,46 +33,38 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = Soy.getTemplate('Dashboard.incrementaldom', 'render');
-
 
 /**
- * @param {Object<string, *>=} opt_data
+ * @param {{
+ *    children: (!soydata.SanitizedHtml|string)
+ * }} opt_data
  * @param {(null|undefined)=} opt_ignored
  * @param {Object<string, *>=} opt_ijData
  * @return {void}
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
+  soy.asserts.assertType((opt_data.children instanceof Function) || (opt_data.children instanceof soydata.UnsanitizedText) || goog.isString(opt_data.children), 'children', opt_data.children, 'Function');
+  var children = /** @type {Function} */ (opt_data.children);
   ie_open('div', null, null,
-      'class', 'campaign-manager container');
-    ie_open('div', null, null,
-        'class', 'row');
-      ie_open('button', null, null,
-          'class', 'btn btn-primary pull-right');
-        itext('New Campaign');
-      ie_close('button');
-      ie_open('h2');
-        itext('Campaign Manager');
-      ie_close('h2');
-    ie_close('div');
-    $templateAlias1(opt_data, null, opt_ijData);
+      'class', 'campaign-manager-card');
+    children();
   ie_close('div');
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'App.render';
+  $render.soyTemplateName = 'Card.render';
 }
 
-exports.render.params = ["campaigns"];
-exports.render.types = {"campaigns":"any"};
+exports.render.params = ["children"];
+exports.render.types = {"children":"html"};
 templates = exports;
 return exports;
 
 });
 
-class App extends Component {}
-Soy.register(App, templates);
+class Card extends Component {}
+Soy.register(Card, templates);
 export default templates;
-export { App, templates };
+export { Card, templates };
 /* jshint ignore:end */

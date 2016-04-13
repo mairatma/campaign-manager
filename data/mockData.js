@@ -53,7 +53,10 @@ var data = {
 						}
 					]
 				}
-			]
+			],
+			influencedCustomers: 100,
+			influencedWins: 1500000,
+			leadsCount: 125
 		},
 		{
 			id: 1,
@@ -77,7 +80,10 @@ var data = {
 			},
 			journey: 1,
 			tactics: [
-			]
+			],
+			influencedCustomers: 10,
+			influencedWins: 10000,
+			leadsCount: 22
 		}
 	],
 	destinations: [
