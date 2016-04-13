@@ -1,0 +1,6 @@
+{
+  "globals": {
+    "metal": true
+  },
+  "extends": "../.jshintrc"
+}
