@@ -40,17 +40,18 @@ var iattr = IncrementalDom.attr;
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  opt_data = opt_data || {};
-  ie_void('div', null, null,
-      'class', 'app' + (opt_data.elementClasses ? ' ' + opt_data.elementClasses : ''));
+  ie_open('div', null, null,
+      'class', 'campaign-manager');
+    itext((goog.asserts.assert((opt_data.campaigns.length) != null), opt_data.campaigns.length));
+  ie_close('div');
 }
 exports.render = $render;
 if (goog.DEBUG) {
   $render.soyTemplateName = 'App.render';
 }
 
-exports.render.params = ["elementClasses"];
-exports.render.types = {"elementClasses":"any"};
+exports.render.params = ["campaigns"];
+exports.render.types = {"campaigns":"any"};
 templates = exports;
 return exports;
 

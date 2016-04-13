@@ -168,4 +168,4 @@ var data = {
 	]
 };
 
-metal.CMActions.updateData(data);
+window.metal.CMActions.updateData(data);

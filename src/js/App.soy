@@ -2,9 +2,10 @@
 
 /**
  * This renders the main element.
- * @param? elementClasses
+ * @param campaigns
  */
 {template .render}
-	<div class="app{$elementClasses ? ' ' + $elementClasses : ''}">
+	<div class="campaign-manager">
+		{length($campaigns)}
 	</div>
 {/template}
