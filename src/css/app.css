@@ -2,9 +2,22 @@ body {
 	background-color: #f5f5f7;
 }
 
+.campaign-manager-header .campaign-manager-button-new {
+	margin: 50px 0;
+}
+
+.campaign-manager-title {
+	color: #a0a8d2;
+	padding: 50px 0;
+}
+
 .campaign-manager-card {
 	background-color: #fff;
 	padding: 15px;
-	margin: 0 30px 50px 0;
+	margin: 0 20px 50px 0;
 	min-height: 250px;
+}
+
+.campaign-manager-card-wrapper:nth-child(3n + 0) .campaign-manager-card {
+	margin-right: 0;
 }

@@ -9,7 +9,7 @@
  */
 {template .render}
 	<div class="campaign-manager-dashboard row">
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 					{length($campaigns)} Active Campaigns
@@ -17,7 +17,7 @@
 				{param key: 'card0' /}
 			{/call}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 					<div class="col-md-6">{$totalInfluencedWins}$ Influenced wins</div>
@@ -26,7 +26,7 @@
 				{param key: 'card1' /}
 			{/call}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 					<div class="col-md-6">{$totalLeadsCount} Total leads</div>
@@ -35,42 +35,42 @@
 				{param key: 'card2' /}
 			{/call}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 				{/param}
 				{param key: 'card3' /}
 			{/call}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 				{/param}
 				{param key: 'card4' /}
 			{/call}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 				{/param}
 				{param key: 'card5' /}
 			{/call}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 				{/param}
 				{param key: 'card6' /}
 			{/call}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 				{/param}
 				{param key: 'card7' /}
 			{/call}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
 				{/param}

@@ -45,7 +45,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager-dashboard row');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param15 = function() {
         itext((goog.asserts.assert((opt_data.campaigns.length) != null), opt_data.campaigns.length));
         itext(' Active Campaigns');
@@ -53,7 +53,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       $templateAlias1({children: param15, key: 'card0'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param21 = function() {
         ie_open('div', null, null,
             'class', 'col-md-6');
@@ -69,7 +69,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       $templateAlias1({children: param21, key: 'card1'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param30 = function() {
         ie_open('div', null, null,
             'class', 'col-md-6');
@@ -85,37 +85,37 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       $templateAlias1({children: param30, key: 'card2'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param39 = function() {
       };
       $templateAlias1({children: param39, key: 'card3'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param43 = function() {
       };
       $templateAlias1({children: param43, key: 'card4'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param47 = function() {
       };
       $templateAlias1({children: param47, key: 'card5'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param51 = function() {
       };
       $templateAlias1({children: param51, key: 'card6'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param55 = function() {
       };
       $templateAlias1({children: param55, key: 'card7'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'col-md-4');
+        'class', 'col-md-4 campaign-manager-card-wrapper');
       var param59 = function() {
       };
       $templateAlias1({children: param59, key: 'card8'}, null, opt_ijData);

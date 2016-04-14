@@ -45,14 +45,18 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager container');
     ie_open('div', null, null,
-        'class', 'row');
-      ie_open('button', null, null,
-          'class', 'btn btn-primary pull-right');
-        itext('New Campaign');
-      ie_close('button');
-      ie_open('h2');
-        itext('Campaign Manager');
-      ie_close('h2');
+        'class', 'campaign-manager-header row');
+      ie_open('div', null, null,
+          'class', 'col-md-12');
+        ie_open('button', null, null,
+            'class', 'btn btn-primary campaign-manager-button-new pull-right');
+          itext('New Campaign');
+        ie_close('button');
+        ie_open('h4', null, null,
+            'class', 'campaign-manager-title');
+          itext('Campaign Manager');
+        ie_close('h4');
+      ie_close('div');
     ie_close('div');
     $templateAlias1(opt_data, null, opt_ijData);
   ie_close('div');
