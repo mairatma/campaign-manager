@@ -1,6 +1,7 @@
 {namespace Dashboard}
 
 /**
+ * @param baseUrl
  * @param campaigns
  * @param? totalInfluencedWins
  * @param? totalInfluencedCustomers
@@ -12,7 +13,13 @@
 		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
-					<span class="highlight">{length($campaigns)}</span> Active Campaigns
+					<div class="col-md-4">
+						<img src="{$baseUrl}images/target.png" height="100">
+					</div>
+					<div class="col-md-8">
+						<div class="highlight big">{length($campaigns)}</div>
+						<div>Active Campaigns</div>
+					</div>
 				{/param}
 				{param key: 'card0' /}
 			{/call}
@@ -20,8 +27,20 @@
 		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
-					<div class="col-md-6">{$totalInfluencedWins}$ Influenced wins</div>
-					<div class="col-md-6">{$totalBudget}$ Total assigned budget</div>
+					<div class="col-md-6">
+						<div>
+							<span class="highlight">{$totalInfluencedWins}</span>
+							<span class="light-gray">$</span>
+						</div>
+						<div>Influenced wins</div>
+					</div>
+					<div class="col-md-6">
+						<div>
+							<span class="highlight">{$totalBudget}</span>
+							<span class="light-gray">$</span>
+						</div>
+						<div>Total assigned budget</div>
+					</div>
 				{/param}
 				{param key: 'card1' /}
 			{/call}
@@ -29,51 +48,80 @@
 		<div class="col-md-4 campaign-manager-card-wrapper">
 			{call Card.render}
 				{param children kind="html"}
-					<div class="col-md-6">{$totalLeadsCount} Total leads</div>
-					<div class="col-md-6">{$totalInfluencedCustomers} Influenced customers</div>
+					<div class="col-md-5">
+						<div class="highlight big">{$totalLeadsCount}</div>
+						<div>Total leads</div>
+					</div>
+					<div class="col-md-2 campaign-manager-card-people">
+						<img src="{$baseUrl}images/people.png">
+					</div>
+					<div class="col-md-5">
+						<div class="highlight big">{$totalInfluencedCustomers}</div>
+						<div>Influenced customers</div>
+					</div>
 				{/param}
 				{param key: 'card2' /}
 			{/call}
 		</div>
 		<div class="col-md-4 campaign-manager-card-wrapper">
-			{call Card.render}
-				{param children kind="html"}
-				{/param}
+			{call ImageCard.render}
+				{param count: 2894 /}
+				{param imageUrl: $baseUrl + 'images/chart.png' /}
+				{param title: 'Destinations views' /}
 				{param key: 'card3' /}
 			{/call}
 		</div>
 		<div class="col-md-4 campaign-manager-card-wrapper">
-			{call Card.render}
-				{param children kind="html"}
-				{/param}
+			{call TableCard.render}
+				{param headers: ['Name', 'Views', 'CTR'] /}
+				{param data: [
+					['Destination name 001', '12k', '7%'],
+					['Destination name 001', '12k', '7%'],
+					['Destination name 001', '12k', '7%'],
+					['Destination name 001', '12k', '7%'],
+					['Destination name 001', '12k', '7%']
+				] /}
+				{param title: 'Top 5 Destinations' /}
 				{param key: 'card4' /}
 			{/call}
 		</div>
 		<div class="col-md-4 campaign-manager-card-wrapper">
-			{call Card.render}
-				{param children kind="html"}
-				{/param}
+			{call ImageCard.render}
+				{param count: 8934 /}
+				{param imageUrl: $baseUrl + 'images/chartWithLabels.png' /}
+				{param title: 'Destinations conversions' /}
 				{param key: 'card5' /}
 			{/call}
 		</div>
 		<div class="col-md-4 campaign-manager-card-wrapper">
-			{call Card.render}
-				{param children kind="html"}
-				{/param}
+			{call ImageCard.render}
+				{param count: 2894 /}
+				{param imageUrl: $baseUrl + 'images/chart.png' /}
+				{param title: 'Banner Ads views' /}
 				{param key: 'card6' /}
 			{/call}
 		</div>
 		<div class="col-md-4 campaign-manager-card-wrapper">
-			{call Card.render}
-				{param children kind="html"}
-				{/param}
+			{call TableCard.render}
+				{param headers: ['Name', '# Promotions', '# Reach', 'CTR'] /}
+				{param data: [
+					['SMS', '150', '150', '7%'],
+					['Email', '860', '860', '5%'],
+					['Push', '75', '260', '3%']
+				] /}
+				{param title: 'One to One promotions' /}
 				{param key: 'card7' /}
 			{/call}
 		</div>
 		<div class="col-md-4 campaign-manager-card-wrapper">
-			{call Card.render}
-				{param children kind="html"}
-				{/param}
+			{call TableCard.render}
+				{param headers: ['Channel', '# Post', 'Reach', 'CTR'] /}
+				{param data: [
+					['Facebook', '150', '150', '7%'],
+					['Twitter', '150', '150', '7%'],
+					['LinkedIn', '150', '150', '7%']
+				] /}
+				{param title: 'Social Promotions' /}
 				{param key: 'card8' /}
 			{/call}
 		</div>

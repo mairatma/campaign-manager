@@ -2,10 +2,11 @@
 
 /**
  * This renders the main element.
+ * @param baseUrl
  * @param campaigns
  */
 {template .render}
-	<div class="campaign-manager container">
+	<div class="campaign-manager container-fluid">
 		<div class="campaign-manager-header row">
 			<div class="col-md-12">
 				<button class="btn btn-primary campaign-manager-button-new pull-right">New Campaign</button>
@@ -14,6 +15,7 @@
 		</div>
 
 		{call Dashboard.render}
+			{param baseUrl: $baseUrl /}
 			{param campaigns: $campaigns /}
 		{/call}
 	</div>

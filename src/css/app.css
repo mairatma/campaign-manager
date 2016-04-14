@@ -2,6 +2,10 @@ body {
 	background-color: #f5f5f7;
 }
 
+.campaign-manager {
+	padding: 0 50px;
+}
+
 .campaign-manager-header .campaign-manager-button-new {
 	margin: 50px 0;
 }
@@ -13,16 +17,55 @@ body {
 
 .campaign-manager-card {
 	background-color: #fff;
+	color: #646c8b;
 	font-size: 25px;
 	padding: 15px;
-	margin: 0 20px 50px 0;
-	min-height: 250px;
+	margin: 0 0 50px 0;
+	min-height: 300px;
+	text-align: center;
 }
 
 .campaign-manager-card-wrapper:nth-child(3n + 0) .campaign-manager-card {
 	margin-right: 0;
 }
 
+.campaign-manager-card-people {
+	padding: 0;
+}
+
+.campaign-manager-card-people img,
+.campaign-manager-image-card img {
+	width: 100%;
+}
+
+.campaign-manager-image-card .campaign-manager-card,
+.campaign-manager-table-card .campaign-manager-card {
+	text-align: left;
+}
+
+.campaign-manager-image-card .count {
+	padding-left: 15px;
+}
+
+.campaign-manager-table-card table thead th {
+	border: none;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.campaign-manager-table-card table tbody td {
+	font-size: 15px;
+	border: none;
+}
+
 .highlight {
 	color: #2ecda8
+}
+
+.big {
+	font-size: 50px;
+}
+
+.light-gray {
+	color: #D0D5DC;
 }

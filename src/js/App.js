@@ -5,6 +5,8 @@ import Component from 'metal-component';
 import Soy from 'metal-soy';
 import store from './store/store';
 
+import './components/Dashboard.soy';
+
 class App extends Component {
 	created() {
 		this.setState(store.getState());

@@ -33,6 +33,10 @@ var iattr = IncrementalDom.attr;
 
 var $templateAlias1 = Soy.getTemplate('Card.incrementaldom', 'render');
 
+var $templateAlias2 = Soy.getTemplate('ImageCard.incrementaldom', 'render');
+
+var $templateAlias3 = Soy.getTemplate('TableCard.incrementaldom', 'render');
+
 
 /**
  * @param {Object<string, *>=} opt_data
@@ -46,82 +50,120 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', 'campaign-manager-dashboard row');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param15 = function() {
-        ie_open('span', null, null,
-            'class', 'highlight');
-          itext((goog.asserts.assert((opt_data.campaigns.length) != null), opt_data.campaigns.length));
-        ie_close('span');
-        itext(' Active Campaigns');
+      var param11 = function() {
+        ie_open('div', null, null,
+            'class', 'col-md-4');
+          ie_open('img', null, null,
+              'src', opt_data.baseUrl + 'images/target.png',
+              'height', '100');
+          ie_close('img');
+        ie_close('div');
+        ie_open('div', null, null,
+            'class', 'col-md-8');
+          ie_open('div', null, null,
+              'class', 'highlight big');
+            itext((goog.asserts.assert((opt_data.campaigns.length) != null), opt_data.campaigns.length));
+          ie_close('div');
+          ie_open('div');
+            itext('Active Campaigns');
+          ie_close('div');
+        ie_close('div');
       };
-      $templateAlias1({children: param15, key: 'card0'}, null, opt_ijData);
+      $templateAlias1({children: param11, key: 'card0'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param22 = function() {
+      var param20 = function() {
         ie_open('div', null, null,
             'class', 'col-md-6');
-          itext((goog.asserts.assert((opt_data.totalInfluencedWins) != null), opt_data.totalInfluencedWins));
-          itext('$ Influenced wins');
+          ie_open('div');
+            ie_open('span', null, null,
+                'class', 'highlight');
+              itext((goog.asserts.assert((opt_data.totalInfluencedWins) != null), opt_data.totalInfluencedWins));
+            ie_close('span');
+            ie_open('span', null, null,
+                'class', 'light-gray');
+              itext('$');
+            ie_close('span');
+          ie_close('div');
+          ie_open('div');
+            itext('Influenced wins');
+          ie_close('div');
         ie_close('div');
         ie_open('div', null, null,
             'class', 'col-md-6');
-          itext((goog.asserts.assert((opt_data.totalBudget) != null), opt_data.totalBudget));
-          itext('$ Total assigned budget');
+          ie_open('div');
+            ie_open('span', null, null,
+                'class', 'highlight');
+              itext((goog.asserts.assert((opt_data.totalBudget) != null), opt_data.totalBudget));
+            ie_close('span');
+            ie_open('span', null, null,
+                'class', 'light-gray');
+              itext('$');
+            ie_close('span');
+          ie_close('div');
+          ie_open('div');
+            itext('Total assigned budget');
+          ie_close('div');
         ie_close('div');
       };
-      $templateAlias1({children: param22, key: 'card1'}, null, opt_ijData);
+      $templateAlias1({children: param20, key: 'card1'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param31 = function() {
+      var param29 = function() {
         ie_open('div', null, null,
-            'class', 'col-md-6');
-          itext((goog.asserts.assert((opt_data.totalLeadsCount) != null), opt_data.totalLeadsCount));
-          itext(' Total leads');
+            'class', 'col-md-5');
+          ie_open('div', null, null,
+              'class', 'highlight big');
+            itext((goog.asserts.assert((opt_data.totalLeadsCount) != null), opt_data.totalLeadsCount));
+          ie_close('div');
+          ie_open('div');
+            itext('Total leads');
+          ie_close('div');
         ie_close('div');
         ie_open('div', null, null,
-            'class', 'col-md-6');
-          itext((goog.asserts.assert((opt_data.totalInfluencedCustomers) != null), opt_data.totalInfluencedCustomers));
-          itext(' Influenced customers');
+            'class', 'col-md-2 campaign-manager-card-people');
+          ie_open('img', null, null,
+              'src', opt_data.baseUrl + 'images/people.png');
+          ie_close('img');
+        ie_close('div');
+        ie_open('div', null, null,
+            'class', 'col-md-5');
+          ie_open('div', null, null,
+              'class', 'highlight big');
+            itext((goog.asserts.assert((opt_data.totalInfluencedCustomers) != null), opt_data.totalInfluencedCustomers));
+          ie_close('div');
+          ie_open('div');
+            itext('Influenced customers');
+          ie_close('div');
         ie_close('div');
       };
-      $templateAlias1({children: param31, key: 'card2'}, null, opt_ijData);
+      $templateAlias1({children: param29, key: 'card2'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param40 = function() {
-      };
-      $templateAlias1({children: param40, key: 'card3'}, null, opt_ijData);
+      $templateAlias2({count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Destinations views', key: 'card3'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param44 = function() {
-      };
-      $templateAlias1({children: param44, key: 'card4'}, null, opt_ijData);
+      $templateAlias3({headers: ['Name', 'Views', 'CTR'], data: [['Destination name 001', '12k', '7%'], ['Destination name 001', '12k', '7%'], ['Destination name 001', '12k', '7%'], ['Destination name 001', '12k', '7%'], ['Destination name 001', '12k', '7%']], title: 'Top 5 Destinations', key: 'card4'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param48 = function() {
-      };
-      $templateAlias1({children: param48, key: 'card5'}, null, opt_ijData);
+      $templateAlias2({count: 8934, imageUrl: opt_data.baseUrl + 'images/chartWithLabels.png', title: 'Destinations conversions', key: 'card5'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param52 = function() {
-      };
-      $templateAlias1({children: param52, key: 'card6'}, null, opt_ijData);
+      $templateAlias2({count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Banner Ads views', key: 'card6'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param56 = function() {
-      };
-      $templateAlias1({children: param56, key: 'card7'}, null, opt_ijData);
+      $templateAlias3({headers: ['Name', '# Promotions', '# Reach', 'CTR'], data: [['SMS', '150', '150', '7%'], ['Email', '860', '860', '5%'], ['Push', '75', '260', '3%']], title: 'One to One promotions', key: 'card7'}, null, opt_ijData);
     ie_close('div');
     ie_open('div', null, null,
         'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param60 = function() {
-      };
-      $templateAlias1({children: param60, key: 'card8'}, null, opt_ijData);
+      $templateAlias3({headers: ['Channel', '# Post', 'Reach', 'CTR'], data: [['Facebook', '150', '150', '7%'], ['Twitter', '150', '150', '7%'], ['LinkedIn', '150', '150', '7%']], title: 'Social Promotions', key: 'card8'}, null, opt_ijData);
     ie_close('div');
   ie_close('div');
 }
@@ -130,8 +172,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Dashboard.render';
 }
 
-exports.render.params = ["campaigns","totalInfluencedWins","totalInfluencedCustomers","totalLeadsCount","totalBudget"];
-exports.render.types = {"campaigns":"any","totalInfluencedWins":"any","totalInfluencedCustomers":"any","totalLeadsCount":"any","totalBudget":"any"};
+exports.render.params = ["baseUrl","campaigns","totalInfluencedWins","totalInfluencedCustomers","totalLeadsCount","totalBudget"];
+exports.render.types = {"baseUrl":"any","campaigns":"any","totalInfluencedWins":"any","totalInfluencedCustomers":"any","totalLeadsCount":"any","totalBudget":"any"};
 templates = exports;
 return exports;
 

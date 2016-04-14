@@ -4,15 +4,15 @@ import Soy from 'metal-soy/src/Soy';
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from App.soy.
+// This file was automatically generated from ImageCard.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace App.
+ * @fileoverview Templates in namespace ImageCard.
  * @public
  */
 
-goog.module('App.incrementaldom');
+goog.module('ImageCard.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -31,7 +31,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = Soy.getTemplate('Dashboard.incrementaldom', 'render');
+var $templateAlias1 = Soy.getTemplate('Card.incrementaldom', 'render');
 
 
 /**
@@ -43,38 +43,38 @@ var $templateAlias1 = Soy.getTemplate('Dashboard.incrementaldom', 'render');
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
-      'class', 'campaign-manager container-fluid');
-    ie_open('div', null, null,
-        'class', 'campaign-manager-header row');
-      ie_open('div', null, null,
-          'class', 'col-md-12');
-        ie_open('button', null, null,
-            'class', 'btn btn-primary campaign-manager-button-new pull-right');
-          itext('New Campaign');
-        ie_close('button');
-        ie_open('h4', null, null,
-            'class', 'campaign-manager-title');
-          itext('Campaign Manager');
-        ie_close('h4');
+      'class', 'campaign-manager-image-card');
+    var param84 = function() {
+      ie_open('div');
+        itext((goog.asserts.assert((opt_data.title) != null), opt_data.title));
+        ie_open('span', null, null,
+            'class', 'highlight count');
+          itext((goog.asserts.assert((opt_data.count) != null), opt_data.count));
+        ie_close('span');
       ie_close('div');
-    ie_close('div');
-    $templateAlias1(opt_data, null, opt_ijData);
+      ie_open('div');
+        ie_open('img', null, null,
+            'src', opt_data.imageUrl);
+        ie_close('img');
+      ie_close('div');
+    };
+    $templateAlias1({children: param84}, null, opt_ijData);
   ie_close('div');
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'App.render';
+  $render.soyTemplateName = 'ImageCard.render';
 }
 
-exports.render.params = ["baseUrl","campaigns"];
-exports.render.types = {"baseUrl":"any","campaigns":"any"};
+exports.render.params = ["count","imageUrl","title"];
+exports.render.types = {"count":"any","imageUrl":"any","title":"any"};
 templates = exports;
 return exports;
 
 });
 
-class App extends Component {}
-Soy.register(App, templates);
+class ImageCard extends Component {}
+Soy.register(ImageCard, templates);
 export default templates;
-export { App, templates };
+export { ImageCard, templates };
 /* jshint ignore:end */
