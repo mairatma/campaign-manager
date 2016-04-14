@@ -14,17 +14,28 @@ class Dashboard extends Component {
 		this.updateCampaignStatistics_();
 	}
 
+	addDots_(number) {
+		var str = number.toString();
+		var finalStr = '';
+
+		for (var i = 0; i < str.length; i++) {
+			if (i > 0 && i < str.length - 1 && (i % 3 === str.length % 3)) {
+				finalStr += '.';
+			}
+			finalStr += str[i];
+		}
+		return finalStr;
+	}
+
+	sum_(name) {
+		return this.campaigns.reduce((prev, curr) => prev + curr[name], 0);
+	}
+
 	updateCampaignStatistics_() {
-		this.totalInfluencedWins = 0;
-		this.totalInfluencedCustomers = 0;
-		this.totalLeadsCount = 0;
-		this.totalBudget = 0;
-		this.campaigns.forEach((campaign) => {
-			this.totalInfluencedWins += campaign.influencedWins;
-			this.totalInfluencedCustomers += campaign.influencedCustomers;
-			this.totalLeadsCount += campaign.leadsCount;
-			this.totalBudget += campaign.budget;
-		});
+		this.totalInfluencedWins = this.addDots_(this.sum_('influencedWins'));
+		this.totalInfluencedCustomers = this.sum_('influencedCustomers');
+		this.totalLeadsCount = this.sum_('leadsCount');
+		this.totalBudget = this.addDots_(this.sum_('budget'));
 	}
 }
 Soy.register(Dashboard, templates);

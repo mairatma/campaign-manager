@@ -55,7 +55,7 @@ var data = {
 				}
 			],
 			influencedCustomers: 100,
-			influencedWins: 1500000,
+			influencedWins: 150000,
 			leadsCount: 125
 		},
 		{
