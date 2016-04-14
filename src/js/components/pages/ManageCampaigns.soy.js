@@ -4,15 +4,15 @@ import Soy from 'metal-soy/src/Soy';
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from App.soy.
+// This file was automatically generated from ManageCampaigns.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace App.
+ * @fileoverview Templates in namespace ManageCampaigns.
  * @public
  */
 
-goog.module('App.incrementaldom');
+goog.module('ManageCampaigns.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -31,10 +31,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = Soy.getTemplate('Dashboard.incrementaldom', 'render');
-
-var $templateAlias2 = Soy.getTemplate('ManageCampaigns.incrementaldom', 'render');
-
 
 /**
  * @param {Object<string, *>=} opt_data
@@ -44,33 +40,23 @@ var $templateAlias2 = Soy.getTemplate('ManageCampaigns.incrementaldom', 'render'
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var $$temp;
-  ie_open('div', null, null,
-      'class', 'campaign-manager container-fluid');
-    switch ((goog.isObject($$temp = opt_data.page)) ? $$temp.toString() : $$temp) {
-      case 0:
-        $templateAlias1({baseUrl: opt_data.baseUrl, campaigns: opt_data.campaigns, key: 'dashboard', page: opt_data.page}, null, opt_ijData);
-        break;
-      case 1:
-        $templateAlias2({key: 'manage-campaigns', page: opt_data.page}, null, opt_ijData);
-        break;
-    }
-  ie_close('div');
+  ie_void('div', null, null,
+      'class', 'campaign-manager-manage-campaigns');
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'App.render';
+  $render.soyTemplateName = 'ManageCampaigns.render';
 }
 
-exports.render.params = ["baseUrl","campaigns","page"];
-exports.render.types = {"baseUrl":"any","campaigns":"any","page":"any"};
+exports.render.params = [];
+exports.render.types = {};
 templates = exports;
 return exports;
 
 });
 
-class App extends Component {}
-Soy.register(App, templates);
+class ManageCampaigns extends Component {}
+Soy.register(ManageCampaigns, templates);
 export default templates;
-export { App, templates };
+export { ManageCampaigns, templates };
 /* jshint ignore:end */

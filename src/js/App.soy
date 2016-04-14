@@ -4,19 +4,23 @@
  * This renders the main element.
  * @param baseUrl
  * @param campaigns
+ * @param page
  */
 {template .render}
 	<div class="campaign-manager container-fluid">
-		<div class="campaign-manager-header row">
-			<div class="col-md-12">
-				<button class="btn btn-primary campaign-manager-button-new pull-right">New Campaign</button>
-				<h4 class="campaign-manager-title">Campaign Manager</h4>
-			</div>
-		</div>
-
-		{call Dashboard.render}
-			{param baseUrl: $baseUrl /}
-			{param campaigns: $campaigns /}
-		{/call}
+		{switch $page}
+			{case 0}
+				{call Dashboard.render}
+					{param baseUrl: $baseUrl /}
+					{param campaigns: $campaigns /}
+					{param key: 'dashboard' /}
+					{param page: $page /}
+				{/call}
+			{case 1}
+				{call ManageCampaigns.render}
+					{param key: 'manage-campaigns' /}
+					{param page: $page /}
+				{/call}
+		{/switch}
 	</div>
 {/template}

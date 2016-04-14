@@ -4,15 +4,15 @@ import Soy from 'metal-soy/src/Soy';
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from App.soy.
+// This file was automatically generated from Tabs.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace App.
+ * @fileoverview Templates in namespace Tabs.
  * @public
  */
 
-goog.module('App.incrementaldom');
+goog.module('Tabs.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -31,10 +31,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = Soy.getTemplate('Dashboard.incrementaldom', 'render');
-
-var $templateAlias2 = Soy.getTemplate('ManageCampaigns.incrementaldom', 'render');
-
 
 /**
  * @param {Object<string, *>=} opt_data
@@ -44,33 +40,36 @@ var $templateAlias2 = Soy.getTemplate('ManageCampaigns.incrementaldom', 'render'
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var $$temp;
-  ie_open('div', null, null,
-      'class', 'campaign-manager container-fluid');
-    switch ((goog.isObject($$temp = opt_data.page)) ? $$temp.toString() : $$temp) {
-      case 0:
-        $templateAlias1({baseUrl: opt_data.baseUrl, campaigns: opt_data.campaigns, key: 'dashboard', page: opt_data.page}, null, opt_ijData);
-        break;
-      case 1:
-        $templateAlias2({key: 'manage-campaigns', page: opt_data.page}, null, opt_ijData);
-        break;
+  ie_open('ul', null, null,
+      'class', 'campaign-manager-tabs nav nav-tabs');
+    var tabList41 = opt_data.tabs;
+    var tabListLen41 = tabList41.length;
+    for (var tabIndex41 = 0; tabIndex41 < tabListLen41; tabIndex41++) {
+      var tabData41 = tabList41[tabIndex41];
+      ie_open('li', null, null,
+          'class', opt_data.selectedIndex == tabIndex41 ? 'active' : '');
+        ie_open('a', null, null,
+            'href', tabData41.href);
+          itext((goog.asserts.assert((tabData41.name) != null), tabData41.name));
+        ie_close('a');
+      ie_close('li');
     }
-  ie_close('div');
+  ie_close('ul');
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'App.render';
+  $render.soyTemplateName = 'Tabs.render';
 }
 
-exports.render.params = ["baseUrl","campaigns","page"];
-exports.render.types = {"baseUrl":"any","campaigns":"any","page":"any"};
+exports.render.params = ["tabs","selectedIndex"];
+exports.render.types = {"tabs":"any","selectedIndex":"any"};
 templates = exports;
 return exports;
 
 });
 
-class App extends Component {}
-Soy.register(App, templates);
+class Tabs extends Component {}
+Soy.register(Tabs, templates);
 export default templates;
-export { App, templates };
+export { Tabs, templates };
 /* jshint ignore:end */

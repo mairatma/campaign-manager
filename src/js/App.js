@@ -5,7 +5,7 @@ import Component from 'metal-component';
 import Soy from 'metal-soy';
 import store from './store/store';
 
-import './components/Dashboard.soy';
+import './components/pages/Dashboard.soy';
 
 class App extends Component {
 	created() {

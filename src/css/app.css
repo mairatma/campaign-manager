@@ -58,6 +58,16 @@ body {
 	border: none;
 }
 
+.campaign-manager-tabs {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.campaign-manager-tabs li {
+	display: inline-block;
+	float: none;
+}
+
 .highlight {
 	color: #2ecda8
 }
