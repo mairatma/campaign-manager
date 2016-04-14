@@ -52,7 +52,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         $templateAlias1({baseUrl: opt_data.baseUrl, campaigns: opt_data.campaigns, key: 'dashboard', page: opt_data.page}, null, opt_ijData);
         break;
       case 1:
-        $templateAlias2({key: 'manage-campaigns', page: opt_data.page}, null, opt_ijData);
+        $templateAlias2({campaigns: opt_data.campaigns, key: 'manage-campaigns', page: opt_data.page}, null, opt_ijData);
         break;
     }
   ie_close('div');

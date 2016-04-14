@@ -1,0 +1,46 @@
+{namespace Table}
+
+/**
+ * @param headers
+ * @param data
+ */
+{template .render}
+	<div class="campaign-manager-table">
+		<table class="table">
+			<thead>
+				<tr>
+					{foreach $header in $headers}
+						<th class="light-gray">{$header}</th>
+					{/foreach}
+					<th class="light-gray">Edit</th>
+					<th class="light-gray">Remove</th>
+				</tr>
+			</thead>
+			<tbody>
+				{foreach $row in $data}
+					<tr>
+						{foreach $cell in $row}
+							<td>{$cell}</td>
+						{/foreach}
+						<td>
+							<span
+								class="glyphicon glyphicon-cog"
+								data-onclick="handleClickEdit_"
+								data-index="{index($row)}"
+								>
+							</span>
+						</td>
+						<td>
+							<span
+								class="glyphicon glyphicon-trash"
+								data-onclick="handleClickRemove_"
+								data-index="{index($row)}"
+								>
+							</span>
+						</td>
+					</tr>
+				{/foreach}
+			</tbody>
+		</table>
+	</div>
+{/template}

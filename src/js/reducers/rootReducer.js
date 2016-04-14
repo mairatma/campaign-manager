@@ -1,11 +1,8 @@
 'use strict';
 
 import ActionTypes from '../actions/ActionTypes';
+import campaigns from './campaigns';
 import page from './page';
-
-function campaigns(state) {
-	return state || [];
-}
 
 function destinations(state) {
 	return state || [];

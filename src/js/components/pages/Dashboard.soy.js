@@ -55,7 +55,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'row');
       ie_open('div', null, null,
           'class', 'col-md-4 campaign-manager-card-wrapper');
-        var param95 = function() {
+        var param96 = function() {
           ie_open('div', null, null,
               'class', 'col-md-4');
             ie_open('img', null, null,
@@ -74,11 +74,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_close('div');
           ie_close('div');
         };
-        $templateAlias2({children: param95, key: 'card0'}, null, opt_ijData);
+        $templateAlias2({children: param96, key: 'card0'}, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null,
           'class', 'col-md-4 campaign-manager-card-wrapper');
-        var param104 = function() {
+        var param105 = function() {
           ie_open('div', null, null,
               'class', 'col-md-6');
             ie_open('div');
@@ -112,11 +112,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_close('div');
           ie_close('div');
         };
-        $templateAlias2({children: param104, key: 'card1'}, null, opt_ijData);
+        $templateAlias2({children: param105, key: 'card1'}, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null,
           'class', 'col-md-4 campaign-manager-card-wrapper');
-        var param113 = function() {
+        var param114 = function() {
           ie_open('div', null, null,
               'class', 'col-md-5');
             ie_open('div', null, null,
@@ -144,7 +144,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_close('div');
           ie_close('div');
         };
-        $templateAlias2({children: param113, key: 'card2'}, null, opt_ijData);
+        $templateAlias2({children: param114, key: 'card2'}, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null,
           'class', 'col-md-4 campaign-manager-card-wrapper');

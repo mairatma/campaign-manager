@@ -1,7 +1,9 @@
 {namespace ManageCampaigns}
 
 /**
+ * @param? tableData
  * @param page
+ * @param? remove
  */
 {template .render}
 	<div class="campaign-manager-manage-campaigns">
@@ -9,6 +11,12 @@
 			{param includeAddCampaignButton: true /}
 			{param includeTabs: true /}
 			{param page: $page /}
+		{/call}
+
+		{call Table.render}
+			{param headers: ['Name', 'Scheduled Data', 'Goal'] /}
+			{param data: $tableData ? $tableData : [] /}
+			{param events: ['removeClicked': $remove] /}
 		{/call}
 	</div>
 {/template}

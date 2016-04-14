@@ -3,6 +3,13 @@
 import ActionTypes from './ActionTypes';
 
 export default {
+	removeCampaign(id) {
+		return {
+			type: ActionTypes.REMOVE_CAMPAIGN,
+			id: id
+		};
+	},
+
 	switchPage(page) {
 		return {
 			type: ActionTypes.SWITCH_PAGE,

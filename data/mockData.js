@@ -6,7 +6,7 @@ var data = {
 			id: 0,
 			name: 'University Credit Card',
 			startDate: new Date(2016, 2, 1),
-			endDate: new Date(2016, 2, 1),
+			endDate: new Date(2016, 3, 1),
 			budget: 12000,
 			goal: {
 				'generation': {
