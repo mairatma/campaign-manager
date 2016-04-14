@@ -174,4 +174,4 @@ var data = {
 	]
 };
 
-window.metal.CMActions.updateData(data);
+CM.store.dispatch(CM.Actions.updateState(data));

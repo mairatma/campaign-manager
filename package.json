@@ -17,15 +17,15 @@
     "metal"
   ],
   "scripts": {
-    "build": "metal build -b bundle.js",
+    "build": "metal build -b bundle.js --globalName CM",
     "server": "http-server",
     "start": "npm run build && npm run server",
-    "watch": "metal watch -b bundle.js"
+    "watch": "metal watch -b bundle.js --globalName CM"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "metal-flux": "^0.1.0",
-    "metal-soy": "^1.0.0-rc.5"
+    "metal-soy": "^1.0.0-rc.5",
+    "redux": "^3.4.0"
   },
   "devDependencies": {
     "http-server": "^0.9.0",

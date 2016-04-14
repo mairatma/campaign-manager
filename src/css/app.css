@@ -13,6 +13,7 @@ body {
 
 .campaign-manager-card {
 	background-color: #fff;
+	font-size: 25px;
 	padding: 15px;
 	margin: 0 20px 50px 0;
 	min-height: 250px;
@@ -20,4 +21,8 @@ body {
 
 .campaign-manager-card-wrapper:nth-child(3n + 0) .campaign-manager-card {
 	margin-right: 0;
+}
+
+.highlight {
+	color: #2ecda8
 }

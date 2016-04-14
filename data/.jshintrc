@@ -1,6 +1,6 @@
 {
   "globals": {
-    "metal": true
+    "CM": true
   },
   "extends": "../.jshintrc"
 }
