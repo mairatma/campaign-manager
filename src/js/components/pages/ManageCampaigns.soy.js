@@ -31,6 +31,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias1 = Soy.getTemplate('Header.incrementaldom', 'render');
+
 
 /**
  * @param {Object<string, *>=} opt_data
@@ -40,16 +42,18 @@ var iattr = IncrementalDom.attr;
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  ie_void('div', null, null,
+  ie_open('div', null, null,
       'class', 'campaign-manager-manage-campaigns');
+    $templateAlias1({includeAddCampaignButton: true, includeTabs: true, page: opt_data.page}, null, opt_ijData);
+  ie_close('div');
 }
 exports.render = $render;
 if (goog.DEBUG) {
   $render.soyTemplateName = 'ManageCampaigns.render';
 }
 
-exports.render.params = [];
-exports.render.types = {};
+exports.render.params = ["page"];
+exports.render.types = {"page":"any"};
 templates = exports;
 return exports;
 

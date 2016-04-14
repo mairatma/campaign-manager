@@ -4,15 +4,15 @@ import Soy from 'metal-soy/src/Soy';
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from App.soy.
+// This file was automatically generated from Main.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace App.
+ * @fileoverview Templates in namespace Main.
  * @public
  */
 
-goog.module('App.incrementaldom');
+goog.module('Main.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -59,7 +59,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'App.render';
+  $render.soyTemplateName = 'Main.render';
 }
 
 exports.render.params = ["baseUrl","campaigns","page"];
@@ -69,8 +69,8 @@ return exports;
 
 });
 
-class App extends Component {}
-Soy.register(App, templates);
+class Main extends Component {}
+Soy.register(Main, templates);
 export default templates;
-export { App, templates };
+export { Main, templates };
 /* jshint ignore:end */

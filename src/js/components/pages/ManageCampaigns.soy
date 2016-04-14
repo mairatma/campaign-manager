@@ -1,8 +1,14 @@
 {namespace ManageCampaigns}
 
 /**
+ * @param page
  */
 {template .render}
 	<div class="campaign-manager-manage-campaigns">
+		{call Header.render}
+			{param includeAddCampaignButton: true /}
+			{param includeTabs: true /}
+			{param page: $page /}
+		{/call}
 	</div>
 {/template}
