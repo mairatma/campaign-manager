@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var gulp = require('gulp');
 var ignore = require('gulp-ignore');
 var soynode = require('gulp-soynode');
+var watch = require('gulp-watch');
 
 gulp.task('css:bootstrap', function() {
 	return gulp.src([
@@ -12,6 +13,12 @@ gulp.task('css:bootstrap', function() {
 			'node_modules/bootstrap/dist/css/bootstrap.css.map'
 		])
 		.pipe(gulp.dest('public/css'));
+});
+
+gulp.task('css:watch', function() {
+	watch('css/**/*.css', function() {
+		gulp.run(['css']);
+	});
 });
 
 gulp.task('css', ['css:bootstrap'], function() {

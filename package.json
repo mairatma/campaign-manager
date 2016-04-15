@@ -20,7 +20,7 @@
     "build": "metal build -b bundle.js --globalName CM",
     "server": "http-server",
     "start": "npm run build && npm run server",
-    "watch": "metal watch -b bundle.js --globalName CM"
+    "watch": "metal watch -b bundle.js --globalName CM && gulp css:watch"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
@@ -29,6 +29,7 @@
     "senna": "^1.0.1"
   },
   "devDependencies": {
+    "gulp-watch": "^4.3.5",
     "http-server": "^0.9.0",
     "metal-cli": "^1.3.0"
   }
