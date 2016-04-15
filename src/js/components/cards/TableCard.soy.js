@@ -44,7 +44,7 @@ var $templateAlias1 = Soy.getTemplate('Card.incrementaldom', 'render');
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager-table-card');
-    var param66 = function() {
+    var param72 = function() {
       ie_open('div');
         itext((goog.asserts.assert((opt_data.title) != null), opt_data.title));
       ie_close('div');
@@ -52,29 +52,29 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           'class', 'table');
         ie_open('thead');
           ie_open('tr');
-            var headerList73 = opt_data.headers;
-            var headerListLen73 = headerList73.length;
-            for (var headerIndex73 = 0; headerIndex73 < headerListLen73; headerIndex73++) {
-              var headerData73 = headerList73[headerIndex73];
+            var headerList79 = opt_data.headers;
+            var headerListLen79 = headerList79.length;
+            for (var headerIndex79 = 0; headerIndex79 < headerListLen79; headerIndex79++) {
+              var headerData79 = headerList79[headerIndex79];
               ie_open('th', null, null,
                   'class', 'light-gray');
-                itext((goog.asserts.assert((headerData73) != null), headerData73));
+                itext((goog.asserts.assert((headerData79) != null), headerData79));
               ie_close('th');
             }
           ie_close('tr');
         ie_close('thead');
         ie_open('tbody');
-          var rowList83 = opt_data.data;
-          var rowListLen83 = rowList83.length;
-          for (var rowIndex83 = 0; rowIndex83 < rowListLen83; rowIndex83++) {
-            var rowData83 = rowList83[rowIndex83];
+          var rowList89 = opt_data.data;
+          var rowListLen89 = rowList89.length;
+          for (var rowIndex89 = 0; rowIndex89 < rowListLen89; rowIndex89++) {
+            var rowData89 = rowList89[rowIndex89];
             ie_open('tr');
-              var cellList80 = rowData83;
-              var cellListLen80 = cellList80.length;
-              for (var cellIndex80 = 0; cellIndex80 < cellListLen80; cellIndex80++) {
-                var cellData80 = cellList80[cellIndex80];
+              var cellList86 = rowData89;
+              var cellListLen86 = cellList86.length;
+              for (var cellIndex86 = 0; cellIndex86 < cellListLen86; cellIndex86++) {
+                var cellData86 = cellList86[cellIndex86];
                 ie_open('td');
-                  itext((goog.asserts.assert((cellData80) != null), cellData80));
+                  itext((goog.asserts.assert((cellData86) != null), cellData86));
                 ie_close('td');
               }
             ie_close('tr');
@@ -82,7 +82,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tbody');
       ie_close('table');
     };
-    $templateAlias1({children: param66}, null, opt_ijData);
+    $templateAlias1({children: param72}, null, opt_ijData);
   ie_close('div');
 }
 exports.render = $render;

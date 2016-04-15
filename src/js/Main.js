@@ -10,6 +10,8 @@ import Senna from 'senna';
 import Soy from 'metal-soy';
 
 import './components/pages/Dashboard.soy';
+import './components/pages/EditCampaign.soy';
+import './components/pages/ManageCampaigns.soy';
 
 class Main extends Component {
 	created() {
@@ -23,7 +25,8 @@ class Main extends Component {
 		this.sennaApp_ = new Senna();
 		this.sennaApp_.addRoutes([
 			new Route('/', () => new CMScreen(PageTypes.DASHBOARD)),
-			new Route('/manage-campaigns', () => new CMScreen(PageTypes.MANAGE_CAMPAIGNS))
+			new Route('/manage-campaigns', () => new CMScreen(PageTypes.MANAGE_CAMPAIGNS)),
+			new Route('/create-campaign', () => new CMScreen(PageTypes.CREATE_CAMPAIGN))
 		]);
 	}
 }

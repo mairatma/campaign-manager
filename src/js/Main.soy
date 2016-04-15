@@ -7,7 +7,8 @@
  * @param page
  */
 {template .render}
-	<div class="campaign-manager container-fluid">
+	{let $hasWhiteBg: $page == 2 /}
+	<div class="campaign-manager container-fluid {$hasWhiteBg ? 'white-bg' : ''}">
 		{switch $page}
 			{case 0}
 				{call Dashboard.render}
@@ -21,6 +22,10 @@
 					{param campaigns: $campaigns /}
 					{param key: 'manage-campaigns' /}
 					{param page: $page /}
+				{/call}
+			{case 2}
+				{call EditCampaign.render}
+					{param key: 'new-campaign' /}
 				{/call}
 		{/switch}
 	</div>

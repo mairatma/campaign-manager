@@ -1,8 +1,5 @@
-body {
-	background-color: #f5f5f7;
-}
-
 .campaign-manager {
+	background-color: #f5f5f7;
 	padding: 0 50px;
 }
 
@@ -88,6 +85,10 @@ body {
 	font-weight: bold;
 }
 
+.campaign-manager-edit-campaign {
+	color: #646c8b;
+}
+
 .highlight {
 	color: #2ecda8
 }
@@ -98,4 +99,8 @@ body {
 
 .light-gray {
 	color: #D0D5DC;
+}
+
+.white-bg {
+	background-color: #fff;
 }

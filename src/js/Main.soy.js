@@ -33,6 +33,8 @@ var iattr = IncrementalDom.attr;
 
 var $templateAlias1 = Soy.getTemplate('Dashboard.incrementaldom', 'render');
 
+var $templateAlias3 = Soy.getTemplate('EditCampaign.incrementaldom', 'render');
+
 var $templateAlias2 = Soy.getTemplate('ManageCampaigns.incrementaldom', 'render');
 
 
@@ -45,14 +47,18 @@ var $templateAlias2 = Soy.getTemplate('ManageCampaigns.incrementaldom', 'render'
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
+  var hasWhiteBg__soy3 = opt_data.page == 2;
   ie_open('div', null, null,
-      'class', 'campaign-manager container-fluid');
+      'class', 'campaign-manager container-fluid ' + (hasWhiteBg__soy3 ? 'white-bg' : ''));
     switch ((goog.isObject($$temp = opt_data.page)) ? $$temp.toString() : $$temp) {
       case 0:
         $templateAlias1({baseUrl: opt_data.baseUrl, campaigns: opt_data.campaigns, key: 'dashboard', page: opt_data.page}, null, opt_ijData);
         break;
       case 1:
         $templateAlias2({campaigns: opt_data.campaigns, key: 'manage-campaigns', page: opt_data.page}, null, opt_ijData);
+        break;
+      case 2:
+        $templateAlias3({key: 'new-campaign'}, null, opt_ijData);
         break;
     }
   ie_close('div');

@@ -4,15 +4,15 @@ import Soy from 'metal-soy/src/Soy';
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from Tabs.soy.
+// This file was automatically generated from EditCampaign.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace Tabs.
+ * @fileoverview Templates in namespace EditCampaign.
  * @public
  */
 
-goog.module('Tabs.incrementaldom');
+goog.module('EditCampaign.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -40,36 +40,23 @@ var iattr = IncrementalDom.attr;
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  ie_open('ul', null, null,
-      'class', 'campaign-manager-tabs nav nav-tabs');
-    var tabList48 = opt_data.tabs;
-    var tabListLen48 = tabList48.length;
-    for (var tabIndex48 = 0; tabIndex48 < tabListLen48; tabIndex48++) {
-      var tabData48 = tabList48[tabIndex48];
-      ie_open('li', null, null,
-          'class', opt_data.selectedIndex == tabIndex48 ? 'active' : '');
-        ie_open('a', null, null,
-            'href', tabData48.href);
-          itext((goog.asserts.assert((tabData48.name) != null), tabData48.name));
-        ie_close('a');
-      ie_close('li');
-    }
-  ie_close('ul');
+  ie_void('div', null, null,
+      'class', 'campaign-manager-edit-campaign');
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'Tabs.render';
+  $render.soyTemplateName = 'EditCampaign.render';
 }
 
-exports.render.params = ["tabs","selectedIndex"];
-exports.render.types = {"tabs":"any","selectedIndex":"any"};
+exports.render.params = [];
+exports.render.types = {};
 templates = exports;
 return exports;
 
 });
 
-class Tabs extends Component {}
-Soy.register(Tabs, templates);
+class EditCampaign extends Component {}
+Soy.register(EditCampaign, templates);
 export default templates;
-export { Tabs, templates };
+export { EditCampaign, templates };
 /* jshint ignore:end */

@@ -46,7 +46,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', 'campaign-manager-header row');
     ie_open('div', null, null,
         'class', 'col-md-12');
-      ie_open('button', null, null,
+      ie_open('a', null, null,
+          'href', '/create-campaign',
           'class', 'btn btn-primary campaign-manager-button-new pull-right');
         itext('New Campaign');
       ie_close('button');
