@@ -61,6 +61,24 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_close('div');
     ie_close('div');
     var param172 = function() {
+      ie_open('div', null, null,
+          'class', 'form-inline order-select');
+        ie_open('label');
+          itext('Order by:');
+        ie_close('label');
+        ie_open('select', null, null,
+            'class', 'form-control',
+            'data-onchange', opt_data.sort);
+          ie_open('option', null, null,
+              'value', 'name');
+            itext('Name');
+          ie_close('option');
+          ie_open('option', null, null,
+              'value', 'date');
+            itext('Scheduled Date');
+          ie_close('option');
+        ie_close('select');
+      ie_close('div');
       $templateAlias4({campaigns: opt_data.filteredCampaigns ? opt_data.filteredCampaigns : []}, null, opt_ijData);
     };
     $templateAlias3({children: param172}, null, opt_ijData);
@@ -71,8 +89,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'ManageCampaigns.render';
 }
 
-exports.render.params = ["filteredCampaigns","page","search"];
-exports.render.types = {"filteredCampaigns":"any","page":"any","search":"any"};
+exports.render.params = ["filteredCampaigns","page","search","sort"];
+exports.render.types = {"filteredCampaigns":"any","page":"any","search":"any","sort":"any"};
 templates = exports;
 return exports;
 

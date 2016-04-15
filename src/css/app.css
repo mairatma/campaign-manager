@@ -75,6 +75,16 @@ body {
 	margin-bottom: 20px;
 }
 
+.campaign-manager-manage-campaigns .order-select label {
+	font-weight: normal;
+}
+
+.campaign-manager-manage-campaigns .order-select select {
+	border: none;
+	box-shadow: none;
+	font-weight: bold;
+}
+
 .highlight {
 	color: #2ecda8
 }

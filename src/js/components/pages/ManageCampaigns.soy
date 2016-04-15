@@ -4,6 +4,7 @@
  * @param? filteredCampaigns
  * @param page
  * @param? search
+ * @param? sort
  */
 {template .render}
 	<div class="campaign-manager-manage-campaigns">
@@ -24,6 +25,13 @@
 
 		{call Card.render}
 			{param children kind="html"}
+				<div class="form-inline order-select">
+					<label>Order by:</label>
+					<select class="form-control" data-onchange="{$sort}">
+					  <option value="name">Name</option>
+					  <option value="date">Scheduled Date</option>
+					</select>
+				</div>
 				{call CampaignTable.render}
 					{param campaigns: $filteredCampaigns ? $filteredCampaigns : [] /}
 				{/call}

@@ -15,7 +15,7 @@ class CampaignTable extends Component {
 	}
 
 	formatDate_(date) {
-		return MONTHS[date.getMonth()] + ' ' + date.getDay() + ', ' + date.getFullYear();
+		return MONTHS[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 	}
 
 	formatDates_(start, end) {
