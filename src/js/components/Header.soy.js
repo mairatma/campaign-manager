@@ -50,7 +50,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_open('a', null, null,
           'href', '/create-campaign',
           'class', 'btn btn-primary campaign-manager-button-new pull-right',
-          'data-onclick', 'setSourceUrl');
+          'data-onclick', 'startCampaignCreation_');
         itext('New Campaign');
       ie_close('button');
       if (opt_data.includeAddCampaignButton) {

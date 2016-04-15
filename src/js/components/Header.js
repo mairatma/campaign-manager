@@ -7,8 +7,8 @@ import Component from 'metal-component';
 import Soy from 'metal-soy';
 
 class Header extends Component {
-	setSourceUrl() {
-		store.dispatch(Actions.setSourceUrl(this.currentUrl));
+	startCampaignCreation_() {
+		store.dispatch(Actions.startCampaignCreation(this.currentUrl));
 	}
 }
 Soy.register(Header, templates);

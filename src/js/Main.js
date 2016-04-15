@@ -2,7 +2,7 @@
 
 import store from './store/store';
 import Dashboard from './components/pages/Dashboard';
-import { EditCampaign } from './components/pages/EditCampaign.soy';
+import EditCampaign from './components/pages/EditCampaign';
 import ManageCampaigns from './components/pages/ManageCampaigns';
 import Router from 'metal-router';
 
