@@ -4,7 +4,7 @@
  * This renders the main element.
  * @param? includeTabs
  * @param? includeAddCampaignButton
- * @param page
+ * @param? selectedTab
  */
 {template .render}
 	<div class="campaign-manager-header row">
@@ -27,7 +27,7 @@
 							'href': '/manage-campaigns'
 						]
 					] /}
-					{param selectedIndex: $page /}
+					{param selectedIndex: $selectedTab ? $selectedTab : 0 /}
 				{/call}
 			</div>
 		{/if}

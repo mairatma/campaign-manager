@@ -2,7 +2,10 @@
 
 import ActionTypes from '../actions/ActionTypes';
 import campaigns from './campaigns';
-import page from './page';
+
+function baseUrl(state) {
+	return state || [];
+}
 
 function destinations(state) {
 	return state || [];
@@ -21,12 +24,12 @@ function displays(state) {
 }
 
 var combined = Redux.combineReducers({
+	baseUrl,
 	campaigns,
 	destinations,
 	audiences,
 	banners,
-	displays,
-	page
+	displays
 });
 
 function rootReducer(state, action) {

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "metal-router": "github:metal/metal-router#master",
     "metal-soy": "^1.0.0-rc.5",
     "redux": "^3.4.0",
     "senna": "^1.0.1"

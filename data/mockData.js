@@ -1,6 +1,7 @@
 'use strict';
 
 var data = {
+	baseUrl: 'src/',
 	campaigns: [
 		{
 			id: 0,
@@ -171,8 +172,7 @@ var data = {
 			count: 1,
 			sourceType: 0
 		}
-	],
-	page: 0
+	]
 };
 
 CM.store.dispatch(CM.Actions.updateState(data));

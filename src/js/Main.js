@@ -1,35 +1,38 @@
 'use strict';
 
 import store from './store/store';
-import templates from './Main.soy';
-import CMScreen from './screen/CMScreen';
-import Component from 'metal-component';
-import PageTypes from './constants/PageTypes';
-import Route from 'senna/src/route/Route';
-import Senna from 'senna';
-import Soy from 'metal-soy';
+import Dashboard from './components/pages/Dashboard';
+import { EditCampaign } from './components/pages/EditCampaign.soy';
+import ManageCampaigns from './components/pages/ManageCampaigns';
+import Router from 'metal-router';
 
-import './components/pages/Dashboard.soy';
-import './components/pages/EditCampaign.soy';
-import './components/pages/ManageCampaigns.soy';
+class Main {
+	static run() {
+		new Router({
+			path: '/',
+			component: Dashboard,
+			initialState: () => store.getState()
+		}, false);
+		new Router({
+			path: '/manage-campaigns',
+			component: ManageCampaigns,
+			initialState: () => store.getState()
+		}, false);
+		new Router({
+			path: '/create-campaign',
+			component: EditCampaign,
+			initialState: () => store.getState()
+		}, false);
 
-class Main extends Component {
-	created() {
-		this.setState(store.getState());
-		store.subscribe(() => this.setState(store.getState()));
+		Router.router().dispatch();
 
-		this.setUpSenna();
+		store.subscribe(Main.refreshState);
+		return this;
 	}
 
-	setUpSenna() {
-		this.sennaApp_ = new Senna();
-		this.sennaApp_.addRoutes([
-			new Route('/', () => new CMScreen(PageTypes.DASHBOARD)),
-			new Route('/manage-campaigns', () => new CMScreen(PageTypes.MANAGE_CAMPAIGNS)),
-			new Route('/create-campaign', () => new CMScreen(PageTypes.CREATE_CAMPAIGN))
-		]);
+	static refreshState() {
+		Router.activeComponent.setState(store.getState());
 	}
 }
-Soy.register(Main, templates);
 
 export default Main;

@@ -40,8 +40,15 @@ var iattr = IncrementalDom.attr;
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  ie_void('div', null, null,
-      'class', 'campaign-manager-edit-campaign');
+  ie_open('div', null, null,
+      'class', 'campaign-manager container-fluid white-bg');
+    ie_open('div', null, null,
+        'class', 'campaign-manager-edit-campaign');
+      ie_open('h1');
+        itext('New Campaign');
+      ie_close('h1');
+    ie_close('div');
+  ie_close('div');
 }
 exports.render = $render;
 if (goog.DEBUG) {

@@ -42,6 +42,7 @@ var $templateAlias1 = Soy.getTemplate('Tabs.incrementaldom', 'render');
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
+  opt_data = opt_data || {};
   ie_open('div', null, null,
       'class', 'campaign-manager-header row');
     ie_open('div', null, null,
@@ -61,7 +62,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     if (opt_data.includeTabs) {
       ie_open('div', null, null,
           'class', 'col-md-12');
-        $templateAlias1({tabs: [{name: 'Dashboard', href: '/'}, {name: 'Manage Campaigns', href: '/manage-campaigns'}], selectedIndex: opt_data.page}, null, opt_ijData);
+        $templateAlias1({tabs: [{name: 'Dashboard', href: '/'}, {name: 'Manage Campaigns', href: '/manage-campaigns'}], selectedIndex: opt_data.selectedTab ? opt_data.selectedTab : 0}, null, opt_ijData);
       ie_close('div');
     }
   ie_close('div');
@@ -71,8 +72,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Header.render';
 }
 
-exports.render.params = ["includeTabs","includeAddCampaignButton","page"];
-exports.render.types = {"includeTabs":"any","includeAddCampaignButton":"any","page":"any"};
+exports.render.params = ["includeTabs","includeAddCampaignButton","selectedTab"];
+exports.render.types = {"includeTabs":"any","includeAddCampaignButton":"any","selectedTab":"any"};
 templates = exports;
 return exports;
 
