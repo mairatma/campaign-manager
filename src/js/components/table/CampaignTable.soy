@@ -1,0 +1,15 @@
+{namespace CampaignTable}
+
+/**
+ * @param? remove
+ * @param? tableData
+ */
+{template .render}
+	<div class="campaign-manager-campaign-table">
+		{call Table.render}
+			{param headers: ['Name', 'Scheduled Data', 'Goal'] /}
+			{param data: $tableData /}
+			{param events: ['removeClicked': $remove] /}
+		{/call}
+	</div>
+{/template}

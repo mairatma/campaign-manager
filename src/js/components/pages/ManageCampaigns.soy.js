@@ -31,13 +31,13 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias4 = Soy.getTemplate('CampaignTable.incrementaldom', 'render');
+
 var $templateAlias3 = Soy.getTemplate('Card.incrementaldom', 'render');
 
 var $templateAlias1 = Soy.getTemplate('Header.incrementaldom', 'render');
 
 var $templateAlias2 = Soy.getTemplate('Search.incrementaldom', 'render');
-
-var $templateAlias4 = Soy.getTemplate('Table.incrementaldom', 'render');
 
 
 /**
@@ -61,7 +61,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_close('div');
     ie_close('div');
     var param172 = function() {
-      $templateAlias4({headers: ['Name', 'Scheduled Data', 'Goal'], data: opt_data.tableData ? opt_data.tableData : [], events: {removeClicked: opt_data.remove}}, null, opt_ijData);
+      $templateAlias4({campaigns: opt_data.filteredCampaigns ? opt_data.filteredCampaigns : []}, null, opt_ijData);
     };
     $templateAlias3({children: param172}, null, opt_ijData);
   ie_close('div');
@@ -71,8 +71,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'ManageCampaigns.render';
 }
 
-exports.render.params = ["tableData","page","remove","search"];
-exports.render.types = {"tableData":"any","page":"any","remove":"any","search":"any"};
+exports.render.params = ["filteredCampaigns","page","search"];
+exports.render.types = {"filteredCampaigns":"any","page":"any","search":"any"};
 templates = exports;
 return exports;
 

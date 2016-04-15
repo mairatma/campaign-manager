@@ -1,9 +1,8 @@
 {namespace ManageCampaigns}
 
 /**
- * @param? tableData
+ * @param? filteredCampaigns
  * @param page
- * @param? remove
  * @param? search
  */
 {template .render}
@@ -25,10 +24,8 @@
 
 		{call Card.render}
 			{param children kind="html"}
-				{call Table.render}
-					{param headers: ['Name', 'Scheduled Data', 'Goal'] /}
-					{param data: $tableData ? $tableData : [] /}
-					{param events: ['removeClicked': $remove] /}
+				{call CampaignTable.render}
+					{param campaigns: $filteredCampaigns ? $filteredCampaigns : [] /}
 				{/call}
 			{/param}
 		{/call}
