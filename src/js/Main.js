@@ -8,9 +8,9 @@ import Router from 'metal-router';
 
 class Main {
 	static run() {
-		Router.route('/', Dashboard, () => store.getState());
-		Router.route('/manage-campaigns', ManageCampaigns, () => store.getState());
-		Router.route('/create-campaign', EditCampaign, () => store.getState());
+		Router.route('/', Dashboard, store.getState);
+		Router.route('/manage-campaigns', ManageCampaigns, store.getState);
+		Router.route('/create-campaign', EditCampaign, store.getState);
 		Router.router().dispatch();
 
 		store.subscribe(Main.refreshState);
