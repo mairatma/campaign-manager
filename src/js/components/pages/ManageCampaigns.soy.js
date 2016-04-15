@@ -62,7 +62,20 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     ie_close('div');
     var param172 = function() {
       ie_open('div', null, null,
-          'class', 'form-inline order-select');
+          'class', 'form-inline select pull-right');
+        ie_open('label');
+          itext('View Mode:');
+        ie_close('label');
+        ie_open('select', null, null,
+            'class', 'form-control');
+          ie_open('option', null, null,
+              'value', 'name');
+            itext('List');
+          ie_close('option');
+        ie_close('select');
+      ie_close('div');
+      ie_open('div', null, null,
+          'class', 'form-inline select');
         ie_open('label');
           itext('Order by:');
         ie_close('label');

@@ -25,7 +25,13 @@
 
 		{call Card.render}
 			{param children kind="html"}
-				<div class="form-inline order-select">
+				<div class="form-inline select pull-right">
+					<label>View Mode:</label>
+					<select class="form-control">
+						<option value="name">List</option>
+					</select>
+				</div>
+				<div class="form-inline select">
 					<label>Order by:</label>
 					<select class="form-control" data-onchange="{$sort}">
 					  <option value="name">Name</option>
