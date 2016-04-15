@@ -2,9 +2,9 @@
 
 import ActionTypes from '../actions/ActionTypes';
 
-function campaigns(state, action) {
+function editCampaignId(state, action) {
 	switch (action.type) {
-		case ActionTypes.EDIT_CAMPAIGN:
+		case ActionTypes.START_CAMPAIGN_EDITION:
 			return action.id;
 		case ActionTypes.START_CAMPAIGN_CREATION:
 			return null;
@@ -12,4 +12,4 @@ function campaigns(state, action) {
 	return state || null;
 }
 
-export default campaigns;
+export default editCampaignId;

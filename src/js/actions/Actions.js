@@ -10,9 +10,9 @@ export default {
 		};
 	},
 
-	editCampaign(id, sourceUrl) {
+	startCampaignEdition(id, sourceUrl) {
 		return {
-			type: ActionTypes.EDIT_CAMPAIGN,
+			type: ActionTypes.START_CAMPAIGN_EDITION,
 			id: id,
 			sourceUrl: sourceUrl
 		};

@@ -16,7 +16,7 @@ class CampaignTable extends Component {
 
 	edit(data) {
 		var id = this.tableDataIds_[data.index];
-		store.dispatch(Actions.editCampaign(id, this.currentUrl));
+		store.dispatch(Actions.startCampaignEdition(id, this.currentUrl));
 	}
 
 	formatDate_(date) {

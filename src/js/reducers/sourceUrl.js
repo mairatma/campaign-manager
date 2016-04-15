@@ -2,13 +2,13 @@
 
 import ActionTypes from '../actions/ActionTypes';
 
-function campaigns(state, action) {
+function sourceUrl(state, action) {
 	switch (action.type) {
 		case ActionTypes.START_CAMPAIGN_CREATION:
-		case ActionTypes.EDIT_CAMPAIGN:
+		case ActionTypes.START_CAMPAIGN_EDITION:
 			return action.sourceUrl || '/';
 	}
 	return state || '/';
 }
 
-export default campaigns;
+export default sourceUrl;
