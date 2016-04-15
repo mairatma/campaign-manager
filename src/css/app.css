@@ -17,8 +17,11 @@ body {
 
 .campaign-manager-card {
 	background-color: #fff;
+	border: 1px solid #ebecf0;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px #ebecf0;
 	color: #646c8b;
-	padding: 15px;
+	padding: 25px 34px;
 }
 
 .campaign-manager-dashboard .campaign-manager-card {
