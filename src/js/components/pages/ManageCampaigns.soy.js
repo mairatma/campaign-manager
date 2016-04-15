@@ -31,11 +31,13 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = Soy.getTemplate('Card.incrementaldom', 'render');
+var $templateAlias3 = Soy.getTemplate('Card.incrementaldom', 'render');
 
 var $templateAlias1 = Soy.getTemplate('Header.incrementaldom', 'render');
 
-var $templateAlias3 = Soy.getTemplate('Table.incrementaldom', 'render');
+var $templateAlias2 = Soy.getTemplate('Search.incrementaldom', 'render');
+
+var $templateAlias4 = Soy.getTemplate('Table.incrementaldom', 'render');
 
 
 /**
@@ -49,10 +51,19 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager-manage-campaigns');
     $templateAlias1({includeAddCampaignButton: true, includeTabs: true, page: opt_data.page}, null, opt_ijData);
-    var param168 = function() {
-      $templateAlias3({headers: ['Name', 'Scheduled Data', 'Goal'], data: opt_data.tableData ? opt_data.tableData : [], events: {removeClicked: opt_data.remove}}, null, opt_ijData);
+    ie_open('div', null, null,
+        'class', 'row');
+      ie_void('div', null, null,
+          'class', 'col-md-4');
+      ie_open('div', null, null,
+          'class', 'col-md-4');
+        $templateAlias2({events: {valueChanged: opt_data.search}}, null, opt_ijData);
+      ie_close('div');
+    ie_close('div');
+    var param172 = function() {
+      $templateAlias4({headers: ['Name', 'Scheduled Data', 'Goal'], data: opt_data.tableData ? opt_data.tableData : [], events: {removeClicked: opt_data.remove}}, null, opt_ijData);
     };
-    $templateAlias2({children: param168}, null, opt_ijData);
+    $templateAlias3({children: param172}, null, opt_ijData);
   ie_close('div');
 }
 exports.render = $render;
@@ -60,8 +71,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'ManageCampaigns.render';
 }
 
-exports.render.params = ["tableData","page","remove"];
-exports.render.types = {"tableData":"any","page":"any","remove":"any"};
+exports.render.params = ["tableData","page","remove","search"];
+exports.render.types = {"tableData":"any","page":"any","remove":"any","search":"any"};
 templates = exports;
 return exports;
 

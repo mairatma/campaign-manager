@@ -46,13 +46,13 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'table');
       ie_open('thead');
         ie_open('tr');
-          var headerList181 = opt_data.headers;
-          var headerListLen181 = headerList181.length;
-          for (var headerIndex181 = 0; headerIndex181 < headerListLen181; headerIndex181++) {
-            var headerData181 = headerList181[headerIndex181];
+          var headerList185 = opt_data.headers;
+          var headerListLen185 = headerList185.length;
+          for (var headerIndex185 = 0; headerIndex185 < headerListLen185; headerIndex185++) {
+            var headerData185 = headerList185[headerIndex185];
             ie_open('th', null, null,
                 'class', 'light-gray');
-              itext((goog.asserts.assert((headerData181) != null), headerData181));
+              itext((goog.asserts.assert((headerData185) != null), headerData185));
             ie_close('th');
           }
           ie_open('th', null, null,
@@ -66,30 +66,30 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var rowList195 = opt_data.data;
-        var rowListLen195 = rowList195.length;
-        for (var rowIndex195 = 0; rowIndex195 < rowListLen195; rowIndex195++) {
-          var rowData195 = rowList195[rowIndex195];
+        var rowList199 = opt_data.data;
+        var rowListLen199 = rowList199.length;
+        for (var rowIndex199 = 0; rowIndex199 < rowListLen199; rowIndex199++) {
+          var rowData199 = rowList199[rowIndex199];
           ie_open('tr');
-            var cellList188 = rowData195;
-            var cellListLen188 = cellList188.length;
-            for (var cellIndex188 = 0; cellIndex188 < cellListLen188; cellIndex188++) {
-              var cellData188 = cellList188[cellIndex188];
+            var cellList192 = rowData199;
+            var cellListLen192 = cellList192.length;
+            for (var cellIndex192 = 0; cellIndex192 < cellListLen192; cellIndex192++) {
+              var cellData192 = cellList192[cellIndex192];
               ie_open('td');
-                itext((goog.asserts.assert((cellData188) != null), cellData188));
+                itext((goog.asserts.assert((cellData192) != null), cellData192));
               ie_close('td');
             }
             ie_open('td');
               ie_void('span', null, null,
                   'class', 'glyphicon glyphicon-cog',
                   'data-onclick', 'handleClickEdit_',
-                  'data-index', rowIndex195);
+                  'data-index', rowIndex199);
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
                   'class', 'glyphicon glyphicon-trash',
                   'data-onclick', 'handleClickRemove_',
-                  'data-index', rowIndex195);
+                  'data-index', rowIndex199);
             ie_close('td');
           ie_close('tr');
         }

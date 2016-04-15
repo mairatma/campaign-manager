@@ -29,17 +29,26 @@ class ManageCampaigns extends Component {
 	}
 
 	remove(data) {
-		store.dispatch(Actions.removeCampaign(data.index));
+		store.dispatch(Actions.removeCampaign(this.tableDataIds_[data.index]));
 	}
 
-	updateTableData_() {
+	search(data) {
+		this.updateTableData_(
+			this.campaigns.filter(campaign => campaign.name.startsWith(data.newVal))
+		);
+	}
+
+	updateTableData_(opt_campaigns) {
+		var campaigns = opt_campaigns || this.campaigns;
 		var data = [];
-		for (var i = 0; i < this.campaigns.length; i++) {
+		this.tableDataIds_ = [];
+		for (var i = 0; i < campaigns.length; i++) {
 			data.push([
-				this.campaigns[i].name,
-				this.formatDates_(this.campaigns[i].startDate, this.campaigns[i].endDate),
-				this.formatGoal_(this.campaigns[i].goal)
+				campaigns[i].name,
+				this.formatDates_(campaigns[i].startDate, campaigns[i].endDate),
+				this.formatGoal_(campaigns[i].goal)
 			]);
+			this.tableDataIds_.push(campaigns[i].id);
 		}
 		this.tableData = data;
 	}

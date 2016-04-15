@@ -71,6 +71,10 @@ body {
 	float: none;
 }
 
+.campaign-manager-search {
+	margin-bottom: 20px;
+}
+
 .highlight {
 	color: #2ecda8
 }

@@ -4,6 +4,7 @@
  * @param? tableData
  * @param page
  * @param? remove
+ * @param? search
  */
 {template .render}
 	<div class="campaign-manager-manage-campaigns">
@@ -12,6 +13,15 @@
 			{param includeTabs: true /}
 			{param page: $page /}
 		{/call}
+
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+		    {call Search.render}
+					{param events: ['valueChanged': $search] /}
+				{/call}
+			</div>
+		</div>
 
 		{call Card.render}
 			{param children kind="html"}
