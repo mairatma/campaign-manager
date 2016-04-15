@@ -63,7 +63,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           $templateAlias2({events: {valueChanged: opt_data.search}}, null, opt_ijData);
         ie_close('div');
       ie_close('div');
-      var param170 = function() {
+      var param167 = function() {
         ie_open('div', null, null,
             'class', 'form-inline select pull-right');
           ie_open('label');
@@ -95,9 +95,9 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_close('option');
           ie_close('select');
         ie_close('div');
-        $templateAlias4({campaigns: opt_data.filteredCampaigns ? opt_data.filteredCampaigns : []}, null, opt_ijData);
+        $templateAlias4({campaigns: opt_data.filteredCampaigns ? opt_data.filteredCampaigns : [], currentUrl: opt_data.currentUrl}, null, opt_ijData);
       };
-      $templateAlias3({children: param170}, null, opt_ijData);
+      $templateAlias3({children: param167}, null, opt_ijData);
     ie_close('div');
   ie_close('div');
 }

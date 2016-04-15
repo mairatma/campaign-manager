@@ -19,16 +19,18 @@
 			<tbody>
 				{foreach $row in $data}
 					<tr>
-						{foreach $cell in $row}
-							<td>{$cell}</td>
-						{/foreach}
+						{for $i in range(length($headers))}
+							<td>{$row[$i]}</td>
+						{/for}
 						<td>
-							<span
-								class="glyphicon glyphicon-cog"
-								data-onclick="handleClickEdit_"
-								data-index="{index($row)}"
-								>
-							</span>
+							<a href="{$row[length($headers)]}">
+								<span
+									class="glyphicon glyphicon-cog"
+									data-onclick="handleClickEdit_"
+									data-index="{index($row)}"
+									>
+								</span>
+							</a>
 						</td>
 						<td>
 							<span

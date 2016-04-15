@@ -48,7 +48,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'campaign-manager-edit-campaign');
       $templateAlias1(opt_data, null, opt_ijData);
       ie_open('h1');
-        itext('New Campaign');
+        itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Edit' : 'New') != null), opt_data.editCampaignId != null ? 'Edit' : 'New'));
+        itext(' Campaign');
       ie_close('h1');
     ie_close('div');
   ie_close('div');
@@ -58,8 +59,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'EditCampaign.render';
 }
 
-exports.render.params = ["sourceUrl"];
-exports.render.types = {"sourceUrl":"any"};
+exports.render.params = ["editCampaignId","sourceUrl"];
+exports.render.types = {"editCampaignId":"any","sourceUrl":"any"};
 templates = exports;
 return exports;
 

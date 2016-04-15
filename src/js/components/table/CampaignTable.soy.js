@@ -45,7 +45,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   opt_data = opt_data || {};
   ie_open('div', null, null,
       'class', 'campaign-manager-campaign-table');
-    $templateAlias1({headers: ['Name', 'Scheduled Date', 'Goal'], data: opt_data.tableData, events: {removeClicked: opt_data.remove}}, null, opt_ijData);
+    $templateAlias1({headers: ['Name', 'Scheduled Date', 'Goal'], data: opt_data.tableData, events: {removeClicked: opt_data.remove, editClicked: opt_data.edit}}, null, opt_ijData);
   ie_close('div');
 }
 exports.render = $render;
@@ -53,8 +53,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'CampaignTable.render';
 }
 
-exports.render.params = ["remove","tableData"];
-exports.render.types = {"remove":"any","tableData":"any"};
+exports.render.params = ["edit","remove","tableData"];
+exports.render.types = {"edit":"any","remove":"any","tableData":"any"};
 templates = exports;
 return exports;
 

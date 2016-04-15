@@ -57,7 +57,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           'class', 'row');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param89 = function() {
+          var param84 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-4');
               ie_open('img', null, null,
@@ -76,11 +76,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param89, key: 'card0'}, null, opt_ijData);
+          $templateAlias2({children: param84, key: 'card0'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param98 = function() {
+          var param93 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-6');
               ie_open('div');
@@ -114,11 +114,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param98, key: 'card1'}, null, opt_ijData);
+          $templateAlias2({children: param93, key: 'card1'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param107 = function() {
+          var param102 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-5');
               ie_open('div', null, null,
@@ -146,7 +146,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param107, key: 'card2'}, null, opt_ijData);
+          $templateAlias2({children: param102, key: 'card2'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');

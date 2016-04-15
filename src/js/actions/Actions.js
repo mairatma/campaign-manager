@@ -3,6 +3,14 @@
 import ActionTypes from './ActionTypes';
 
 export default {
+	editCampaign(id, sourceUrl) {
+		return {
+			type: ActionTypes.EDIT_CAMPAIGN,
+			id: id,
+			sourceUrl: sourceUrl
+		};
+	},
+
 	removeCampaign(id) {
 		return {
 			type: ActionTypes.REMOVE_CAMPAIGN,

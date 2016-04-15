@@ -1,6 +1,7 @@
 {namespace CampaignTable}
 
 /**
+ * @param? edit
  * @param? remove
  * @param? tableData
  */
@@ -9,7 +10,7 @@
 		{call Table.render}
 			{param headers: ['Name', 'Scheduled Date', 'Goal'] /}
 			{param data: $tableData /}
-			{param events: ['removeClicked': $remove] /}
+			{param events: ['removeClicked': $remove, 'editClicked': $edit] /}
 		{/call}
 	</div>
 {/template}

@@ -14,6 +14,11 @@ class CampaignTable extends Component {
 		this.on('campaignsChanged', this.formatTableData_);
 	}
 
+	edit(data) {
+		var id = this.tableDataIds_[data.index];
+		store.dispatch(Actions.editCampaign(id, this.currentUrl));
+	}
+
 	formatDate_(date) {
 		return MONTHS[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 	}
@@ -33,7 +38,8 @@ class CampaignTable extends Component {
 			data.push([
 				this.campaigns[i].name,
 				this.formatDates_(this.campaigns[i].startDate, this.campaigns[i].endDate),
-				this.formatGoal_(this.campaigns[i].goal)
+				this.formatGoal_(this.campaigns[i].goal),
+				'/edit-campaign/' + this.campaigns[i].id
 			]);
 			this.tableDataIds_.push(this.campaigns[i].id);
 		}
@@ -49,6 +55,8 @@ Soy.register(CampaignTable, templates);
 CampaignTable.STATE = {
 	campaigns: {
 		validator: Array.isArray
+	},
+	currentUrl: {
 	}
 };
 
