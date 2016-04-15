@@ -8,22 +8,9 @@ import Router from 'metal-router';
 
 class Main {
 	static run() {
-		new Router({
-			path: '/',
-			component: Dashboard,
-			initialState: () => store.getState()
-		}, false);
-		new Router({
-			path: '/manage-campaigns',
-			component: ManageCampaigns,
-			initialState: () => store.getState()
-		}, false);
-		new Router({
-			path: '/create-campaign',
-			component: EditCampaign,
-			initialState: () => store.getState()
-		}, false);
-
+		Router.route('/', Dashboard, () => store.getState());
+		Router.route('/manage-campaigns', ManageCampaigns, () => store.getState());
+		Router.route('/create-campaign', EditCampaign, () => store.getState());
 		Router.router().dispatch();
 
 		store.subscribe(Main.refreshState);
