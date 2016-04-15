@@ -1,11 +1,12 @@
 'use strict';
 
-import store from '../store/store';
+import store from '../../store/store';
 import templates from './ManageCampaigns.soy';
-import Actions from '../actions/Actions';
+import Actions from '../../actions/Actions';
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 
+import '../cards/Card.soy';
 import '../Header.soy';
 import '../table/Table.soy';
 

@@ -13,10 +13,14 @@
 			{param page: $page /}
 		{/call}
 
-		{call Table.render}
-			{param headers: ['Name', 'Scheduled Data', 'Goal'] /}
-			{param data: $tableData ? $tableData : [] /}
-			{param events: ['removeClicked': $remove] /}
+		{call Card.render}
+			{param children kind="html"}
+				{call Table.render}
+					{param headers: ['Name', 'Scheduled Data', 'Goal'] /}
+					{param data: $tableData ? $tableData : [] /}
+					{param events: ['removeClicked': $remove] /}
+				{/call}
+			{/param}
 		{/call}
 	</div>
 {/template}
