@@ -89,6 +89,14 @@
 	color: #646c8b;
 }
 
+.campaign-manager-edit-campaign .form-horizontal .control-label {
+	text-align: left;
+}
+
+.campaign-manager-edit-campaign .form-horizontal h2 {
+	color: #86af33;
+}
+
 .back-arrow {
 	position: absolute;
 	top: 0;

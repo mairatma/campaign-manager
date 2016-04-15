@@ -3,6 +3,13 @@
 import ActionTypes from './ActionTypes';
 
 export default {
+	saveCampaign(campaign) {
+		return {
+			type: ActionTypes.SAVE_CAMPAIGN,
+			campaign: campaign
+		};
+	},
+
 	startCampaignCreation(sourceUrl) {
 		return {
 			type: ActionTypes.START_CAMPAIGN_CREATION,

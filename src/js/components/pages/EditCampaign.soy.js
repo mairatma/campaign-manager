@@ -51,6 +51,45 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Edit' : 'New') != null), opt_data.editCampaignId != null ? 'Edit' : 'New'));
         itext(' Campaign');
       ie_close('h1');
+      ie_open('form', null, null,
+          'class', 'form-horizontal');
+        ie_open('h2');
+          itext('Details');
+        ie_close('h2');
+        ie_open('div', null, null,
+            'class', 'form-group');
+          ie_open('label', null, null,
+              'class', 'col-sm-1 control-label');
+            itext('Name:');
+          ie_close('label');
+          ie_open('div', null, null,
+              'class', 'col-sm-4');
+            ie_open('input', null, null,
+                'type', 'text',
+                'class', 'form-control',
+                'name', 'name');
+            ie_close('input');
+          ie_close('div');
+        ie_close('div');
+        ie_open('div', null, null,
+            'class', 'form-group');
+          ie_open('div', null, null,
+              'class', 'col-sm-10');
+            ie_open('a', null, null,
+                'href', opt_data.sourceUrl,
+                'class', 'btn btn-success',
+                'data-onclick', 'save');
+              itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Save' : 'Create') != null), opt_data.editCampaignId != null ? 'Save' : 'Create'));
+              itext(' Campaign');
+            ie_close('a');
+            ie_open('a', null, null,
+                'href', opt_data.sourceUrl,
+                'class', 'btn btn-default');
+              itext('Cancel');
+            ie_close('a');
+          ie_close('div');
+        ie_close('div');
+      ie_close('form');
     ie_close('div');
   ie_close('div');
 }
