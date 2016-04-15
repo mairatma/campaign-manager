@@ -1,6 +1,7 @@
 {namespace ManageCampaigns}
 
 /**
+ * @param? currentUrl
  * @param? filteredCampaigns
  * @param? search
  * @param? sort
@@ -9,7 +10,7 @@
 	<div class="campaign-manager container-fluid">
 		<div class="campaign-manager-manage-campaigns">
 			{call Header.render}
-				{param selectedTab: 1 /}
+				{param currentUrl: $currentUrl /}
 				{param includeAddCampaignButton: true /}
 				{param includeTabs: true /}
 			{/call}

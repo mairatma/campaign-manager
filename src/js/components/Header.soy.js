@@ -49,7 +49,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'col-md-12');
       ie_open('a', null, null,
           'href', '/create-campaign',
-          'class', 'btn btn-primary campaign-manager-button-new pull-right');
+          'class', 'btn btn-primary campaign-manager-button-new pull-right',
+          'data-onclick', 'setSourceUrl');
         itext('New Campaign');
       ie_close('button');
       if (opt_data.includeAddCampaignButton) {
@@ -62,7 +63,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     if (opt_data.includeTabs) {
       ie_open('div', null, null,
           'class', 'col-md-12');
-        $templateAlias1({tabs: [{name: 'Dashboard', href: '/'}, {name: 'Manage Campaigns', href: '/manage-campaigns'}], selectedIndex: opt_data.selectedTab ? opt_data.selectedTab : 0}, null, opt_ijData);
+        $templateAlias1({tabs: [{name: 'Dashboard', href: '/'}, {name: 'Manage Campaigns', href: '/manage-campaigns'}], selectedIndex: opt_data.currentUrl == '/manage-campaigns' ? 1 : 0}, null, opt_ijData);
       ie_close('div');
     }
   ie_close('div');
@@ -72,8 +73,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Header.render';
 }
 
-exports.render.params = ["includeTabs","includeAddCampaignButton","selectedTab"];
-exports.render.types = {"includeTabs":"any","includeAddCampaignButton":"any","selectedTab":"any"};
+exports.render.params = ["currentUrl","includeTabs","includeAddCampaignButton"];
+exports.render.types = {"currentUrl":"any","includeTabs":"any","includeAddCampaignButton":"any"};
 templates = exports;
 return exports;
 

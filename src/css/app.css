@@ -89,6 +89,12 @@
 	color: #646c8b;
 }
 
+.back-arrow {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 .highlight {
 	color: #2ecda8
 }
