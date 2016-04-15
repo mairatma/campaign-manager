@@ -25,13 +25,6 @@ export default {
 		};
 	},
 
-	setSourceUrl(sourceUrl) {
-		return {
-			type: ActionTypes.SET_SOURCE_URL,
-			sourceUrl: sourceUrl
-		};
-	},
-
 	updateState(state) {
 		return {
 			type: ActionTypes.UPDATE_DATA,
