@@ -56,8 +56,9 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null,
           'class', 'row');
         ie_open('div', null, null,
+            'id', 'campaign-manager-active-card',
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param89 = function() {
+          var param86 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-4');
               ie_open('img', null, null,
@@ -71,19 +72,22 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                   'class', 'highlight big');
                 itext((goog.asserts.assert((opt_data.campaigns.length) != null), opt_data.campaigns.length));
               ie_close('div');
-              ie_open('div');
+              ie_open('div', null, null,
+                  'class', 'campaign-manager-card-label');
                 itext('Active Campaigns');
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param89, key: 'card0'}, null, opt_ijData);
+          $templateAlias2({children: param86, key: 'card0', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
-            'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param98 = function() {
+            'id', 'campaign-manager-amount-card',
+            'class', 'col-md-4 campaign-manager-group campaign-manager-card-wrapper');
+          var param96 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-6');
-              ie_open('div');
+              ie_open('div', null, null,
+                  'class', 'campaign-manager-amount-value');
                 ie_open('span', null, null,
                     'class', 'highlight');
                   itext((goog.asserts.assert((opt_data.totalInfluencedWins) != null), opt_data.totalInfluencedWins));
@@ -93,13 +97,15 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                   itext('$');
                 ie_close('span');
               ie_close('div');
-              ie_open('div');
+              ie_open('div', null, null,
+                  'class', 'campaign-manager-card-label');
                 itext('Influenced wins');
               ie_close('div');
             ie_close('div');
             ie_open('div', null, null,
                 'class', 'col-md-6');
-              ie_open('div');
+              ie_open('div', null, null,
+                  'class', 'campaign-manager-amount-value');
                 ie_open('span', null, null,
                     'class', 'highlight');
                   itext((goog.asserts.assert((opt_data.totalBudget) != null), opt_data.totalBudget));
@@ -109,23 +115,26 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                   itext('$');
                 ie_close('span');
               ie_close('div');
-              ie_open('div');
+              ie_open('div', null, null,
+                  'class', 'campaign-manager-card-label');
                 itext('Total assigned budget');
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param98, key: 'card1'}, null, opt_ijData);
+          $templateAlias2({children: param96, key: 'card1-0', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
+            'id', 'campaign-manager-leads-card',
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param107 = function() {
+          var param106 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-5');
               ie_open('div', null, null,
                   'class', 'highlight big');
                 itext((goog.asserts.assert((opt_data.totalLeadsCount) != null), opt_data.totalLeadsCount));
               ie_close('div');
-              ie_open('div');
+              ie_open('div', null, null,
+                  'class', 'campaign-manager-card-label');
                 itext('Total leads');
               ie_close('div');
             ie_close('div');
@@ -141,13 +150,17 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                   'class', 'highlight big');
                 itext((goog.asserts.assert((opt_data.totalInfluencedCustomers) != null), opt_data.totalInfluencedCustomers));
               ie_close('div');
-              ie_open('div');
+              ie_open('div', null, null,
+                  'class', 'campaign-manager-card-label');
                 itext('Influenced customers');
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param107, key: 'card2'}, null, opt_ijData);
+          $templateAlias2({children: param106, key: 'card2', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null,
+          'class', 'row');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
           $templateAlias3({count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Destinations views', key: 'card3'}, null, opt_ijData);
@@ -160,6 +173,9 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'class', 'col-md-4 campaign-manager-card-wrapper');
           $templateAlias3({count: 8934, imageUrl: opt_data.baseUrl + 'images/chartWithLabels.png', title: 'Destinations conversions', key: 'card5'}, null, opt_ijData);
         ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null,
+          'class', 'row');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
           $templateAlias3({count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Banner Ads views', key: 'card6'}, null, opt_ijData);

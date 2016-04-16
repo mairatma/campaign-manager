@@ -17,7 +17,7 @@
 			{/call}
 
 			<div class="row">
-				<div class="col-md-4 campaign-manager-card-wrapper">
+				<div id="campaign-manager-active-card" class="col-md-4 campaign-manager-card-wrapper">
 					{call Card.render}
 						{param children kind="html"}
 							<div class="col-md-4">
@@ -25,51 +25,57 @@
 							</div>
 							<div class="col-md-8">
 								<div class="highlight big">{length($campaigns)}</div>
-								<div>Active Campaigns</div>
+								<div class="campaign-manager-card-label">Active Campaigns</div>
 							</div>
 						{/param}
 						{param key: 'card0' /}
+						{param cssClass: 'clearfix' /}
 					{/call}
 				</div>
-				<div class="col-md-4 campaign-manager-card-wrapper">
-					{call Card.render}
-						{param children kind="html"}
-							<div class="col-md-6">
-								<div>
-									<span class="highlight">{$totalInfluencedWins}</span>
-									<span class="light-gray">$</span>
+				<div id="campaign-manager-amount-card" class="col-md-4 campaign-manager-group campaign-manager-card-wrapper">
+						{call Card.render}
+							{param children kind="html"}
+								<div class="col-md-6">
+									<div class="campaign-manager-amount-value">
+										<span class="highlight">{$totalInfluencedWins}</span>
+										<span class="light-gray">$</span>
+									</div>
+									<div class="campaign-manager-card-label">Influenced wins</div>
 								</div>
-								<div>Influenced wins</div>
-							</div>
-							<div class="col-md-6">
-								<div>
-									<span class="highlight">{$totalBudget}</span>
-									<span class="light-gray">$</span>
+								<div class="col-md-6">
+									<div class="campaign-manager-amount-value">
+										<span class="highlight">{$totalBudget}</span>
+										<span class="light-gray">$</span>
+									</div>
+									<div class="campaign-manager-card-label">Total assigned budget</div>
 								</div>
-								<div>Total assigned budget</div>
-							</div>
-						{/param}
-						{param key: 'card1' /}
-					{/call}
+							{/param}
+							{param key: 'card1-0' /}
+							{param cssClass: 'clearfix' /}
+						{/call}
 				</div>
-				<div class="col-md-4 campaign-manager-card-wrapper">
+				<div id="campaign-manager-leads-card" class="col-md-4 campaign-manager-card-wrapper">
 					{call Card.render}
 						{param children kind="html"}
 							<div class="col-md-5">
 								<div class="highlight big">{$totalLeadsCount}</div>
-								<div>Total leads</div>
+								<div class="campaign-manager-card-label">Total leads</div>
 							</div>
 							<div class="col-md-2 campaign-manager-card-people">
 								<img src="{$baseUrl}images/people.png">
 							</div>
 							<div class="col-md-5">
 								<div class="highlight big">{$totalInfluencedCustomers}</div>
-								<div>Influenced customers</div>
+								<div class="campaign-manager-card-label">Influenced customers</div>
 							</div>
 						{/param}
 						{param key: 'card2' /}
+						{param cssClass: 'clearfix' /}
 					{/call}
 				</div>
+			</div>
+
+			<div class="row">
 				<div class="col-md-4 campaign-manager-card-wrapper">
 					{call ImageCard.render}
 						{param count: 2894 /}
@@ -100,6 +106,9 @@
 						{param key: 'card5' /}
 					{/call}
 				</div>
+			</div>
+
+			<div class="row">
 				<div class="col-md-4 campaign-manager-card-wrapper">
 					{call ImageCard.render}
 						{param count: 2894 /}
@@ -133,6 +142,7 @@
 					{/call}
 				</div>
 			</div>
+
 		</div>
 	</div>
 {/template}

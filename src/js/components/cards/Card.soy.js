@@ -36,6 +36,7 @@ var iattr = IncrementalDom.attr;
 
 /**
  * @param {{
+ *    cssClass: (?),
  *    children: (!soydata.SanitizedHtml|string)
  * }} opt_data
  * @param {(null|undefined)=} opt_ignored
@@ -47,8 +48,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   soy.asserts.assertType((opt_data.children instanceof Function) || (opt_data.children instanceof soydata.UnsanitizedText) || goog.isString(opt_data.children), 'children', opt_data.children, 'Function');
   var children = /** @type {Function} */ (opt_data.children);
   ie_open('div', null, null,
-      'class', 'campaign-manager-card');
-    children();
+      'class', 'campaign-manager-card ' + (opt_data.cssClass ? opt_data.cssClass : ''));
+    ie_open('div', null, null,
+        'class', 'campaign-manager-card-body clearfix');
+      children();
+    ie_close('div');
   ie_close('div');
 }
 exports.render = $render;
@@ -56,8 +60,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Card.render';
 }
 
-exports.render.params = ["children"];
-exports.render.types = {"children":"html"};
+exports.render.params = ["children","cssClass"];
+exports.render.types = {"children":"html","cssClass":"any"};
 templates = exports;
 return exports;
 
