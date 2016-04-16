@@ -17,15 +17,6 @@ body {
 	padding: 50px 0;
 }
 
-.campaign-manager-card {
-	background-color: #fff;
-	border: 1px solid #ebecf0;
-	border-radius: 8px;
-	box-shadow: 0 2px 5px #ebecf0;
-	color: #646c8b;
-	padding: 25px;
-}
-
 .no-padding {
 	padding: 0;
 }
@@ -34,6 +25,7 @@ body {
 #campaign-manager-leads-card .campaign-manager-card,
 #campaign-manager-amount-card .campaign-manager-card {
 	padding: 0;
+	text-align: center;
 }
 
 #campaign-manager-active-card .campaign-manager-card-body {
@@ -53,56 +45,13 @@ body {
 	margin-bottom: 7px;
 }
 
-.campaign-manager-card .campaign-manager-card-label {
-	font-size: 2rem;
-	line-height: 2.4rem;
-}
-
 .campaign-manager-dashboard .campaign-manager-card {
 	font-size: 25px;
 	height: 100%;
-	text-align: center;
 }
 
 .campaign-manager-dashboard .campaign-manager-card-wrapper {
 	height: 100%;
-}
-
-.campaign-manager-card-wrapper {
-	margin: 0 0 50px 0;
-}
-
-.campaign-manager-card-wrapper:nth-child(3n + 0) .campaign-manager-card {
-	margin-right: 0;
-}
-
-.campaign-manager-card-people {
-	padding: 0;
-}
-
-.campaign-manager-card-people img,
-.campaign-manager-image-card img {
-	width: 100%;
-}
-
-.campaign-manager-image-card .campaign-manager-card,
-.campaign-manager-table-card .campaign-manager-card {
-	text-align: left;
-}
-
-.campaign-manager-image-card .count {
-	padding-left: 15px;
-}
-
-.campaign-manager-table-card table thead th {
-	border: none;
-	font-size: 18px;
-	font-weight: normal;
-}
-
-.campaign-manager-table-card table tbody td {
-	font-size: 15px;
-	border: none;
 }
 
 .campaign-manager-search {
