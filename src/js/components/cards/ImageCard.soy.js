@@ -45,7 +45,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager-image-card');
     var param44 = function() {
-      ie_open('div');
+      ie_open('div', null, null,
+          'class', 'campaign-manager-card-title');
         itext((goog.asserts.assert((opt_data.title) != null), opt_data.title));
         ie_open('span', null, null,
             'class', 'highlight count');

@@ -45,36 +45,38 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager-table-card');
     var param57 = function() {
-      ie_open('div');
+      ie_open('div', null, null,
+          'class', 'campaign-manager-card-title');
         itext((goog.asserts.assert((opt_data.title) != null), opt_data.title));
       ie_close('div');
       ie_open('table', null, null,
           'class', 'table');
         ie_open('thead');
           ie_open('tr');
-            var headerList64 = opt_data.headers;
-            var headerListLen64 = headerList64.length;
-            for (var headerIndex64 = 0; headerIndex64 < headerListLen64; headerIndex64++) {
-              var headerData64 = headerList64[headerIndex64];
+            var headerList66 = opt_data.headers;
+            var headerListLen66 = headerList66.length;
+            for (var headerIndex66 = 0; headerIndex66 < headerListLen66; headerIndex66++) {
+              var headerData66 = headerList66[headerIndex66];
               ie_open('th', null, null,
-                  'class', 'light-gray');
-                itext((goog.asserts.assert((headerData64) != null), headerData64));
+                  'class', 'light-gray ' + (headerIndex66 == 0 ? '' : 'text-center'));
+                itext((goog.asserts.assert((headerData66) != null), headerData66));
               ie_close('th');
             }
           ie_close('tr');
         ie_close('thead');
         ie_open('tbody');
-          var rowList74 = opt_data.data;
-          var rowListLen74 = rowList74.length;
-          for (var rowIndex74 = 0; rowIndex74 < rowListLen74; rowIndex74++) {
-            var rowData74 = rowList74[rowIndex74];
+          var rowList78 = opt_data.data;
+          var rowListLen78 = rowList78.length;
+          for (var rowIndex78 = 0; rowIndex78 < rowListLen78; rowIndex78++) {
+            var rowData78 = rowList78[rowIndex78];
             ie_open('tr');
-              var cellList71 = rowData74;
-              var cellListLen71 = cellList71.length;
-              for (var cellIndex71 = 0; cellIndex71 < cellListLen71; cellIndex71++) {
-                var cellData71 = cellList71[cellIndex71];
-                ie_open('td');
-                  itext((goog.asserts.assert((cellData71) != null), cellData71));
+              var cellList75 = rowData78;
+              var cellListLen75 = cellList75.length;
+              for (var cellIndex75 = 0; cellIndex75 < cellListLen75; cellIndex75++) {
+                var cellData75 = cellList75[cellIndex75];
+                ie_open('td', null, null,
+                    'class', cellIndex75 == 0 ? '' : 'text-center');
+                  itext((goog.asserts.assert((cellData75) != null), cellData75));
                 ie_close('td');
               }
             ie_close('tr');

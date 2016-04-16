@@ -46,13 +46,13 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'table');
       ie_open('thead');
         ie_open('tr');
-          var headerList206 = opt_data.headers;
-          var headerListLen206 = headerList206.length;
-          for (var headerIndex206 = 0; headerIndex206 < headerListLen206; headerIndex206++) {
-            var headerData206 = headerList206[headerIndex206];
+          var headerList210 = opt_data.headers;
+          var headerListLen210 = headerList210.length;
+          for (var headerIndex210 = 0; headerIndex210 < headerListLen210; headerIndex210++) {
+            var headerData210 = headerList210[headerIndex210];
             ie_open('th', null, null,
                 'class', 'light-gray');
-              itext((goog.asserts.assert((headerData206) != null), headerData206));
+              itext((goog.asserts.assert((headerData210) != null), headerData210));
             ie_close('th');
           }
           ie_open('th', null, null,
@@ -66,31 +66,31 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var rowList221 = opt_data.data;
-        var rowListLen221 = rowList221.length;
-        for (var rowIndex221 = 0; rowIndex221 < rowListLen221; rowIndex221++) {
-          var rowData221 = rowList221[rowIndex221];
+        var rowList225 = opt_data.data;
+        var rowListLen225 = rowList225.length;
+        for (var rowIndex225 = 0; rowIndex225 < rowListLen225; rowIndex225++) {
+          var rowData225 = rowList225[rowIndex225];
           ie_open('tr');
-            var iLimit210 = opt_data.headers.length;
-            for (var i210 = 0; i210 < iLimit210; i210++) {
+            var iLimit214 = opt_data.headers.length;
+            for (var i214 = 0; i214 < iLimit214; i214++) {
               ie_open('td');
-                itext((goog.asserts.assert((rowData221[i210]) != null), rowData221[i210]));
+                itext((goog.asserts.assert((rowData225[i214]) != null), rowData225[i214]));
               ie_close('td');
             }
             ie_open('td');
               ie_open('a', null, null,
-                  'href', rowData221[opt_data.headers.length]);
+                  'href', rowData225[opt_data.headers.length]);
                 ie_void('span', null, null,
                     'class', 'glyphicon glyphicon-cog',
                     'data-onclick', 'handleClickEdit_',
-                    'data-index', rowIndex221);
+                    'data-index', rowIndex225);
               ie_close('a');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
                   'class', 'glyphicon glyphicon-trash',
                   'data-onclick', 'handleClickRemove_',
-                  'data-index', rowIndex221);
+                  'data-index', rowIndex225);
             ie_close('td');
           ie_close('tr');
         }
