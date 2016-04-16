@@ -65,16 +65,6 @@ body {
 	border: none;
 }
 
-.campaign-manager-tabs {
-	margin-bottom: 20px;
-	text-align: center;
-}
-
-.campaign-manager-tabs li {
-	display: inline-block;
-	float: none;
-}
-
 .campaign-manager-search {
 	margin-bottom: 20px;
 }
