@@ -1,3 +1,7 @@
+body {
+	color: #646c8b;
+}
+
 .campaign-manager {
 	background-color: #f5f5f7;
 	padding: 0 50px;
@@ -105,6 +109,10 @@
 
 .highlight {
 	color: #2ecda8
+}
+
+.default-text-color {
+	color: #646c8b;
 }
 
 .big {
