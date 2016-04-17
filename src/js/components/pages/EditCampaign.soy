@@ -14,7 +14,7 @@
 			</div>
 
 			<form class="form-horizontal">
-				<div class="details container-fluid white-bg campaign-manager session session-merged-next">
+				<div class="campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next">
 					<h2>Details</h2>
 					<div class="form-group">
 						<label for="" class="col-md-1 control-label">Name</label>
@@ -77,11 +77,13 @@
 					</div>
 				</div>
 
-				<div class="journey container-fluid white-bg campaign-manager session">
+				<div class="campaign-manager-edit-campaign-journey container-fluid white-bg campaign-manager session">
 					<h2>Journey</h2>
-					<p>What's the journey? The journey defines the steps or stages of your campaign. If you don't have stages, just use the single step journey. If you are  using multi-step journeys you'll be able to define goals for each stage and program tactic that depend on information from the previous stage.</p>
+					<div class="session-description">
+						<p><b>What's the journey?</b> <em> The journey defines the steps or stages of your campaign. If you don't have stages, just use the single step journey. If you are  using multi-step journeys you'll be able to define goals for each stage and program tactic that depend on information from the previous stage.</em></p>
+					</div>
 					<div class="form-group">
-						<label for="" class="col-md-2 control-label">Journey</label>
+						<label for="" class="col-md-1 control-label">Journey</label>
 						<div class="col-md-2">
 							<select name="" id="" class="form-control">
 								<option value="">Sales Funnel</option>
@@ -93,10 +95,12 @@
 					</div>
 				</div>
 
-				<div class="goal container-fluid campaign-manager session">
+				<div class="campaign-manager-edit-campaign-goal container-fluid campaign-manager session">
 					<div class="campaign-manager-card">
 						<h2>Goal</h2>
-					  <p>Here you can define the goal of this stage. This will be used to generate smart reports in your campaign dashboard</p>
+						<div class="session-description">
+						<p><em>Here you can define the goal of this stage. This will be used to generate smart reports in your campaign dashboard</em></p>
+						</div>
 					  <div class="form-group">
 					    <div class="col-md-2">
 					      <select name="" id="" class="form-control">
@@ -107,7 +111,7 @@
 					      <input type="email" class="form-control" id="" placeholder="10.000">
 					    </div>
 
-					    <label for="" class="col-md-2 control-label">new contact in: </label>
+					    <label for="" class="col-md-2 control-label"><div class="text-right">new contact in: </div></label>
 					    <div class="col-md-2">
 					      <select name="" id="" class="form-control">
 					        <option value="">2</option>
@@ -122,25 +126,31 @@
 					</div>
 				</div>
 
-				<div class="tactics container-fluid campaign-manager white-bg session">
+				<div class="campaign-manager-edit-campaign-tactics container-fluid campaign-manager white-bg session session-merged-next">
 					<h2>Tactics</h2>
-					<p>What are tactics? Tactics are the different ways to achive your marketing goals. They usually include publishing destinations like landing pages or blog, defining broadcast prmotion on social media or via personalized banner ads in your webs and also one to one promotions like emails, SMS or Push notifications to the right audience.</p>
-					<a href="" class="btn btn-lg btn-default">New tactic</a>
+					<div class="session-description">
+						<p><b>What are tactics?</b> <em>Tactics are the different ways to achive your marketing goals. They usually include publishing destinations like landing pages or blog, defining broadcast prmotion on social media or via personalized banner ads in your webs and also one to one promotions like emails, SMS or Push notifications to the right audience.</em></p>
+					</div>
+
+					<a href="" class="btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new">New tactic</a>
 
 					{call Table.render}
 						{param headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners'] /}
+						{param cssClass: 'table-box' /}
 						{param data: [
 							['Destination name 001', '12k', '7%' , '12k', '7%']
 						] /}
 					{/call}
 				</div>
 
-				<div class="form-group">
-					<div class="col-sm-10">
-						<a href="{$sourceUrl}" class="btn btn-lg btn-success" data-onclick="save">
-							{isNonnull($editCampaignId) ? 'Save' : 'Create'} Campaign
-						</a>
-						<a href="{$sourceUrl}" class="btn btn-lg btn-lighter">Cancel</a>
+				<div class="container-fluid campaign-manager white-bg session">
+					<div class="form-group">
+						<div class="col-sm-10">
+							<a href="{$sourceUrl}" class="btn btn-lg btn-success" data-onclick="save">
+								{isNonnull($editCampaignId) ? 'Save' : 'Create'} Campaign
+							</a>
+							<a href="{$sourceUrl}" class="btn btn-lg btn-lighter">Cancel</a>
+						</div>
 					</div>
 				</div>
 			</form>

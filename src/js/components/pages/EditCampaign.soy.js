@@ -48,16 +48,19 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', 'campaign-manager-edit-campaign');
     ie_open('div', null, null,
         'class', 'container-fluid white-bg campaign-manager');
-      $templateAlias1(opt_data, null, opt_ijData);
-      ie_open('h1');
-        itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Edit' : 'New') != null), opt_data.editCampaignId != null ? 'Edit' : 'New'));
-        itext(' Campaign');
-      ie_close('h1');
+      ie_open('div', null, null,
+          'class', 'campaign-manager-page-title');
+        $templateAlias1(opt_data, null, opt_ijData);
+        ie_open('h1');
+          itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Edit' : 'New') != null), opt_data.editCampaignId != null ? 'Edit' : 'New'));
+          itext(' Campaign');
+        ie_close('h1');
+      ie_close('div');
     ie_close('div');
     ie_open('form', null, null,
         'class', 'form-horizontal');
       ie_open('div', null, null,
-          'class', 'details container-fluid white-bg campaign-manager session session-merged-next');
+          'class', 'campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next');
         ie_open('h2');
           itext('Details');
         ie_close('h2');
@@ -203,18 +206,27 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
-          'class', 'journey container-fluid white-bg campaign-manager session');
+          'class', 'campaign-manager-edit-campaign-journey container-fluid white-bg campaign-manager session');
         ie_open('h2');
           itext('Journey');
         ie_close('h2');
-        ie_open('p');
-          itext('What\'s the journey? The journey defines the steps or stages of your campaign. If you don\'t have stages, just use the single step journey. If you are  using multi-step journeys you\'ll be able to define goals for each stage and program tactic that depend on information from the previous stage.');
-        ie_close('p');
+        ie_open('div', null, null,
+            'class', 'session-description');
+          ie_open('p');
+            ie_open('b');
+              itext('What\'s the journey?');
+            ie_close('b');
+            itext(' ');
+            ie_open('em');
+              itext(' The journey defines the steps or stages of your campaign. If you don\'t have stages, just use the single step journey. If you are  using multi-step journeys you\'ll be able to define goals for each stage and program tactic that depend on information from the previous stage.');
+            ie_close('em');
+          ie_close('p');
+        ie_close('div');
         ie_open('div', null, null,
             'class', 'form-group');
           ie_open('label', null, null,
               'for', '',
-              'class', 'col-md-2 control-label');
+              'class', 'col-md-1 control-label');
             itext('Journey');
           ie_close('label');
           ie_open('div', null, null,
@@ -239,15 +251,20 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
-          'class', 'goal container-fluid campaign-manager session');
+          'class', 'campaign-manager-edit-campaign-goal container-fluid campaign-manager session');
         ie_open('div', null, null,
             'class', 'campaign-manager-card');
           ie_open('h2');
             itext('Goal');
           ie_close('h2');
-          ie_open('p');
-            itext('Here you can define the goal of this stage. This will be used to generate smart reports in your campaign dashboard');
-          ie_close('p');
+          ie_open('div', null, null,
+              'class', 'session-description');
+            ie_open('p');
+              ie_open('em');
+                itext('Here you can define the goal of this stage. This will be used to generate smart reports in your campaign dashboard');
+              ie_close('em');
+            ie_close('p');
+          ie_close('div');
           ie_open('div', null, null,
               'class', 'form-group');
             ie_open('div', null, null,
@@ -274,7 +291,10 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('label', null, null,
                 'for', '',
                 'class', 'col-md-2 control-label');
-              itext('new contact in: ');
+              ie_open('div', null, null,
+                  'class', 'text-right');
+                itext('new contact in: ');
+              ie_close('div');
             ie_close('label');
             ie_open('div', null, null,
                 'class', 'col-md-2');
@@ -304,36 +324,48 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
-          'class', 'tactics container-fluid campaign-manager white-bg session');
+          'class', 'campaign-manager-edit-campaign-tactics container-fluid campaign-manager white-bg session session-merged-next');
         ie_open('h2');
           itext('Tactics');
         ie_close('h2');
-        ie_open('p');
-          itext('What are tactics? Tactics are the different ways to achive your marketing goals. They usually include publishing destinations like landing pages or blog, defining broadcast prmotion on social media or via personalized banner ads in your webs and also one to one promotions like emails, SMS or Push notifications to the right audience.');
-        ie_close('p');
+        ie_open('div', null, null,
+            'class', 'session-description');
+          ie_open('p');
+            ie_open('b');
+              itext('What are tactics?');
+            ie_close('b');
+            itext(' ');
+            ie_open('em');
+              itext('Tactics are the different ways to achive your marketing goals. They usually include publishing destinations like landing pages or blog, defining broadcast prmotion on social media or via personalized banner ads in your webs and also one to one promotions like emails, SMS or Push notifications to the right audience.');
+            ie_close('em');
+          ie_close('p');
+        ie_close('div');
         ie_open('a', null, null,
             'href', '',
-            'class', 'btn btn-lg btn-default');
+            'class', 'btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new');
           itext('New tactic');
         ie_close('a');
-        $templateAlias2({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners'], data: [['Destination name 001', '12k', '7%', '12k', '7%']]}, null, opt_ijData);
+        $templateAlias2({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners'], cssClass: 'table-box', data: [['Destination name 001', '12k', '7%', '12k', '7%']]}, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null,
-          'class', 'form-group');
+          'class', 'container-fluid campaign-manager white-bg session');
         ie_open('div', null, null,
-            'class', 'col-sm-10');
-          ie_open('a', null, null,
-              'href', opt_data.sourceUrl,
-              'class', 'btn btn-lg btn-success',
-              'data-onclick', 'save');
-            itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Save' : 'Create') != null), opt_data.editCampaignId != null ? 'Save' : 'Create'));
-            itext(' Campaign');
-          ie_close('a');
-          ie_open('a', null, null,
-              'href', opt_data.sourceUrl,
-              'class', 'btn btn-lg btn-lighter');
-            itext('Cancel');
-          ie_close('a');
+            'class', 'form-group');
+          ie_open('div', null, null,
+              'class', 'col-sm-10');
+            ie_open('a', null, null,
+                'href', opt_data.sourceUrl,
+                'class', 'btn btn-lg btn-success',
+                'data-onclick', 'save');
+              itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Save' : 'Create') != null), opt_data.editCampaignId != null ? 'Save' : 'Create'));
+              itext(' Campaign');
+            ie_close('a');
+            ie_open('a', null, null,
+                'href', opt_data.sourceUrl,
+                'class', 'btn btn-lg btn-lighter');
+              itext('Cancel');
+            ie_close('a');
+          ie_close('div');
         ie_close('div');
       ie_close('div');
     ie_close('form');

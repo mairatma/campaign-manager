@@ -43,10 +43,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'href', opt_data.sourceUrl,
       'class', 'back-arrow');
-    ie_open('h1');
-      ie_void('span', null, null,
-          'class', 'glyphicon glyphicon-chevron-left');
-    ie_close('h1');
+    ie_void('span', null, null,
+        'class', 'glyphicon glyphicon-menu-left');
   ie_close('a');
 }
 exports.render = $render;
