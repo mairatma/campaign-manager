@@ -138,11 +138,6 @@ body {
 	margin-top: 50px;
 }
 
-.campaign-manager-campaign-table .glyphicon-cog {
-	color: #e48888;
-	font-size: 17px;
-}
-
 .session {
 	padding-top: 60px;
 	padding-bottom: 60px;
@@ -166,4 +161,12 @@ body {
 
 .campaign-manager-edit-campaign-tactics-add-new {
 	margin-bottom: 30px;
+}
+
+.table-action-icon {
+	font-size: 17px;
+}
+
+.table-action-edit {
+	color: #e79b9d;
 }

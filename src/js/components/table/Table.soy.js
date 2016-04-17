@@ -81,14 +81,14 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_open('a', null, null,
                   'href', rowData233[opt_data.headers.length]);
                 ie_void('span', null, null,
-                    'class', 'glyphicon glyphicon-cog',
+                    'class', 'glyphicon glyphicon-cog table-action-icon table-action-edit',
                     'data-onclick', 'handleClickEdit_',
                     'data-index', rowIndex233);
               ie_close('a');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', 'glyphicon glyphicon-trash',
+                  'class', 'glyphicon glyphicon-trash table-action-icon table-action-remove',
                   'data-onclick', 'handleClickRemove_',
                   'data-index', rowIndex233);
             ie_close('td');
