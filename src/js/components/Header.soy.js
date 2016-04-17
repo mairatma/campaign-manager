@@ -55,7 +55,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_close('button');
       if (opt_data.includeAddCampaignButton) {
         ie_open('h4', null, null,
-            'class', 'campaign-manager-title');
+            'class', 'campaign-manager-title campaign-manager-page-title');
           itext('Campaign Manager');
         ie_close('h4');
       }

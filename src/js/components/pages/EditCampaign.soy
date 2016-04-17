@@ -7,8 +7,10 @@
 {template .render}
 		<div class="campaign-manager-edit-campaign">
 			<div class="container-fluid white-bg campaign-manager">
-				{call BackArrow.render data="all" /}
-				<h1>{isNonnull($editCampaignId) ? 'Edit' : 'New'} Campaign</h1>
+				<div class="campaign-manager-page-title">
+					{call BackArrow.render data="all" /}
+					<h1>{isNonnull($editCampaignId) ? 'Edit' : 'New'} Campaign</h1>
+				</div>
 			</div>
 
 			<form class="form-horizontal">
