@@ -116,5 +116,11 @@ body {
 	background-color: #fff;
 }
 
+.campaign-manager-campaign-table {
+	margin-top: 50px;
+}
 
+.campaign-manager-campaign-table .glyphicon-cog {
+	color: #e48888;
+	font-size: 17px;
 }
