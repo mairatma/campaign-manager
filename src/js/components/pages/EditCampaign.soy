@@ -5,18 +5,132 @@
  * @param sourceUrl
  */
 {template .render}
-	<div class="campaign-manager container-fluid white-bg">
 		<div class="campaign-manager-edit-campaign">
-			{call BackArrow.render data="all" /}
-			<h1>{isNonnull($editCampaignId) ? 'Edit' : 'New'} Campaign</h1>
+			<div class="container-fluid white-bg campaign-manager">
+				{call BackArrow.render data="all" /}
+				<h1>{isNonnull($editCampaignId) ? 'Edit' : 'New'} Campaign</h1>
+			</div>
 
 			<form class="form-horizontal">
-				<h2>Details</h2>
-				<div class="form-group">
-					<label class="col-sm-1 control-label">Name:</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" name="name">
+				<div class="details container-fluid white-bg campaign-manager session session-merged-next">
+					<h2>Details</h2>
+					<div class="form-group">
+						<label for="" class="col-md-1 control-label">Name</label>
+						<div class="col-md-4">
+							<input type="email" class="form-control" id="">
+						</div>
+
+						<br class="hidden-md hidden-lg">
+
+						<label for="" class="col-md-1 col-md-offset-2 control-label">budget</label>
+						<div class="col-md-2">
+							<input type="email" class="form-control" id="">
+						</div>
+						<div class="col-md-2">
+							<select name="" id="" class="form-control">
+								<option value="">(€)Euros</option>
+							</select>
+						</div>
 					</div>
+
+					<div class="form-group">
+						<label for="" class="col-md-1 control-label">Description</label>
+						<div class="col-md-11">
+							<textarea name="name" class="form-control" rows="8" cols="40"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="" class="col-md-1 control-label">Starts on</label>
+						<div class="col-md-2">
+							<input type="email" class="form-control" id="">
+						</div>
+						<div class="col-md-1">
+							<select name="" id="" class="form-control">
+								<option value="">01:00 PM</option>
+							</select>
+						</div>
+						<div class="col-md-1">
+							<select name="" id="" class="form-control">
+								<option value="">GMT</option>
+							</select>
+						</div>
+
+						<br class="hidden-md hidden-lg">
+
+						<label for="" class="col-md-1 col-md-offset-2 control-label">Ends</label>
+						<div class="col-md-2">
+							<input type="email" class="form-control" id="">
+						</div>
+						<div class="col-md-1">
+							<select name="" id="" class="form-control">
+								<option value="">01:00 PM</option>
+							</select>
+						</div>
+						<div class="col-md-1">
+							<select name="" id="" class="form-control">
+								<option value="">GMT</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="journey container-fluid white-bg campaign-manager session">
+					<h2>Journey</h2>
+					<p>What's the journey? The journey defines the steps or stages of your campaign. If you don't have stages, just use the single step journey. If you are  using multi-step journeys you'll be able to define goals for each stage and program tactic that depend on information from the previous stage.</p>
+					<div class="form-group">
+						<label for="" class="col-md-2 control-label">Journey</label>
+						<div class="col-md-2">
+							<select name="" id="" class="form-control">
+								<option value="">Sales Funnel</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<a href="">Manage journeys</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="goal container-fluid campaign-manager session">
+					<div class="campaign-manager-card">
+						<h2>Goal</h2>
+					  <p>Here you can define the goal of this stage. This will be used to generate smart reports in your campaign dashboard</p>
+					  <div class="form-group">
+					    <div class="col-md-2">
+					      <select name="" id="" class="form-control">
+					        <option value="">Lead Generation</option>
+					      </select>
+					    </div>
+					    <div class="col-md-2">
+					      <input type="email" class="form-control" id="" placeholder="10.000">
+					    </div>
+
+					    <label for="" class="col-md-2 control-label">new contact in: </label>
+					    <div class="col-md-2">
+					      <select name="" id="" class="form-control">
+					        <option value="">2</option>
+					      </select>
+					    </div>
+					    <div class="col-md-2">
+					      <select name="" id="" class="form-control">
+					        <option value="">Weeks</option>
+					      </select>
+					    </div>
+					  </div>
+					</div>
+				</div>
+
+				<div class="tactics container-fluid campaign-manager white-bg session">
+					<h2>Tactics</h2>
+					<p>What are tactics? Tactics are the different ways to achive your marketing goals. They usually include publishing destinations like landing pages or blog, defining broadcast prmotion on social media or via personalized banner ads in your webs and also one to one promotions like emails, SMS or Push notifications to the right audience.</p>
+					<a href="" class="btn btn-lg btn-default">New tactic</a>
+
+					{call Table.render}
+						{param headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners'] /}
+						{param data: [
+							['Destination name 001', '12k', '7%' , '12k', '7%']
+						] /}
+					{/call}
 				</div>
 
 				<div class="form-group">
@@ -29,5 +143,4 @@
 				</div>
 			</form>
 		</div>
-	</div>
 {/template}

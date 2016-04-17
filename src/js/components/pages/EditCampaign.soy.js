@@ -33,6 +33,8 @@ var iattr = IncrementalDom.attr;
 
 var $templateAlias1 = Soy.getTemplate('BackArrow.incrementaldom', 'render');
 
+var $templateAlias2 = Soy.getTemplate('Table.incrementaldom', 'render');
+
 
 /**
  * @param {Object<string, *>=} opt_data
@@ -43,54 +45,298 @@ var $templateAlias1 = Soy.getTemplate('BackArrow.incrementaldom', 'render');
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
-      'class', 'campaign-manager container-fluid white-bg');
+      'class', 'campaign-manager-edit-campaign');
     ie_open('div', null, null,
-        'class', 'campaign-manager-edit-campaign');
+        'class', 'container-fluid white-bg campaign-manager');
       $templateAlias1(opt_data, null, opt_ijData);
       ie_open('h1');
         itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Edit' : 'New') != null), opt_data.editCampaignId != null ? 'Edit' : 'New'));
         itext(' Campaign');
       ie_close('h1');
-      ie_open('form', null, null,
-          'class', 'form-horizontal');
+    ie_close('div');
+    ie_open('form', null, null,
+        'class', 'form-horizontal');
+      ie_open('div', null, null,
+          'class', 'details container-fluid white-bg campaign-manager session session-merged-next');
         ie_open('h2');
           itext('Details');
         ie_close('h2');
         ie_open('div', null, null,
             'class', 'form-group');
           ie_open('label', null, null,
-              'class', 'col-sm-1 control-label');
-            itext('Name:');
+              'for', '',
+              'class', 'col-md-1 control-label');
+            itext('Name');
           ie_close('label');
           ie_open('div', null, null,
-              'class', 'col-sm-4');
+              'class', 'col-md-4');
             ie_open('input', null, null,
-                'type', 'text',
+                'type', 'email',
                 'class', 'form-control',
-                'name', 'name');
+                'id', '');
             ie_close('input');
+          ie_close('div');
+          ie_open('br', null, null,
+              'class', 'hidden-md hidden-lg');
+          ie_close('br');
+          ie_open('label', null, null,
+              'for', '',
+              'class', 'col-md-1 col-md-offset-2 control-label');
+            itext('budget');
+          ie_close('label');
+          ie_open('div', null, null,
+              'class', 'col-md-2');
+            ie_open('input', null, null,
+                'type', 'email',
+                'class', 'form-control',
+                'id', '');
+            ie_close('input');
+          ie_close('div');
+          ie_open('div', null, null,
+              'class', 'col-md-2');
+            ie_open('select', null, null,
+                'name', '',
+                'id', '',
+                'class', 'form-control');
+              ie_open('option', null, null,
+                  'value', '');
+                itext('(\u20AC)Euros');
+              ie_close('option');
+            ie_close('select');
           ie_close('div');
         ie_close('div');
         ie_open('div', null, null,
             'class', 'form-group');
+          ie_open('label', null, null,
+              'for', '',
+              'class', 'col-md-1 control-label');
+            itext('Description');
+          ie_close('label');
           ie_open('div', null, null,
-              'class', 'col-sm-10');
+              'class', 'col-md-11');
+            ie_void('textarea', null, null,
+                'name', 'name',
+                'class', 'form-control',
+                'rows', '8',
+                'cols', '40');
+          ie_close('div');
+        ie_close('div');
+        ie_open('div', null, null,
+            'class', 'form-group');
+          ie_open('label', null, null,
+              'for', '',
+              'class', 'col-md-1 control-label');
+            itext('Starts on');
+          ie_close('label');
+          ie_open('div', null, null,
+              'class', 'col-md-2');
+            ie_open('input', null, null,
+                'type', 'email',
+                'class', 'form-control',
+                'id', '');
+            ie_close('input');
+          ie_close('div');
+          ie_open('div', null, null,
+              'class', 'col-md-1');
+            ie_open('select', null, null,
+                'name', '',
+                'id', '',
+                'class', 'form-control');
+              ie_open('option', null, null,
+                  'value', '');
+                itext('01:00 PM');
+              ie_close('option');
+            ie_close('select');
+          ie_close('div');
+          ie_open('div', null, null,
+              'class', 'col-md-1');
+            ie_open('select', null, null,
+                'name', '',
+                'id', '',
+                'class', 'form-control');
+              ie_open('option', null, null,
+                  'value', '');
+                itext('GMT');
+              ie_close('option');
+            ie_close('select');
+          ie_close('div');
+          ie_open('br', null, null,
+              'class', 'hidden-md hidden-lg');
+          ie_close('br');
+          ie_open('label', null, null,
+              'for', '',
+              'class', 'col-md-1 col-md-offset-2 control-label');
+            itext('Ends');
+          ie_close('label');
+          ie_open('div', null, null,
+              'class', 'col-md-2');
+            ie_open('input', null, null,
+                'type', 'email',
+                'class', 'form-control',
+                'id', '');
+            ie_close('input');
+          ie_close('div');
+          ie_open('div', null, null,
+              'class', 'col-md-1');
+            ie_open('select', null, null,
+                'name', '',
+                'id', '',
+                'class', 'form-control');
+              ie_open('option', null, null,
+                  'value', '');
+                itext('01:00 PM');
+              ie_close('option');
+            ie_close('select');
+          ie_close('div');
+          ie_open('div', null, null,
+              'class', 'col-md-1');
+            ie_open('select', null, null,
+                'name', '',
+                'id', '',
+                'class', 'form-control');
+              ie_open('option', null, null,
+                  'value', '');
+                itext('GMT');
+              ie_close('option');
+            ie_close('select');
+          ie_close('div');
+        ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null,
+          'class', 'journey container-fluid white-bg campaign-manager session');
+        ie_open('h2');
+          itext('Journey');
+        ie_close('h2');
+        ie_open('p');
+          itext('What\'s the journey? The journey defines the steps or stages of your campaign. If you don\'t have stages, just use the single step journey. If you are  using multi-step journeys you\'ll be able to define goals for each stage and program tactic that depend on information from the previous stage.');
+        ie_close('p');
+        ie_open('div', null, null,
+            'class', 'form-group');
+          ie_open('label', null, null,
+              'for', '',
+              'class', 'col-md-2 control-label');
+            itext('Journey');
+          ie_close('label');
+          ie_open('div', null, null,
+              'class', 'col-md-2');
+            ie_open('select', null, null,
+                'name', '',
+                'id', '',
+                'class', 'form-control');
+              ie_open('option', null, null,
+                  'value', '');
+                itext('Sales Funnel');
+              ie_close('option');
+            ie_close('select');
+          ie_close('div');
+          ie_open('div', null, null,
+              'class', 'col-md-4');
             ie_open('a', null, null,
-                'href', opt_data.sourceUrl,
-                'class', 'btn btn-lg btn-success',
-                'data-onclick', 'save');
-              itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Save' : 'Create') != null), opt_data.editCampaignId != null ? 'Save' : 'Create'));
-              itext(' Campaign');
-            ie_close('a');
-            ie_open('a', null, null,
-                'href', opt_data.sourceUrl,
-                'class', 'btn btn-lg btn-lighter');
-              itext('Cancel');
+                'href', '');
+              itext('Manage journeys');
             ie_close('a');
           ie_close('div');
         ie_close('div');
-      ie_close('form');
-    ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null,
+          'class', 'goal container-fluid campaign-manager session');
+        ie_open('div', null, null,
+            'class', 'campaign-manager-card');
+          ie_open('h2');
+            itext('Goal');
+          ie_close('h2');
+          ie_open('p');
+            itext('Here you can define the goal of this stage. This will be used to generate smart reports in your campaign dashboard');
+          ie_close('p');
+          ie_open('div', null, null,
+              'class', 'form-group');
+            ie_open('div', null, null,
+                'class', 'col-md-2');
+              ie_open('select', null, null,
+                  'name', '',
+                  'id', '',
+                  'class', 'form-control');
+                ie_open('option', null, null,
+                    'value', '');
+                  itext('Lead Generation');
+                ie_close('option');
+              ie_close('select');
+            ie_close('div');
+            ie_open('div', null, null,
+                'class', 'col-md-2');
+              ie_open('input', null, null,
+                  'type', 'email',
+                  'class', 'form-control',
+                  'id', '',
+                  'placeholder', '10.000');
+              ie_close('input');
+            ie_close('div');
+            ie_open('label', null, null,
+                'for', '',
+                'class', 'col-md-2 control-label');
+              itext('new contact in: ');
+            ie_close('label');
+            ie_open('div', null, null,
+                'class', 'col-md-2');
+              ie_open('select', null, null,
+                  'name', '',
+                  'id', '',
+                  'class', 'form-control');
+                ie_open('option', null, null,
+                    'value', '');
+                  itext('2');
+                ie_close('option');
+              ie_close('select');
+            ie_close('div');
+            ie_open('div', null, null,
+                'class', 'col-md-2');
+              ie_open('select', null, null,
+                  'name', '',
+                  'id', '',
+                  'class', 'form-control');
+                ie_open('option', null, null,
+                    'value', '');
+                  itext('Weeks');
+                ie_close('option');
+              ie_close('select');
+            ie_close('div');
+          ie_close('div');
+        ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null,
+          'class', 'tactics container-fluid campaign-manager white-bg session');
+        ie_open('h2');
+          itext('Tactics');
+        ie_close('h2');
+        ie_open('p');
+          itext('What are tactics? Tactics are the different ways to achive your marketing goals. They usually include publishing destinations like landing pages or blog, defining broadcast prmotion on social media or via personalized banner ads in your webs and also one to one promotions like emails, SMS or Push notifications to the right audience.');
+        ie_close('p');
+        ie_open('a', null, null,
+            'href', '',
+            'class', 'btn btn-lg btn-default');
+          itext('New tactic');
+        ie_close('a');
+        $templateAlias2({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners'], data: [['Destination name 001', '12k', '7%', '12k', '7%']]}, null, opt_ijData);
+      ie_close('div');
+      ie_open('div', null, null,
+          'class', 'form-group');
+        ie_open('div', null, null,
+            'class', 'col-sm-10');
+          ie_open('a', null, null,
+              'href', opt_data.sourceUrl,
+              'class', 'btn btn-lg btn-success',
+              'data-onclick', 'save');
+            itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Save' : 'Create') != null), opt_data.editCampaignId != null ? 'Save' : 'Create'));
+            itext(' Campaign');
+          ie_close('a');
+          ie_open('a', null, null,
+              'href', opt_data.sourceUrl,
+              'class', 'btn btn-lg btn-lighter');
+            itext('Cancel');
+          ie_close('a');
+        ie_close('div');
+      ie_close('div');
+    ie_close('form');
   ie_close('div');
 }
 exports.render = $render;
