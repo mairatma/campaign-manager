@@ -345,7 +345,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'class', 'btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new');
           itext('New tactic');
         ie_close('a');
-        $templateAlias2({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners'], cssClass: 'table-box', data: [['Destination name 001', '12k', '7%', '12k', '7%']]}, null, opt_ijData);
+        $templateAlias2({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners'], cssClass: 'table-box', data: [['Destination name 001', 'Lading Page NAS 2016', 'doneIcon', 'doneIcon', 'doneIcon']]}, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null,
           'class', 'container-fluid campaign-manager white-bg session');
