@@ -46,13 +46,13 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', 'input-group campaign-manager-search');
     ie_open('input', null, null,
         'type', 'text',
-        'class', 'form-control',
+        'class', 'form-control input-lg',
         'placeholder', 'Search',
         'value', ($$temp = opt_data.value) == null ? '' : $$temp,
         'data-oninput', 'handleInput_');
     ie_close('input');
     ie_open('div', null, null,
-        'class', 'input-group-addon');
+        'class', 'input-group-addon input-group-addon-clean');
       ie_void('span', null, null,
           'class', 'glyphicon glyphicon-search');
     ie_close('div');

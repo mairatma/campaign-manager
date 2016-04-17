@@ -55,7 +55,12 @@ body {
 }
 
 .campaign-manager-search {
-	margin-bottom: 20px;
+	margin: 29px 0 45px 0;
+	box-shadow: 0 0 10px #ebecf0;
+}
+
+.campaign-manager-search .glyphicon-search {
+	color: #cacbd5;
 }
 
 .campaign-manager-manage-campaigns .select label {
