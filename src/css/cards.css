@@ -42,13 +42,37 @@
 	padding-left: 15px;
 }
 
-.campaign-manager-table-card table thead th {
+.table-striped > tbody > tr:nth-of-type(odd) {
+	background-color: #fafafc;
+}
+
+.table-box {
+	border: 2px solid #e9e9f0;
+	overflow: hidden;
+	border-collapse: inherit;
+	border-radius: 5px;
+}
+
+.table-box > thead > tr > th {
+	border-bottom: 2px solid #cecfd8;
+	color: #afb3c1;
+	text-transform: uppercase;
+	font-size: 11px;
+	padding: 28px 22px;
+}
+
+.table-box > tbody > tr > td {
+	border-top: none;
+	padding: 22px;
+}
+
+.table.table-clean thead th {
 	border: none;
 	font-size: 18px;
 	font-weight: normal;
 }
 
-.campaign-manager-table-card table tbody td {
+.table.table-clean tbody td {
 	font-size: 15px;
 	border: none;
 }

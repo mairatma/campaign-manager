@@ -45,7 +45,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   opt_data = opt_data || {};
   ie_open('div', null, null,
       'class', 'campaign-manager-campaign-table');
-    $templateAlias1({headers: ['Name', 'Scheduled Date', 'Goal'], data: opt_data.tableData, events: {removeClicked: opt_data.remove, editClicked: opt_data.edit}}, null, opt_ijData);
+    $templateAlias1({headers: ['Name', 'Scheduled Date', 'Goal'], data: opt_data.tableData, events: {removeClicked: opt_data.remove, editClicked: opt_data.edit}, cssClass: 'table-box'}, null, opt_ijData);
   ie_close('div');
 }
 exports.render = $render;

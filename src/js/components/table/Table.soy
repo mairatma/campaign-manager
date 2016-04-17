@@ -3,10 +3,11 @@
 /**
  * @param headers
  * @param data
+ * @param? cssClass
  */
 {template .render}
 	<div class="campaign-manager-table">
-		<table class="table">
+		<table class="table {($cssClass) ? $cssClass : ''}">
 			<thead>
 				<tr>
 					{foreach $header in $headers}

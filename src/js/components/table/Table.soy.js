@@ -43,16 +43,16 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager-table');
     ie_open('table', null, null,
-        'class', 'table');
+        'class', 'table ' + (opt_data.cssClass ? opt_data.cssClass : ''));
       ie_open('thead');
         ie_open('tr');
-          var headerList210 = opt_data.headers;
-          var headerListLen210 = headerList210.length;
-          for (var headerIndex210 = 0; headerIndex210 < headerListLen210; headerIndex210++) {
-            var headerData210 = headerList210[headerIndex210];
+          var headerList213 = opt_data.headers;
+          var headerListLen213 = headerList213.length;
+          for (var headerIndex213 = 0; headerIndex213 < headerListLen213; headerIndex213++) {
+            var headerData213 = headerList213[headerIndex213];
             ie_open('th', null, null,
                 'class', 'light-gray');
-              itext((goog.asserts.assert((headerData210) != null), headerData210));
+              itext((goog.asserts.assert((headerData213) != null), headerData213));
             ie_close('th');
           }
           ie_open('th', null, null,
@@ -66,31 +66,31 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var rowList225 = opt_data.data;
-        var rowListLen225 = rowList225.length;
-        for (var rowIndex225 = 0; rowIndex225 < rowListLen225; rowIndex225++) {
-          var rowData225 = rowList225[rowIndex225];
+        var rowList228 = opt_data.data;
+        var rowListLen228 = rowList228.length;
+        for (var rowIndex228 = 0; rowIndex228 < rowListLen228; rowIndex228++) {
+          var rowData228 = rowList228[rowIndex228];
           ie_open('tr');
-            var iLimit214 = opt_data.headers.length;
-            for (var i214 = 0; i214 < iLimit214; i214++) {
+            var iLimit217 = opt_data.headers.length;
+            for (var i217 = 0; i217 < iLimit217; i217++) {
               ie_open('td');
-                itext((goog.asserts.assert((rowData225[i214]) != null), rowData225[i214]));
+                itext((goog.asserts.assert((rowData228[i217]) != null), rowData228[i217]));
               ie_close('td');
             }
             ie_open('td');
               ie_open('a', null, null,
-                  'href', rowData225[opt_data.headers.length]);
+                  'href', rowData228[opt_data.headers.length]);
                 ie_void('span', null, null,
                     'class', 'glyphicon glyphicon-cog',
                     'data-onclick', 'handleClickEdit_',
-                    'data-index', rowIndex225);
+                    'data-index', rowIndex228);
               ie_close('a');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
                   'class', 'glyphicon glyphicon-trash',
                   'data-onclick', 'handleClickRemove_',
-                  'data-index', rowIndex225);
+                  'data-index', rowIndex228);
             ie_close('td');
           ie_close('tr');
         }
@@ -103,8 +103,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Table.render';
 }
 
-exports.render.params = ["headers","data"];
-exports.render.types = {"headers":"any","data":"any"};
+exports.render.params = ["headers","data","cssClass"];
+exports.render.types = {"headers":"any","data":"any","cssClass":"any"};
 templates = exports;
 return exports;
 
