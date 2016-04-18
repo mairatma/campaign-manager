@@ -14,9 +14,7 @@ goog.loadModule(function(exports) {
 
 goog.module('BackArrow.incrementaldom');
 
-/** @suppress {extraRequire} */
 var soy = goog.require('soy');
-/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -53,7 +51,6 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["sourceUrl"];
-exports.render.types = {"sourceUrl":"any"};
 templates = exports;
 return exports;
 

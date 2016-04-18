@@ -14,14 +14,10 @@ goog.loadModule(function(exports) {
 
 goog.module('EditCampaignDetails.incrementaldom');
 
-/** @suppress {extraRequire} */
 var soy = goog.require('soy');
-/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.asserts');
-/** @suppress {extraRequire} */
-goog.require('soy.asserts');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
 var IncrementalDom = goog.require('incrementaldom');
@@ -208,11 +204,8 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["campaigns","editCampaignId"];
-exports.render.types = {"campaigns":"any","editCampaignId":"any"};
 exports.date.params = ["label","name","obj"];
-exports.date.types = {"label":"string","name":"string","obj":"any"};
 exports.selectedOption.params = ["value","current"];
-exports.selectedOption.types = {"value":"any","current":"any"};
 templates = exports;
 return exports;
 
