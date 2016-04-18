@@ -133,10 +133,13 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                   'class', 'highlight big');
                 itext((goog.asserts.assert((opt_data.totalLeadsCount) != null), opt_data.totalLeadsCount));
               ie_close('div');
-              ie_open('div', null, null,
+              ie_open('p', null, null,
                   'class', 'campaign-manager-card-label');
                 itext('Total leads');
-              ie_close('div');
+                ie_open('span');
+                  itext('(Lead Cost 1.26%)');
+                ie_close('span');
+              ie_close('p');
             ie_close('div');
             ie_open('div', null, null,
                 'class', 'col-md-2 hidden-sm campaign-manager-card-people');
@@ -150,10 +153,10 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                   'class', 'highlight big');
                 itext((goog.asserts.assert((opt_data.totalInfluencedCustomers) != null), opt_data.totalInfluencedCustomers));
               ie_close('div');
-              ie_open('div', null, null,
+              ie_open('p', null, null,
                   'class', 'campaign-manager-card-label');
                 itext('Influenced customers');
-              ie_close('div');
+              ie_close('p');
             ie_close('div');
           };
           $templateAlias2({children: param110, key: 'card2', cssClass: 'clearfix'}, null, opt_ijData);

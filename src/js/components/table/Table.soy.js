@@ -46,13 +46,13 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'table ' + (opt_data.cssClass ? opt_data.cssClass : ''));
       ie_open('thead');
         ie_open('tr');
-          var headerList213 = opt_data.headers;
-          var headerListLen213 = headerList213.length;
-          for (var headerIndex213 = 0; headerIndex213 < headerListLen213; headerIndex213++) {
-            var headerData213 = headerList213[headerIndex213];
+          var headerList218 = opt_data.headers;
+          var headerListLen218 = headerList218.length;
+          for (var headerIndex218 = 0; headerIndex218 < headerListLen218; headerIndex218++) {
+            var headerData218 = headerList218[headerIndex218];
             ie_open('th', null, null,
                 'class', 'light-gray');
-              itext((goog.asserts.assert((headerData213) != null), headerData213));
+              itext((goog.asserts.assert((headerData218) != null), headerData218));
             ie_close('th');
           }
           ie_open('th', null, null,
@@ -66,31 +66,31 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var rowList228 = opt_data.data;
-        var rowListLen228 = rowList228.length;
-        for (var rowIndex228 = 0; rowIndex228 < rowListLen228; rowIndex228++) {
-          var rowData228 = rowList228[rowIndex228];
+        var rowList233 = opt_data.data;
+        var rowListLen233 = rowList233.length;
+        for (var rowIndex233 = 0; rowIndex233 < rowListLen233; rowIndex233++) {
+          var rowData233 = rowList233[rowIndex233];
           ie_open('tr');
-            var iLimit217 = opt_data.headers.length;
-            for (var i217 = 0; i217 < iLimit217; i217++) {
+            var iLimit222 = opt_data.headers.length;
+            for (var i222 = 0; i222 < iLimit222; i222++) {
               ie_open('td');
-                itext((goog.asserts.assert((rowData228[i217]) != null), rowData228[i217]));
+                itext((goog.asserts.assert((rowData233[i222]) != null), rowData233[i222]));
               ie_close('td');
             }
             ie_open('td');
               ie_open('a', null, null,
-                  'href', rowData228[opt_data.headers.length]);
+                  'href', rowData233[opt_data.headers.length]);
                 ie_void('span', null, null,
                     'class', 'glyphicon glyphicon-cog table-action-icon table-action-edit',
                     'data-onclick', 'handleClickEdit_',
-                    'data-index', rowIndex228);
+                    'data-index', rowIndex233);
               ie_close('a');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
                   'class', 'glyphicon glyphicon-trash table-action-icon table-action-remove',
                   'data-onclick', 'handleClickRemove_',
-                  'data-index', rowIndex228);
+                  'data-index', rowIndex233);
             ie_close('td');
           ie_close('tr');
         }

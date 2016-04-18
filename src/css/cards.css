@@ -7,13 +7,24 @@
 	padding: 25px;
 }
 
+.campaign-manager-card .highlight.big {
+	font-size: 3em;
+}
+
 .campaign-manager-card-title {
-	margin-bottom: 25px;
+	margin-bottom: 2.5em;
+	font-size: 1.6em;
 }
 
 .campaign-manager-card .campaign-manager-card-label {
-	font-size: 2rem;
-	line-height: 2.4rem;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
+.campaign-manager-card-label span {
+	display: inline-block;
+	font-size: 12px;
+	color: #d2d3dc;
 }
 
 .campaign-manager-card-wrapper {
@@ -77,6 +88,30 @@
 }
 
 .table.table-clean tbody td {
-	font-size: 15px;
 	border: none;
+}
+
+@media (max-width: 1220px) {
+	body {
+		font-size: 13px;
+	}
+	/*.campaign-manager-card .campaign-manager-card-label {
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	.campaign-manager-card .highlight.big {
+		font-size: 30px;
+	}*/
+}
+
+@media (max-width: 1080px and min-width: 992px) {
+	/*.campaign-manager-card .campaign-manager-card-label {
+		font-size: 13px;
+		line-height: 13px;
+	}
+
+	.campaign-manager-card .highlight.big {
+		font-size: 30px;
+	}*/
 }
