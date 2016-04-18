@@ -39,12 +39,16 @@ class ManageCampaigns extends Component {
 	sortCampaigns_() {
 		this.filteredCampaigns = this.filteredCampaigns.sort((c1, c2) => {
 			if (this.sortBy_ === 'date') {
-				var start = c1.startDate - c2.startDate;
-				return start !== 0 ? start : c1.endDate - c2.endDate;
+				var start = this.toDate_(c1.startDate) - this.toDate_(c2.startDate);
+				return start !== 0 ? start : this.toDate_(c1.endDate) - this.toDate_(c2.endDate);
 			} else {
 				return c1.name.localeCompare(c2.name);
 			}
 		});
+	}
+
+	toDate_(obj) {
+		return new Date(obj.year, obj.month, obj.date, obj.hours, obj.minutes);
 	}
 }
 Soy.register(ManageCampaigns, templates);
