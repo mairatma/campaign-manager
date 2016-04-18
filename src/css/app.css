@@ -94,7 +94,8 @@ body {
 }
 
 .campaign-manager-edit-campaign-details h2,
-.campaign-manager-edit-campaign-journey h2 {
+.campaign-manager-edit-campaign-journey h2,
+.campaign-manager-edit-campaign-tactics .glyphicon-ok {
 	color: #86af33;
 }
 

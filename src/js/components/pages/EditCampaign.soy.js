@@ -33,7 +33,9 @@ var iattr = IncrementalDom.attr;
 
 var $templateAlias1 = Soy.getTemplate('BackArrow.incrementaldom', 'render');
 
-var $templateAlias2 = Soy.getTemplate('Table.incrementaldom', 'render');
+var $templateAlias2 = Soy.getTemplate('EditCampaignDetails.incrementaldom', 'render');
+
+var $templateAlias3 = Soy.getTemplate('Table.incrementaldom', 'render');
 
 
 /**
@@ -59,144 +61,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     ie_close('div');
     ie_open('form', null, null,
         'class', 'form-horizontal');
-      ie_open('div', null, null,
-          'class', 'campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next');
-        ie_open('h2');
-          itext('Details');
-        ie_close('h2');
-        ie_open('div', null, null,
-            'class', 'form-group');
-          ie_open('label', null, null,
-              'for', '',
-              'class', 'col-md-1 control-label');
-            itext('Name');
-          ie_close('label');
-          ie_open('div', null, null,
-              'class', 'col-md-4');
-            ie_open('input', null, null,
-                'type', 'text',
-                'class', 'form-control',
-                'name', 'name');
-            ie_close('input');
-          ie_close('div');
-          ie_open('br', null, null,
-              'class', 'hidden-md hidden-lg');
-          ie_close('br');
-          ie_open('label', null, null,
-              'for', '',
-              'class', 'col-md-1 col-md-offset-2 control-label');
-            itext('budget');
-          ie_close('label');
-          ie_open('div', null, null,
-              'class', 'col-md-2');
-            ie_open('input', null, null,
-                'type', 'text',
-                'class', 'form-control');
-            ie_close('input');
-          ie_close('div');
-          ie_open('div', null, null,
-              'class', 'col-md-2');
-            ie_open('select', null, null,
-                'name', '',
-                'class', 'form-control');
-              ie_open('option', null, null,
-                  'value', '');
-                itext('(\u20AC)Euros');
-              ie_close('option');
-            ie_close('select');
-          ie_close('div');
-        ie_close('div');
-        ie_open('div', null, null,
-            'class', 'form-group');
-          ie_open('label', null, null,
-              'for', '',
-              'class', 'col-md-1 control-label');
-            itext('Description');
-          ie_close('label');
-          ie_open('div', null, null,
-              'class', 'col-md-11');
-            ie_void('textarea', null, null,
-                'name', 'name',
-                'class', 'form-control',
-                'rows', '8',
-                'cols', '40');
-          ie_close('div');
-        ie_close('div');
-        ie_open('div', null, null,
-            'class', 'form-group');
-          ie_open('label', null, null,
-              'for', '',
-              'class', 'col-md-1 control-label');
-            itext('Starts on');
-          ie_close('label');
-          ie_open('div', null, null,
-              'class', 'col-md-2');
-            ie_open('input', null, null,
-                'type', 'name',
-                'class', 'form-control');
-            ie_close('input');
-          ie_close('div');
-          ie_open('div', null, null,
-              'class', 'col-md-1');
-            ie_open('select', null, null,
-                'name', '',
-                'class', 'form-control');
-              ie_open('option', null, null,
-                  'value', '');
-                itext('01:00 PM');
-              ie_close('option');
-            ie_close('select');
-          ie_close('div');
-          ie_open('div', null, null,
-              'class', 'col-md-1');
-            ie_open('select', null, null,
-                'name', '',
-                'class', 'form-control');
-              ie_open('option', null, null,
-                  'value', '');
-                itext('GMT');
-              ie_close('option');
-            ie_close('select');
-          ie_close('div');
-          ie_open('br', null, null,
-              'class', 'hidden-md hidden-lg');
-          ie_close('br');
-          ie_open('label', null, null,
-              'for', '',
-              'class', 'col-md-1 col-md-offset-2 control-label');
-            itext('Ends');
-          ie_close('label');
-          ie_open('div', null, null,
-              'class', 'col-md-2');
-            ie_open('input', null, null,
-                'type', 'name',
-                'class', 'form-control');
-            ie_close('input');
-          ie_close('div');
-          ie_open('div', null, null,
-              'class', 'col-md-1');
-            ie_open('select', null, null,
-                'name', '',
-                'class', 'form-control');
-              ie_open('option', null, null,
-                  'value', '');
-                itext('01:00 PM');
-              ie_close('option');
-            ie_close('select');
-          ie_close('div');
-          ie_open('div', null, null,
-              'class', 'col-md-1');
-            ie_open('select', null, null,
-                'name', '',
-                'class', 'form-control');
-              ie_open('option', null, null,
-                  'value', '');
-                itext('GMT');
-              ie_close('option');
-            ie_close('select');
-          ie_close('div');
-        ie_close('div');
-      ie_close('div');
+      $templateAlias2(null, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'campaign-manager-edit-campaign-journey container-fluid white-bg campaign-manager session');
         ie_open('h2');
@@ -224,7 +89,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-md-2');
             ie_open('select', null, null,
-                'name', '',
                 'class', 'form-control');
               ie_open('option', null, null,
                   'value', '');
@@ -262,7 +126,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('div', null, null,
                 'class', 'col-md-2');
               ie_open('select', null, null,
-                  'name', '',
                   'class', 'form-control');
                 ie_open('option', null, null,
                     'value', '');
@@ -273,7 +136,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('div', null, null,
                 'class', 'col-md-2');
               ie_open('input', null, null,
-                  'type', 'name',
+                  'type', 'text',
                   'class', 'form-control',
                   'placeholder', '10.000');
               ie_close('input');
@@ -289,7 +152,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('div', null, null,
                 'class', 'col-md-2');
               ie_open('select', null, null,
-                  'name', '',
                   'class', 'form-control');
                 ie_open('option', null, null,
                     'value', '');
@@ -300,7 +162,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('div', null, null,
                 'class', 'col-md-2');
               ie_open('select', null, null,
-                  'name', '',
                   'class', 'form-control');
                 ie_open('option', null, null,
                     'value', '');
@@ -333,7 +194,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'class', 'btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new');
           itext('New tactic');
         ie_close('a');
-        $templateAlias2({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'], cssClass: 'table-box', data: [[{text: 'Destination name 001'}, {text: 'Lading Page NAS 2016'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-cog table-action-icon table-action-edit'}, {cssClass: 'glyphicon glyphicon-trash table-action-icon table-action-remove'}]]}, null, opt_ijData);
+        $templateAlias3({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'], cssClass: 'table-box', data: [[{text: 'Destination name 001'}, {text: 'Lading Page NAS 2016'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-cog table-action-icon table-action-edit'}, {cssClass: 'glyphicon glyphicon-trash table-action-icon table-action-remove'}]]}, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null,
           'class', 'container-fluid campaign-manager white-bg session');

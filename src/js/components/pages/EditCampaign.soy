@@ -14,68 +14,7 @@
 			</div>
 
 			<form class="form-horizontal">
-				<div class="campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next">
-					<h2>Details</h2>
-					<div class="form-group">
-						<label for="" class="col-md-1 control-label">Name</label>
-						<div class="col-md-4">
-							<input type="text" class="form-control" name="name">
-						</div>
-
-						<br class="hidden-md hidden-lg">
-
-						<label for="" class="col-md-1 col-md-offset-2 control-label">budget</label>
-						<div class="col-md-2">
-							<input type="text" class="form-control">
-						</div>
-						<div class="col-md-2">
-							<select name="" class="form-control">
-								<option value="">(€)Euros</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="" class="col-md-1 control-label">Description</label>
-						<div class="col-md-11">
-							<textarea name="name" class="form-control" rows="8" cols="40"></textarea>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="" class="col-md-1 control-label">Starts on</label>
-						<div class="col-md-2">
-							<input type="name" class="form-control">
-						</div>
-						<div class="col-md-1">
-							<select name="" class="form-control">
-								<option value="">01:00 PM</option>
-							</select>
-						</div>
-						<div class="col-md-1">
-							<select name="" class="form-control">
-								<option value="">GMT</option>
-							</select>
-						</div>
-
-						<br class="hidden-md hidden-lg">
-
-						<label for="" class="col-md-1 col-md-offset-2 control-label">Ends</label>
-						<div class="col-md-2">
-							<input type="name" class="form-control">
-						</div>
-						<div class="col-md-1">
-							<select name="" class="form-control">
-								<option value="">01:00 PM</option>
-							</select>
-						</div>
-						<div class="col-md-1">
-							<select name="" class="form-control">
-								<option value="">GMT</option>
-							</select>
-						</div>
-					</div>
-				</div>
+				{call EditCampaignDetails.render /}
 
 				<div class="campaign-manager-edit-campaign-journey container-fluid white-bg campaign-manager session">
 					<h2>Journey</h2>
@@ -85,7 +24,7 @@
 					<div class="form-group">
 						<label for="" class="col-md-1 control-label">Journey</label>
 						<div class="col-md-2">
-							<select name="" class="form-control">
+							<select class="form-control">
 								<option value="">Sales Funnel</option>
 							</select>
 						</div>
@@ -103,22 +42,22 @@
 						</div>
 					  <div class="form-group">
 					    <div class="col-md-2">
-					      <select name="" class="form-control">
+					      <select class="form-control">
 					        <option value="">Lead Generation</option>
 					      </select>
 					    </div>
 					    <div class="col-md-2">
-					      <input type="name" class="form-control" placeholder="10.000">
+					      <input type="text" class="form-control" placeholder="10.000">
 					    </div>
 
 					    <label for="" class="col-md-2 control-label"><div class="text-right">new contact in: </div></label>
 					    <div class="col-md-2">
-					      <select name="" class="form-control">
+					      <select class="form-control">
 					        <option value="">2</option>
 					      </select>
 					    </div>
 					    <div class="col-md-2">
-					      <select name="" class="form-control">
+					      <select class="form-control">
 					        <option value="">Weeks</option>
 					      </select>
 					    </div>
