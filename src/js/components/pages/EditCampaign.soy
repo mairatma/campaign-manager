@@ -2,7 +2,9 @@
 
 /**
  * @param? editCampaignId
+ * @param destinations
  * @param sourceUrl
+ * @param tactics
  */
 {template .render}
 		<div class="campaign-manager-edit-campaign">
@@ -35,45 +37,11 @@
 				</div>
 
 				{call EditCampaignGoal.render /}
-
-				<div class="campaign-manager-edit-campaign-tactics container-fluid campaign-manager white-bg session session-merged-next">
-					<h2>Tactics</h2>
-					<div class="session-description">
-						<p><b>What are tactics?</b> <em>Tactics are the different ways to achive your marketing goals. They usually include publishing destinations like landing pages or blog, defining broadcast prmotion on social media or via personalized banner ads in your webs and also one to one promotions like emails, SMS or Push notifications to the right audience.</em></p>
-					</div>
-
-					<a href="" class="btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new">New tactic</a>
-
-					{call Table.render}
-						{param headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'] /}
-						{param cssClass: 'table-box' /}
-						{param data: [
-							[
-								[
-									'text': 'Destination name 001'
-								],
-								[
-									'text': 'Lading Page NAS 2016'
-								],
-								[
-									'cssClass': 'glyphicon glyphicon-ok'
-								],
-								[
-									'cssClass': 'glyphicon glyphicon-ok'
-								],
-								[
-									'cssClass': 'glyphicon glyphicon-ok'
-								],
-								[
-									'cssClass': 'glyphicon glyphicon-cog table-action-icon table-action-edit'
-								],
-								[
-									'cssClass': 'glyphicon glyphicon-trash table-action-icon table-action-remove'
-								]
-							]
-						] /}
-					{/call}
-				</div>
+				{call EditCampaignTactics.render}
+					{param destinations: $destinations /}
+					{param selectedTacticIds: [0] /}
+					{param tactics: $tactics /}
+				{/call}
 
 				<div class="container-fluid campaign-manager white-bg session">
 					<div class="form-group">

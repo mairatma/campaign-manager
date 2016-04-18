@@ -1,0 +1,16 @@
+{namespace TacticsTable}
+
+/**
+ * @param? handleTableClicked_
+ * @param? tableData
+ */
+{template .render}
+	<div class="campaign-manager-tactics-table">
+		{call Table.render}
+			{param headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'] /}
+			{param data: $tableData /}
+			{param events: ['click': $handleTableClicked_] /}
+			{param cssClass: 'table-box' /}
+		{/call}
+	</div>
+{/template}

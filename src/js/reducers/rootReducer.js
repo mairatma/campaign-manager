@@ -25,6 +25,10 @@ function displays(state) {
 	return state || [];
 }
 
+function tactics(state) {
+	return state || [];
+}
+
 var combined = Redux.combineReducers({
 	baseUrl,
 	campaigns,
@@ -33,6 +37,7 @@ var combined = Redux.combineReducers({
 	audiences,
 	banners,
 	displays,
+	tactics,
 	sourceUrl
 });
 

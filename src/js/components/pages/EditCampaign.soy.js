@@ -37,7 +37,7 @@ var $templateAlias2 = Soy.getTemplate('EditCampaignDetails.incrementaldom', 'ren
 
 var $templateAlias3 = Soy.getTemplate('EditCampaignGoal.incrementaldom', 'render');
 
-var $templateAlias4 = Soy.getTemplate('Table.incrementaldom', 'render');
+var $templateAlias4 = Soy.getTemplate('EditCampaignTactics.incrementaldom', 'render');
 
 
 /**
@@ -109,30 +109,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
       ie_close('div');
       $templateAlias3(null, null, opt_ijData);
-      ie_open('div', null, null,
-          'class', 'campaign-manager-edit-campaign-tactics container-fluid campaign-manager white-bg session session-merged-next');
-        ie_open('h2');
-          itext('Tactics');
-        ie_close('h2');
-        ie_open('div', null, null,
-            'class', 'session-description');
-          ie_open('p');
-            ie_open('b');
-              itext('What are tactics?');
-            ie_close('b');
-            itext(' ');
-            ie_open('em');
-              itext('Tactics are the different ways to achive your marketing goals. They usually include publishing destinations like landing pages or blog, defining broadcast prmotion on social media or via personalized banner ads in your webs and also one to one promotions like emails, SMS or Push notifications to the right audience.');
-            ie_close('em');
-          ie_close('p');
-        ie_close('div');
-        ie_open('a', null, null,
-            'href', '',
-            'class', 'btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new');
-          itext('New tactic');
-        ie_close('a');
-        $templateAlias4({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'], cssClass: 'table-box', data: [[{text: 'Destination name 001'}, {text: 'Lading Page NAS 2016'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-cog table-action-icon table-action-edit'}, {cssClass: 'glyphicon glyphicon-trash table-action-icon table-action-remove'}]]}, null, opt_ijData);
-      ie_close('div');
+      $templateAlias4({destinations: opt_data.destinations, selectedTacticIds: [0], tactics: opt_data.tactics}, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'container-fluid campaign-manager white-bg session');
         ie_open('div', null, null,
@@ -162,8 +139,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'EditCampaign.render';
 }
 
-exports.render.params = ["editCampaignId","sourceUrl"];
-exports.render.types = {"editCampaignId":"any","sourceUrl":"any"};
+exports.render.params = ["editCampaignId","destinations","sourceUrl","tactics"];
+exports.render.types = {"editCampaignId":"any","destinations":"any","sourceUrl":"any","tactics":"any"};
 templates = exports;
 return exports;
 

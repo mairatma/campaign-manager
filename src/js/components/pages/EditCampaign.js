@@ -41,7 +41,8 @@ class EditCampaign extends Component {
 			influencedCustomers: 0,
 			influencedWins: 0,
 			journey: parseInt(data.journey, 10),
-			leadsCount: 0
+			leadsCount: 0,
+			tacticIds: data.tacticIds.split(',').map(id => parseInt(id, 10))
 		})));
 	}
 }

@@ -58,7 +58,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_open('div', null, null,
             'id', 'campaign-manager-active-card',
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param121 = function() {
+          var param139 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-4');
               ie_open('img', null, null,
@@ -78,12 +78,12 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param121, key: 'card0', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param139, key: 'card0', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'id', 'campaign-manager-amount-card',
             'class', 'col-md-4 campaign-manager-group campaign-manager-card-wrapper');
-          var param131 = function() {
+          var param149 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-6');
               ie_open('div', null, null,
@@ -121,12 +121,12 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param131, key: 'card1-0', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param149, key: 'card1-0', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'id', 'campaign-manager-leads-card',
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param141 = function() {
+          var param159 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-5');
               ie_open('div', null, null,
@@ -159,7 +159,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('p');
             ie_close('div');
           };
-          $templateAlias2({children: param141, key: 'card2', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param159, key: 'card2', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,

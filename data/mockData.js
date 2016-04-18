@@ -24,37 +24,7 @@ var data = {
 				}
 			},
 			journey: 1,
-			tactics: [
-				{
-					name: 'Tactics named 0001',
-					stages: {
-						'generation': true,
-						'nurturing': true
-					},
-					cost: 5000,
-					destinationId: 0,
-					oneToOnePromos: [
-						{
-							name: 'New credit card promo for students',
-							audienceIds: [0, 1],
-							date: new Date(2016, 2, 20)
-						},
-						{
-							name: 'New credit card promo for homeowners',
-							audienceIds: [1],
-							date: new Date(2016, 2, 22)
-						}
-					],
-					promotionalAds: [
-						{
-							name: 'Promotion of Liferay before NAS',
-							audienceIds: [3, 4],
-							bannerIds: [0],
-							displayIds: [0, 2]
-						}
-					]
-				}
-			],
+			tacticIds: [0],
 			influencedCustomers: 100,
 			influencedWins: 150000,
 			leadsCount: 125
@@ -171,6 +141,49 @@ var data = {
 			source: 'Westeros Investors',
 			count: 1,
 			sourceType: 0
+		}
+	],
+	tactics: [
+		{
+			id: 0,
+			name: 'Tactics named 0001',
+			stages: {
+				'generation': true,
+				'nurturing': true
+			},
+			cost: 5000,
+			destinationId: 0,
+			oneToOnePromos: [
+				{
+					name: 'New credit card promo for students',
+					audienceIds: [0, 1],
+					date: new Date(2016, 2, 20)
+				},
+				{
+					name: 'New credit card promo for homeowners',
+					audienceIds: [1],
+					date: new Date(2016, 2, 22)
+				}
+			],
+			promotionalAds: [
+				{
+					name: 'Promotion of Liferay before NAS',
+					audienceIds: [3, 4],
+					bannerIds: [0],
+					displayIds: [0, 2]
+				}
+			]
+		},
+		{
+			id: 1,
+			name: 'Tactics named 0002',
+			stages: {
+				'nurturing': true
+			},
+			cost: 2000,
+			destinationId: 1,
+			oneToOnePromos: [],
+			promotionalAds: []
 		}
 	]
 };
