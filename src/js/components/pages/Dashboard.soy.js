@@ -139,7 +139,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
             ie_open('div', null, null,
-                'class', 'col-md-2 campaign-manager-card-people');
+                'class', 'col-md-2 hidden-sm campaign-manager-card-people');
               ie_open('img', null, null,
                   'src', opt_data.baseUrl + 'images/people.png');
               ie_close('img');
@@ -160,7 +160,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
-          'class', 'row');
+          'class', 'row row-destinations');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
           $templateAlias3({count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Destinations views', key: 'card3'}, null, opt_ijData);
@@ -175,7 +175,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
-          'class', 'row');
+          'class', 'row row-promotions');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
           $templateAlias3({count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Banner Ads views', key: 'card6'}, null, opt_ijData);

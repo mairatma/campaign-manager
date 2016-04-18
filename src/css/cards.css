@@ -33,6 +33,10 @@
 	width: 100%;
 }
 
+.campaign-manager-table-card .campaign-manager-card {
+	overflow: auto;
+}
+
 .campaign-manager-image-card .campaign-manager-card,
 .campaign-manager-table-card .campaign-manager-card {
 	text-align: left;
