@@ -35,7 +35,9 @@ var $templateAlias1 = Soy.getTemplate('BackArrow.incrementaldom', 'render');
 
 var $templateAlias2 = Soy.getTemplate('EditCampaignDetails.incrementaldom', 'render');
 
-var $templateAlias3 = Soy.getTemplate('Table.incrementaldom', 'render');
+var $templateAlias3 = Soy.getTemplate('EditCampaignGoal.incrementaldom', 'render');
+
+var $templateAlias4 = Soy.getTemplate('Table.incrementaldom', 'render');
 
 
 /**
@@ -106,72 +108,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_close('div');
         ie_close('div');
       ie_close('div');
-      ie_open('div', null, null,
-          'class', 'campaign-manager-edit-campaign-goal container-fluid campaign-manager session');
-        ie_open('div', null, null,
-            'class', 'campaign-manager-card');
-          ie_open('h2');
-            itext('Goal');
-          ie_close('h2');
-          ie_open('div', null, null,
-              'class', 'session-description');
-            ie_open('p');
-              ie_open('em');
-                itext('Here you can define the goal of this stage. This will be used to generate smart reports in your campaign dashboard');
-              ie_close('em');
-            ie_close('p');
-          ie_close('div');
-          ie_open('div', null, null,
-              'class', 'form-group');
-            ie_open('div', null, null,
-                'class', 'col-md-2');
-              ie_open('select', null, null,
-                  'class', 'form-control');
-                ie_open('option', null, null,
-                    'value', '');
-                  itext('Lead Generation');
-                ie_close('option');
-              ie_close('select');
-            ie_close('div');
-            ie_open('div', null, null,
-                'class', 'col-md-2');
-              ie_open('input', null, null,
-                  'type', 'text',
-                  'class', 'form-control',
-                  'placeholder', '10.000');
-              ie_close('input');
-            ie_close('div');
-            ie_open('label', null, null,
-                'for', '',
-                'class', 'col-md-2 control-label');
-              ie_open('div', null, null,
-                  'class', 'text-right');
-                itext('new contact in: ');
-              ie_close('div');
-            ie_close('label');
-            ie_open('div', null, null,
-                'class', 'col-md-2');
-              ie_open('select', null, null,
-                  'class', 'form-control');
-                ie_open('option', null, null,
-                    'value', '');
-                  itext('2');
-                ie_close('option');
-              ie_close('select');
-            ie_close('div');
-            ie_open('div', null, null,
-                'class', 'col-md-2');
-              ie_open('select', null, null,
-                  'class', 'form-control');
-                ie_open('option', null, null,
-                    'value', '');
-                  itext('Weeks');
-                ie_close('option');
-              ie_close('select');
-            ie_close('div');
-          ie_close('div');
-        ie_close('div');
-      ie_close('div');
+      $templateAlias3(null, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'campaign-manager-edit-campaign-tactics container-fluid campaign-manager white-bg session session-merged-next');
         ie_open('h2');
@@ -194,7 +131,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'class', 'btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new');
           itext('New tactic');
         ie_close('a');
-        $templateAlias3({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'], cssClass: 'table-box', data: [[{text: 'Destination name 001'}, {text: 'Lading Page NAS 2016'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-cog table-action-icon table-action-edit'}, {cssClass: 'glyphicon glyphicon-trash table-action-icon table-action-remove'}]]}, null, opt_ijData);
+        $templateAlias4({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'], cssClass: 'table-box', data: [[{text: 'Destination name 001'}, {text: 'Lading Page NAS 2016'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-cog table-action-icon table-action-edit'}, {cssClass: 'glyphicon glyphicon-trash table-action-icon table-action-remove'}]]}, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null,
           'class', 'container-fluid campaign-manager white-bg session');

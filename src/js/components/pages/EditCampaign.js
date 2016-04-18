@@ -8,6 +8,7 @@ import Component from 'metal-component';
 import Soy from 'metal-soy';
 
 import '../edit/EditCampaignDetails.soy';
+import '../edit/EditCampaignGoal.soy';
 
 class EditCampaign extends Component {
 	buildDate_(dateStr, time) {
@@ -34,7 +35,7 @@ class EditCampaign extends Component {
 			endDate: this.buildDate_(data.endDate, data.endDateTime),
 			goal: {
 				generation: {
-					count: 1000
+					count: data['generation.count']
 				}
 			},
 			influencedCustomers: 0,
