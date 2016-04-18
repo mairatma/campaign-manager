@@ -14,9 +14,7 @@ goog.loadModule(function(exports) {
 
 goog.module('TacticsTable.incrementaldom');
 
-/** @suppress {extraRequire} */
 var soy = goog.require('soy');
-/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -73,33 +71,33 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var idList323 = opt_data.selectedTacticIds;
-        var idListLen323 = idList323.length;
-        for (var idIndex323 = 0; idIndex323 < idListLen323; idIndex323++) {
-          var idData323 = idList323[idIndex323];
+        var idList127 = opt_data.selectedTacticIds;
+        var idListLen127 = idList127.length;
+        for (var idIndex127 = 0; idIndex127 < idListLen127; idIndex127++) {
+          var idData127 = idList127[idIndex127];
           ie_open('tr', null, null,
-              'data-row', idIndex323);
+              'data-row', idIndex127);
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((opt_data.destinations[opt_data.tactics[idData323].destinationId].name) != null), opt_data.destinations[opt_data.tactics[idData323].destinationId].name));
+                itext((goog.asserts.assert((opt_data.destinations[opt_data.tactics[idData127].destinationId].name) != null), opt_data.destinations[opt_data.tactics[idData127].destinationId].name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((opt_data.tactics[idData323].name) != null), opt_data.tactics[idData323].name));
+                itext((goog.asserts.assert((opt_data.tactics[idData127].name) != null), opt_data.tactics[idData127].name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData323].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+                  'class', opt_data.tactics[idData127].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData323].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+                  'class', opt_data.tactics[idData127].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData323].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
+                  'class', opt_data.tactics[idData127].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
@@ -118,7 +116,6 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["destinations","selectedTacticIds","tactics"];
-exports.render.types = {"destinations":"any","selectedTacticIds":"any","tactics":"any"};
 templates = exports;
 return exports;
 

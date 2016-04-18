@@ -14,14 +14,10 @@ goog.loadModule(function(exports) {
 
 goog.module('Card.incrementaldom');
 
-/** @suppress {extraRequire} */
 var soy = goog.require('soy');
-/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.asserts');
-/** @suppress {extraRequire} */
-goog.require('soy.asserts');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
 var IncrementalDom = goog.require('incrementaldom');
@@ -61,7 +57,6 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["children","cssClass"];
-exports.render.types = {"children":"html","cssClass":"any"};
 templates = exports;
 return exports;
 

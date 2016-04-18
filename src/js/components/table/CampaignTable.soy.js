@@ -14,9 +14,7 @@ goog.loadModule(function(exports) {
 
 goog.module('CampaignTable.incrementaldom');
 
-/** @suppress {extraRequire} */
 var soy = goog.require('soy');
-/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -69,43 +67,43 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var MONTHS__soy282 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        var campaignList304 = opt_data.campaigns;
-        var campaignListLen304 = campaignList304.length;
-        for (var campaignIndex304 = 0; campaignIndex304 < campaignListLen304; campaignIndex304++) {
-          var campaignData304 = campaignList304[campaignIndex304];
+        var MONTHS__soy86 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var campaignList108 = opt_data.campaigns;
+        var campaignListLen108 = campaignList108.length;
+        for (var campaignIndex108 = 0; campaignIndex108 < campaignListLen108; campaignIndex108++) {
+          var campaignData108 = campaignList108[campaignIndex108];
           ie_open('tr', null, null,
-              'data-id', campaignData304.id);
+              'data-id', campaignData108.id);
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((campaignData304.name) != null), campaignData304.name));
+                itext((goog.asserts.assert((campaignData108.name) != null), campaignData108.name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((MONTHS__soy282[campaignData304.startDate.month - 1]) != null), MONTHS__soy282[campaignData304.startDate.month - 1]));
+                itext((goog.asserts.assert((MONTHS__soy86[campaignData108.startDate.month - 1]) != null), MONTHS__soy86[campaignData108.startDate.month - 1]));
                 itext(' ');
-                itext((goog.asserts.assert((campaignData304.startDate.date) != null), campaignData304.startDate.date));
+                itext((goog.asserts.assert((campaignData108.startDate.date) != null), campaignData108.startDate.date));
                 itext(', ');
-                itext((goog.asserts.assert((campaignData304.startDate.year) != null), campaignData304.startDate.year));
+                itext((goog.asserts.assert((campaignData108.startDate.year) != null), campaignData108.startDate.year));
                 itext(' to ');
-                itext((goog.asserts.assert((MONTHS__soy282[campaignData304.endDate.month - 1]) != null), MONTHS__soy282[campaignData304.endDate.month - 1]));
+                itext((goog.asserts.assert((MONTHS__soy86[campaignData108.endDate.month - 1]) != null), MONTHS__soy86[campaignData108.endDate.month - 1]));
                 itext(' ');
-                itext((goog.asserts.assert((campaignData304.endDate.date) != null), campaignData304.endDate.date));
+                itext((goog.asserts.assert((campaignData108.endDate.date) != null), campaignData108.endDate.date));
                 itext(', ');
-                itext((goog.asserts.assert((campaignData304.endDate.year) != null), campaignData304.endDate.year));
+                itext((goog.asserts.assert((campaignData108.endDate.year) != null), campaignData108.endDate.year));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
                 itext('Lead Generation - ');
-                itext((goog.asserts.assert((campaignData304.goal.generation.count) != null), campaignData304.goal.generation.count));
+                itext((goog.asserts.assert((campaignData108.goal.generation.count) != null), campaignData108.goal.generation.count));
                 itext(' new contacts in 2 weeks');
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('a', null, null,
-                  'href', '/edit-campaign/' + campaignData304.id,
+                  'href', '/edit-campaign/' + campaignData108.id,
                   'data-onclick', 'edit_');
                 ie_void('span', null, null,
                     'class', 'glyphicon glyphicon-cog table-action-icon table-action-edit');
@@ -128,7 +126,6 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["campaigns"];
-exports.render.types = {"campaigns":"any"};
 templates = exports;
 return exports;
 

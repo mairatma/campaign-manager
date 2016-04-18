@@ -14,9 +14,7 @@ goog.loadModule(function(exports) {
 
 goog.module('Header.incrementaldom');
 
-/** @suppress {extraRequire} */
 var soy = goog.require('soy');
-/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -74,7 +72,6 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["currentUrl","includeTabs","includeAddCampaignButton"];
-exports.render.types = {"currentUrl":"any","includeTabs":"any","includeAddCampaignButton":"any"};
 templates = exports;
 return exports;
 

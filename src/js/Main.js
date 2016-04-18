@@ -7,7 +7,8 @@ import ManageCampaigns from './components/pages/ManageCampaigns';
 import Router from 'metal-router';
 
 class Main {
-	static run() {
+	static run(opt_baseUrl = '') {
+		Router.router().setBasePath(opt_baseUrl);
 		Router.route('/', Dashboard, store.getState, true);
 		Router.route('/manage-campaigns', ManageCampaigns, store.getState, true);
 		Router.route('/create-campaign', EditCampaign, store.getState, true);
