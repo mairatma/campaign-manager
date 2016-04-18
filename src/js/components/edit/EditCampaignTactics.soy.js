@@ -92,12 +92,12 @@ if (goog.DEBUG) {
 function $join(opt_data, opt_ignored, opt_ijData) {
   var output = '';
   var ids = goog.asserts.assertArray(opt_data.ids, "expected parameter 'ids' of type list<int|string>.");
-  var idList277 = ids;
-  var idListLen277 = idList277.length;
-  for (var idIndex277 = 0; idIndex277 < idListLen277; idIndex277++) {
-    var idData277 = idList277[idIndex277];
-    output += (idIndex277 > 0) ? ',' : '';
-    output += idData277;
+  var idList152 = ids;
+  var idListLen152 = idList152.length;
+  for (var idIndex152 = 0; idIndex152 < idListLen152; idIndex152++) {
+    var idData152 = idList152[idIndex152];
+    output += (idIndex152 > 0) ? ',' : '';
+    output += idData152;
   }
   return output;
 }

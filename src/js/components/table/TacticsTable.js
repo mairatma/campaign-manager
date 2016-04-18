@@ -17,8 +17,9 @@ class TacticsTable extends Component {
 	handleTableClicked_() {
 		if (dom.hasClass(event.target, 'table-action-remove')) {
 			var row = parseInt(dom.parent(event.target, 'tr').getAttribute('data-row'), 10);
-			this.selectedTacticIds.splice(row, 1);
-			this.selectedTacticIds = this.selectedTacticIds;
+			var tacticIds = this.selectedTacticIds.concat();
+			tacticIds.splice(row, 1);
+			this.selectedTacticIds = tacticIds;
 		}
 	}
 
