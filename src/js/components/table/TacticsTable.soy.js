@@ -31,8 +31,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = Soy.getTemplate('Table.incrementaldom', 'render');
-
 
 /**
  * @param {Object<string, *>=} opt_data
@@ -42,10 +40,84 @@ var $templateAlias1 = Soy.getTemplate('Table.incrementaldom', 'render');
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  opt_data = opt_data || {};
   ie_open('div', null, null,
-      'class', 'campaign-manager-tactics-table');
-    $templateAlias1({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'], data: opt_data.tableData, events: {click: opt_data.handleTableClicked_}, cssClass: 'table-box'}, null, opt_ijData);
+      'class', 'campaign-manager-tactics-table campaign-manager-table');
+    ie_open('table', null, null,
+        'class', 'table table-box');
+      ie_open('thead');
+        ie_open('tr');
+          ie_open('th', null, null,
+              'class', 'light-gray');
+            itext('Name');
+          ie_close('th');
+          ie_open('th', null, null,
+              'class', 'light-gray');
+            itext('Destination');
+          ie_close('th');
+          ie_open('th', null, null,
+              'class', 'light-gray');
+            itext('Promos');
+          ie_close('th');
+          ie_open('th', null, null,
+              'class', 'light-gray');
+            itext('Audience');
+          ie_close('th');
+          ie_open('th', null, null,
+              'class', 'light-gray');
+            itext('Banners');
+          ie_close('th');
+          ie_open('th', null, null,
+              'class', 'light-gray');
+            itext('Edit');
+          ie_close('th');
+          ie_open('th', null, null,
+              'class', 'light-gray');
+            itext('Remove');
+          ie_close('th');
+        ie_close('tr');
+      ie_close('thead');
+      ie_open('tbody');
+        var idList203 = opt_data.selectedTacticIds;
+        var idListLen203 = idList203.length;
+        for (var idIndex203 = 0; idIndex203 < idListLen203; idIndex203++) {
+          var idData203 = idList203[idIndex203];
+          ie_open('tr', null, null,
+              'data-row', idIndex203);
+            ie_open('td');
+              ie_open('span');
+                itext((goog.asserts.assert((opt_data.destinations[opt_data.tactics[idData203].destinationId].name) != null), opt_data.destinations[opt_data.tactics[idData203].destinationId].name));
+              ie_close('span');
+            ie_close('td');
+            ie_open('td');
+              ie_open('span');
+                itext((goog.asserts.assert((opt_data.tactics[idData203].name) != null), opt_data.tactics[idData203].name));
+              ie_close('span');
+            ie_close('td');
+            ie_open('td');
+              ie_void('span', null, null,
+                  'class', opt_data.tactics[idData203].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+            ie_close('td');
+            ie_open('td');
+              ie_void('span', null, null,
+                  'class', opt_data.tactics[idData203].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+            ie_close('td');
+            ie_open('td');
+              ie_void('span', null, null,
+                  'class', opt_data.tactics[idData203].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
+            ie_close('td');
+            ie_open('td');
+              ie_void('span', null, null,
+                  'class', 'glyphicon glyphicon-cog table-action-icon table-action-edit');
+            ie_close('td');
+            ie_open('td');
+              ie_void('span', null, null,
+                  'class', 'glyphicon glyphicon-trash table-action-icon table-action-remove',
+                  'data-onclick', 'remove_');
+            ie_close('td');
+          ie_close('tr');
+        }
+      ie_close('tbody');
+    ie_close('table');
   ie_close('div');
 }
 exports.render = $render;
@@ -53,8 +125,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'TacticsTable.render';
 }
 
-exports.render.params = ["handleTableClicked_","tableData"];
-exports.render.types = {"handleTableClicked_":"any","tableData":"any"};
+exports.render.params = ["destinations","selectedTacticIds","tactics"];
+exports.render.types = {"destinations":"any","selectedTacticIds":"any","tactics":"any"};
 templates = exports;
 return exports;
 
