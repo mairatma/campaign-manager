@@ -151,7 +151,7 @@ function $date(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'col-md-2');
     ie_open('input', null, null,
-        'type', 'text',
+        'type', 'date',
         'class', 'form-control',
         'name', name,
         'value', opt_data.obj ? opt_data.obj.month + '/' + opt_data.obj.date + '/' + opt_data.obj.year : '');

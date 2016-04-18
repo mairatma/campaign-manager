@@ -61,11 +61,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('em');
       ie_close('p');
     ie_close('div');
-    ie_open('a', null, null,
-        'href', '',
-        'class', 'btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new');
-      itext('New tactic');
-    ie_close('a');
     $templateAlias1(opt_data, null, opt_ijData);
     ie_open('input', null, null,
         'type', 'hidden',

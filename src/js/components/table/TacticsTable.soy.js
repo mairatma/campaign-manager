@@ -68,46 +68,38 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_close('th');
           ie_open('th', null, null,
               'class', 'light-gray');
-            itext('Edit');
-          ie_close('th');
-          ie_open('th', null, null,
-              'class', 'light-gray');
             itext('Remove');
           ie_close('th');
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var idList203 = opt_data.selectedTacticIds;
-        var idListLen203 = idList203.length;
-        for (var idIndex203 = 0; idIndex203 < idListLen203; idIndex203++) {
-          var idData203 = idList203[idIndex203];
+        var idList323 = opt_data.selectedTacticIds;
+        var idListLen323 = idList323.length;
+        for (var idIndex323 = 0; idIndex323 < idListLen323; idIndex323++) {
+          var idData323 = idList323[idIndex323];
           ie_open('tr', null, null,
-              'data-row', idIndex203);
+              'data-row', idIndex323);
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((opt_data.destinations[opt_data.tactics[idData203].destinationId].name) != null), opt_data.destinations[opt_data.tactics[idData203].destinationId].name));
+                itext((goog.asserts.assert((opt_data.destinations[opt_data.tactics[idData323].destinationId].name) != null), opt_data.destinations[opt_data.tactics[idData323].destinationId].name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((opt_data.tactics[idData203].name) != null), opt_data.tactics[idData203].name));
+                itext((goog.asserts.assert((opt_data.tactics[idData323].name) != null), opt_data.tactics[idData323].name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData203].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+                  'class', opt_data.tactics[idData323].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData203].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+                  'class', opt_data.tactics[idData323].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData203].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
-            ie_close('td');
-            ie_open('td');
-              ie_void('span', null, null,
-                  'class', 'glyphicon glyphicon-cog table-action-icon table-action-edit');
+                  'class', opt_data.tactics[idData323].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
