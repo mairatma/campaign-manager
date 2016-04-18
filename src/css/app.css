@@ -179,21 +179,3 @@ body {
 .campaign-manager-table-card {
 	height: 100%;
 }
-
-/*.row-destinations {
-	height: 380px;
-}
-
-.row-promotions {
-	height: 360px;
-}
-
-@media (max-width: 992px) {
-	.row-destinations {
-		height: auto;
-	}
-
-	.row-promotions {
-		height: auto;
-	}
-}*/
