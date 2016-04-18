@@ -6,6 +6,7 @@ var data = {
 		{
 			id: 0,
 			name: 'University Credit Card',
+			description: 'A credit card for university students',
 			startDate: new Date(2016, 2, 1),
 			endDate: new Date(2016, 3, 1),
 			budget: 12000,
@@ -50,8 +51,7 @@ var data = {
 				}
 			},
 			journey: 1,
-			tactics: [
-			],
+			tacticIds: [],
 			influencedCustomers: 10,
 			influencedWins: 10000,
 			leadsCount: 22

@@ -77,7 +77,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_open('input', null, null,
             'type', 'text',
             'class', 'form-control',
-            'name', 'budget');
+            'name', 'budget',
+            'value', ($$temp = campaign__soy85.budget) == null ? '' : $$temp);
         ie_close('input');
       ie_close('div');
       ie_open('div', null, null,
@@ -99,11 +100,13 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_close('label');
       ie_open('div', null, null,
           'class', 'col-md-11');
-        ie_void('textarea', null, null,
+        ie_open('textarea', null, null,
             'class', 'form-control',
             'rows', '8',
             'cols', '40',
             'name', 'description');
+          itext((goog.asserts.assert((($$temp = campaign__soy85.description) == null ? '' : $$temp) != null), ($$temp = campaign__soy85.description) == null ? '' : $$temp));
+        ie_close('textarea');
       ie_close('div');
     ie_close('div');
     ie_open('div', null, null,
@@ -157,12 +160,12 @@ function $date(opt_data, opt_ignored, opt_ijData) {
     ie_open('select', null, null,
         'class', 'form-control',
         'name', name + 'Time');
-      for (var i105 = 0; i105 < 24; i105++) {
+      for (var i109 = 0; i109 < 24; i109++) {
         ie_open('option', null, null,
-            'value', i105);
-          itext((goog.asserts.assert((i105 > 12 ? i105 - 12 : i105) != null), i105 > 12 ? i105 - 12 : i105));
+            'value', i109);
+          itext((goog.asserts.assert((i109 > 12 ? i109 - 12 : i109) != null), i109 > 12 ? i109 - 12 : i109));
           itext(':00 ');
-          itext((goog.asserts.assert((i105 >= 12 ? 'PM' : 'AM') != null), i105 >= 12 ? 'PM' : 'AM'));
+          itext((goog.asserts.assert((i109 >= 12 ? 'PM' : 'AM') != null), i109 >= 12 ? 'PM' : 'AM'));
         ie_close('option');
       }
     ie_close('select');

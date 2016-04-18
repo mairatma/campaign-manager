@@ -43,7 +43,7 @@
 				{call EditCampaignGoal.render /}
 				{call EditCampaignTactics.render}
 					{param destinations: $destinations /}
-					{param selectedTacticIds: [0] /}
+					{param selectedTacticIds: isNonnull($editCampaignId) ? $campaigns[$editCampaignId].tacticIds : [] /}
 					{param tactics: $tactics /}
 				{/call}
 

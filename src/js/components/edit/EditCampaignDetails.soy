@@ -18,7 +18,7 @@
 
 			<label class="col-md-1 col-md-offset-2 control-label">Budget:</label>
 			<div class="col-md-2">
-				<input type="text" class="form-control" name="budget">
+				<input type="text" class="form-control" name="budget" value="{$campaign.budget ?: ''}">
 			</div>
 			<div class="col-md-2">
 				<select class="form-control">
@@ -30,7 +30,9 @@
 		<div class="form-group">
 			<label for="" class="col-md-1 control-label">Description:</label>
 			<div class="col-md-11">
-				<textarea class="form-control" rows="8" cols="40" name="description"></textarea>
+				<textarea class="form-control" rows="8" cols="40" name="description">
+					{$campaign.description ?: ''}
+				</textarea>
 			</div>
 		</div>
 
