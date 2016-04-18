@@ -7,8 +7,6 @@ import Actions from '../../actions/Actions';
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 
-import '../table/Table.soy';
-
 class CampaignTable extends Component {
 	edit_(event) {
 		var id = this.getRowId_(event);

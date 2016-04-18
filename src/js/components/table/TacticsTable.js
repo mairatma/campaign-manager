@@ -5,8 +5,6 @@ import templates from './TacticsTable.soy';
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 
-import '../table/Table.soy';
-
 class TacticsTable extends Component {
 	remove_() {
 		var row = parseInt(dom.parent(event.target, 'tr').getAttribute('data-row'), 10);
