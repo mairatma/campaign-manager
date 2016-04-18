@@ -1,16 +1,15 @@
 {namespace CampaignTable}
 
 /**
- * @param? edit
- * @param? remove
+ * @param? handleTableClicked_
  * @param? tableData
  */
 {template .render}
 	<div class="campaign-manager-campaign-table">
 		{call Table.render}
-			{param headers: ['Name', 'Scheduled Date', 'Goal'] /}
+			{param headers: ['Name', 'Scheduled Date', 'Goal', 'Edit', 'Remove'] /}
 			{param data: $tableData /}
-			{param events: ['removeClicked': $remove, 'editClicked': $edit] /}
+			{param events: ['click': $handleTableClicked_] /}
 			{param cssClass: 'table-box' /}
 		{/call}
 	</div>

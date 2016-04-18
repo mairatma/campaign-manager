@@ -1,5 +1,6 @@
 'use strict';
 
+import dom from 'metal-dom';
 import store from '../../store/store';
 import templates from './CampaignTable.soy';
 import Actions from '../../actions/Actions';
@@ -14,9 +15,15 @@ class CampaignTable extends Component {
 		this.on('campaignsChanged', this.formatTableData_);
 	}
 
-	edit(data) {
-		var id = this.tableDataIds_[data.index];
-		store.dispatch(Actions.startCampaignEdition(id, this.currentUrl));
+	handleTableClicked_(event) {
+		if (dom.hasClass(event.target, 'glyphicon')) {
+			var row = parseInt(dom.parent(event.target, 'tr').getAttribute('data-row'), 10);
+			if (dom.hasClass(event.target, 'table-action-remove')) {
+				store.dispatch(Actions.removeCampaign(this.tableDataIds_[row]));
+			} else {
+				store.dispatch(Actions.startCampaignEdition(row, this.currentUrl));
+			}
+		}
 	}
 
 	formatDate_(date) {
@@ -36,18 +43,26 @@ class CampaignTable extends Component {
 		this.tableDataIds_ = [];
 		for (var i = 0; i < this.campaigns.length; i++) {
 			data.push([
-				this.campaigns[i].name,
-				this.formatDates_(this.campaigns[i].startDate, this.campaigns[i].endDate),
-				this.formatGoal_(this.campaigns[i].goal),
-				'/edit-campaign/' + this.campaigns[i].id
+				{
+					text: this.campaigns[i].name
+				},
+				{
+					text: this.formatDates_(this.campaigns[i].startDate, this.campaigns[i].endDate)
+				},
+				{
+					text: this.formatGoal_(this.campaigns[i].goal)
+				},
+				{
+					cssClass: 'glyphicon glyphicon-cog table-action-icon table-action-edit',
+					href: '/edit-campaign/' + this.campaigns[i].id
+				},
+				{
+					cssClass: 'glyphicon glyphicon-trash table-action-icon table-action-remove'
+				}
 			]);
 			this.tableDataIds_.push(this.campaigns[i].id);
 		}
 		this.tableData = data;
-	}
-
-	remove(data) {
-		store.dispatch(Actions.removeCampaign(this.tableDataIds_[data.index]));
 	}
 }
 Soy.register(CampaignTable, templates);

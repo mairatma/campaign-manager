@@ -74,9 +74,9 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-md-4');
             ie_open('input', null, null,
-                'type', 'email',
+                'type', 'text',
                 'class', 'form-control',
-                'id', '');
+                'name', 'name');
             ie_close('input');
           ie_close('div');
           ie_open('br', null, null,
@@ -90,16 +90,14 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-md-2');
             ie_open('input', null, null,
-                'type', 'email',
-                'class', 'form-control',
-                'id', '');
+                'type', 'text',
+                'class', 'form-control');
             ie_close('input');
           ie_close('div');
           ie_open('div', null, null,
               'class', 'col-md-2');
             ie_open('select', null, null,
                 'name', '',
-                'id', '',
                 'class', 'form-control');
               ie_open('option', null, null,
                   'value', '');
@@ -134,16 +132,14 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-md-2');
             ie_open('input', null, null,
-                'type', 'email',
-                'class', 'form-control',
-                'id', '');
+                'type', 'name',
+                'class', 'form-control');
             ie_close('input');
           ie_close('div');
           ie_open('div', null, null,
               'class', 'col-md-1');
             ie_open('select', null, null,
                 'name', '',
-                'id', '',
                 'class', 'form-control');
               ie_open('option', null, null,
                   'value', '');
@@ -155,7 +151,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               'class', 'col-md-1');
             ie_open('select', null, null,
                 'name', '',
-                'id', '',
                 'class', 'form-control');
               ie_open('option', null, null,
                   'value', '');
@@ -174,16 +169,14 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-md-2');
             ie_open('input', null, null,
-                'type', 'email',
-                'class', 'form-control',
-                'id', '');
+                'type', 'name',
+                'class', 'form-control');
             ie_close('input');
           ie_close('div');
           ie_open('div', null, null,
               'class', 'col-md-1');
             ie_open('select', null, null,
                 'name', '',
-                'id', '',
                 'class', 'form-control');
               ie_open('option', null, null,
                   'value', '');
@@ -195,7 +188,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               'class', 'col-md-1');
             ie_open('select', null, null,
                 'name', '',
-                'id', '',
                 'class', 'form-control');
               ie_open('option', null, null,
                   'value', '');
@@ -233,7 +225,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               'class', 'col-md-2');
             ie_open('select', null, null,
                 'name', '',
-                'id', '',
                 'class', 'form-control');
               ie_open('option', null, null,
                   'value', '');
@@ -272,7 +263,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'class', 'col-md-2');
               ie_open('select', null, null,
                   'name', '',
-                  'id', '',
                   'class', 'form-control');
                 ie_open('option', null, null,
                     'value', '');
@@ -283,9 +273,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('div', null, null,
                 'class', 'col-md-2');
               ie_open('input', null, null,
-                  'type', 'email',
+                  'type', 'name',
                   'class', 'form-control',
-                  'id', '',
                   'placeholder', '10.000');
               ie_close('input');
             ie_close('div');
@@ -301,7 +290,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'class', 'col-md-2');
               ie_open('select', null, null,
                   'name', '',
-                  'id', '',
                   'class', 'form-control');
                 ie_open('option', null, null,
                     'value', '');
@@ -313,7 +301,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'class', 'col-md-2');
               ie_open('select', null, null,
                   'name', '',
-                  'id', '',
                   'class', 'form-control');
                 ie_open('option', null, null,
                     'value', '');
@@ -346,7 +333,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'class', 'btn btn-lg btn-default campaign-manager-edit-campaign-tactics-add-new');
           itext('New tactic');
         ie_close('a');
-        $templateAlias2({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners'], cssClass: 'table-box', data: [['Destination name 001', 'Lading Page NAS 2016', 'doneIcon', 'doneIcon', 'doneIcon']]}, null, opt_ijData);
+        $templateAlias2({headers: ['Name', 'Destination', 'Promos', 'Audience', 'Banners', 'Edit', 'Remove'], cssClass: 'table-box', data: [[{text: 'Destination name 001'}, {text: 'Lading Page NAS 2016'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-ok'}, {cssClass: 'glyphicon glyphicon-cog table-action-icon table-action-edit'}, {cssClass: 'glyphicon glyphicon-trash table-action-icon table-action-remove'}]]}, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null,
           'class', 'container-fluid campaign-manager white-bg session');
