@@ -95,23 +95,4 @@
 	body {
 		font-size: 13px;
 	}
-	/*.campaign-manager-card .campaign-manager-card-label {
-		font-size: 16px;
-		line-height: 16px;
-	}
-
-	.campaign-manager-card .highlight.big {
-		font-size: 30px;
-	}*/
-}
-
-@media (max-width: 1080px and min-width: 992px) {
-	/*.campaign-manager-card .campaign-manager-card-label {
-		font-size: 13px;
-		line-height: 13px;
-	}
-
-	.campaign-manager-card .highlight.big {
-		font-size: 30px;
-	}*/
 }
