@@ -47,29 +47,29 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'table ' + (($$temp = opt_data.cssClass) == null ? '' : $$temp));
       ie_open('thead');
         ie_open('tr');
-          var headerList279 = opt_data.headers;
-          var headerListLen279 = headerList279.length;
-          for (var headerIndex279 = 0; headerIndex279 < headerListLen279; headerIndex279++) {
-            var headerData279 = headerList279[headerIndex279];
+          var headerList296 = opt_data.headers;
+          var headerListLen296 = headerList296.length;
+          for (var headerIndex296 = 0; headerIndex296 < headerListLen296; headerIndex296++) {
+            var headerData296 = headerList296[headerIndex296];
             ie_open('th', null, null,
                 'class', 'light-gray');
-              itext((goog.asserts.assert((headerData279) != null), headerData279));
+              itext((goog.asserts.assert((headerData296) != null), headerData296));
             ie_close('th');
           }
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var rowList290 = opt_data.data;
-        var rowListLen290 = rowList290.length;
-        for (var rowIndex290 = 0; rowIndex290 < rowListLen290; rowIndex290++) {
-          var rowData290 = rowList290[rowIndex290];
+        var rowList307 = opt_data.data;
+        var rowListLen307 = rowList307.length;
+        for (var rowIndex307 = 0; rowIndex307 < rowListLen307; rowIndex307++) {
+          var rowData307 = rowList307[rowIndex307];
           ie_open('tr', null, null,
-              'data-row', rowIndex290);
-            var cellList287 = rowData290;
-            var cellListLen287 = cellList287.length;
-            for (var cellIndex287 = 0; cellIndex287 < cellListLen287; cellIndex287++) {
-              var cellData287 = cellList287[cellIndex287];
-              $cell({cell: cellData287}, null, opt_ijData);
+              'data-row', rowIndex307);
+            var cellList304 = rowData307;
+            var cellListLen304 = cellList304.length;
+            for (var cellIndex304 = 0; cellIndex304 < cellListLen304; cellIndex304++) {
+              var cellData304 = cellList304[cellIndex304];
+              $cell({cell: cellData304}, null, opt_ijData);
             }
           ie_close('tr');
         }
@@ -93,7 +93,7 @@ if (goog.DEBUG) {
 function $cell(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
   ie_open('td');
-    var content__soy295 = function() {
+    var content__soy312 = function() {
       ie_open('span', null, null,
           'class', ($$temp = opt_data.cell.cssClass) == null ? '' : $$temp);
         itext((goog.asserts.assert((($$temp = opt_data.cell.text) == null ? '' : $$temp) != null), ($$temp = opt_data.cell.text) == null ? '' : $$temp));
@@ -102,10 +102,10 @@ function $cell(opt_data, opt_ignored, opt_ijData) {
     if (opt_data.cell.href) {
       ie_open('a', null, null,
           'href', opt_data.cell.href);
-        content__soy295();
+        content__soy312();
       ie_close('a');
     } else {
-      content__soy295();
+      content__soy312();
     }
   ie_close('td');
 }

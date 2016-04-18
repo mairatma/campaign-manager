@@ -40,6 +40,7 @@ var iattr = IncrementalDom.attr;
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
+  var campaign__soy257 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
   ie_open('div', null, null,
       'class', 'campaign-manager-edit-campaign-goal container-fluid campaign-manager session');
     ie_open('div', null, null,
@@ -72,7 +73,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               'type', 'text',
               'class', 'form-control',
               'name', 'generation.count',
-              'value', '10000');
+              'value', campaign__soy257.goal ? campaign__soy257.goal.generation.count : 0);
           ie_close('input');
         ie_close('div');
         ie_open('label', null, null,
@@ -110,8 +111,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'EditCampaignGoal.render';
 }
 
-exports.render.params = [];
-exports.render.types = {};
+exports.render.params = ["campaigns","editCampaignId"];
+exports.render.types = {"campaigns":"any","editCampaignId":"any"};
 templates = exports;
 return exports;
 

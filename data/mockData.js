@@ -7,21 +7,30 @@ var data = {
 			id: 0,
 			name: 'University Credit Card',
 			description: 'A credit card for university students',
-			startDate: new Date(2016, 2, 1),
-			endDate: new Date(2016, 3, 1),
+			startDate: {
+				date: 1,
+				month: 2,
+				year: 2016,
+				hours: 13,
+				minutes: 0
+			},
+			endDate: {
+				date: 1,
+				month: 3,
+				year: 2016,
+				hours: 23,
+				minutes: 0
+			},
 			budget: 12000,
 			goal: {
 				'generation': {
-					count: 10000,
-					deadline: new Date(2016, 1, 3)
+					count: 10000
 				},
 				'nurturing': {
-					count: 1000,
-					deadline: new Date(2016, 1, 3)
+					count: 1000
 				},
 				'qualification': {
-					count: 500,
-					deadline: new Date(2016, 1, 3)
+					count: 500
 				}
 			},
 			journey: 1,
@@ -33,21 +42,30 @@ var data = {
 		{
 			id: 1,
 			name: 'Promotions for the new iPhone i7',
-			startDate: new Date(2016, 2, 12),
-			endDate: new Date(2016, 2, 18),
+			startDate: {
+				date: 12,
+				month: 2,
+				year: 2016,
+				hours: 7,
+				minutes: 0
+			},
+			endDate: {
+				date: 18,
+				month: 2,
+				year: 2016,
+				hours: 21,
+				minutes: 30
+			},
 			budget: 9000,
 			goal: {
 				'generation': {
-					count: 9000,
-					deadline: new Date(2016, 2, 18)
+					count: 9000
 				},
 				'nurturing': {
-					count: 1200,
-					deadline: new Date(2016, 2, 18)
+					count: 1200
 				},
 				'qualification': {
-					count: 400,
-					deadline: new Date(2016, 2, 18)
+					count: 400
 				}
 			},
 			journey: 1,
@@ -157,12 +175,20 @@ var data = {
 				{
 					name: 'New credit card promo for students',
 					audienceIds: [0, 1],
-					date: new Date(2016, 2, 20)
+					date: {
+						date: 20,
+						month: 2,
+						year: 2016
+					}
 				},
 				{
 					name: 'New credit card promo for homeowners',
 					audienceIds: [1],
-					date: new Date(2016, 2, 22)
+					date: {
+						date: 22,
+						month: 2,
+						year: 2016
+					}
 				}
 			],
 			promotionalAds: [

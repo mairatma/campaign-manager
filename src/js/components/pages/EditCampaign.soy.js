@@ -108,7 +108,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_close('div');
         ie_close('div');
       ie_close('div');
-      $templateAlias3(null, null, opt_ijData);
+      $templateAlias3(opt_data, null, opt_ijData);
       $templateAlias4({destinations: opt_data.destinations, selectedTacticIds: opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId].tacticIds : [], tactics: opt_data.tactics}, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'container-fluid campaign-manager white-bg session');

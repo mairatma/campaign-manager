@@ -12,9 +12,15 @@ import '../edit/EditCampaignGoal.soy';
 
 class EditCampaign extends Component {
 	buildDate_(dateStr, time) {
-		var date = new Date(dateStr);
+		var date = new Date(dateStr ? dateStr : Date.now());
 		date.setHours(time);
-		return date;
+		return {
+			date: date.getDate(),
+			month: date.getMonth() + 1,
+			year: date.getFullYear(),
+			hours: date.getHours(),
+			minutes: date.getMinutes()
+		};
 	}
 
 	getData_() {
@@ -40,7 +46,7 @@ class EditCampaign extends Component {
 				}
 			},
 			journey: parseInt(data.journey, 10),
-			tacticIds: data.tacticIds.split(',').map(id => parseInt(id, 10))
+			tacticIds: data.tacticIds.split(',').map(id => parseInt(id, 10)).filter(id => !!id)
 		})));
 	}
 }

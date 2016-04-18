@@ -40,7 +40,11 @@
 					</div>
 				</div>
 
-				{call EditCampaignGoal.render /}
+				{call EditCampaignGoal.render}
+					{param campaigns: $campaigns /}
+					{param editCampaignId: $editCampaignId /}
+				{/call}
+				
 				{call EditCampaignTactics.render}
 					{param destinations: $destinations /}
 					{param selectedTacticIds: isNonnull($editCampaignId) ? $campaigns[$editCampaignId].tacticIds : [] /}

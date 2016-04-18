@@ -17,12 +17,12 @@ function campaigns(state, action) {
 					action.campaign
 				);
 			} else {
-				state.push(object.mixin({
+				state.push(object.mixin(action.campaign, {
 					id: state.length,
 					influencedCustomers: 0,
 					influencedWins: 0,
 					leadsCount: 0
-				}, action.campaign));
+				}));
 			}
 			return state;
 	}

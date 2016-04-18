@@ -1,8 +1,11 @@
 {namespace EditCampaignGoal}
 
 /**
+ * @param campaigns
+ * @param? editCampaignId
  */
 {template .render}
+	{let $campaign: isNonnull($editCampaignId) ? $campaigns[$editCampaignId] : [] /}
 	<div class="campaign-manager-edit-campaign-goal container-fluid campaign-manager session">
 		<div class="campaign-manager-card">
 			<h2>Goal</h2>
@@ -16,7 +19,11 @@
 		      </select>
 		    </div>
 		    <div class="col-md-2">
-		      <input type="text" class="form-control" name="generation.count" value="10000">
+		      <input
+						type="text"
+						class="form-control"
+						name="generation.count"
+						value="{$campaign.goal ? $campaign.goal.generation.count : 0}">
 		    </div>
 
 		    <label for="" class="col-md-2 control-label"><div class="text-right">new contacts in: </div></label>
