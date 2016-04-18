@@ -244,7 +244,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-md-4');
             ie_open('a', null, null,
-                'href', '');
+                'href', '',
+                'class', 'btn-manage-journey');
               itext('Manage journeys');
             ie_close('a');
           ie_close('div');

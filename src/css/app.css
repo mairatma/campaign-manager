@@ -170,3 +170,8 @@ body {
 .table-action-edit {
 	color: #e79b9d;
 }
+
+.btn-manage-journey {
+	display: inline-block;
+	padding: 6px 0;
+}
