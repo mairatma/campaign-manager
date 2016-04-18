@@ -39,6 +39,7 @@ class EditCampaign extends Component {
 			},
 			influencedCustomers: 0,
 			influencedWins: 0,
+			journey: parseInt(data.journey, 10),
 			leadsCount: 0
 		})));
 	}

@@ -89,9 +89,10 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-md-2');
             ie_open('select', null, null,
-                'class', 'form-control');
+                'class', 'form-control',
+                'name', 'journey');
               ie_open('option', null, null,
-                  'value', '');
+                  'value', '1');
                 itext('Sales Funnel');
               ie_close('option');
             ie_close('select');
@@ -99,7 +100,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-md-4');
             ie_open('a', null, null,
-                'href', '',
                 'class', 'btn-manage-journey');
               itext('Manage journeys');
             ie_close('a');
