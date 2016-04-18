@@ -1,5 +1,6 @@
 'use strict';
 
+import dom from 'metal-dom';
 import templates from './TacticsTable.soy';
 import Component from 'metal-component';
 import Soy from 'metal-soy';
@@ -10,14 +11,19 @@ class TacticsTable extends Component {
 	created() {
 		this.formatTableData_();
 		this.on('tacticsChanged', this.formatTableData_);
+		this.on('selectedTacticIdsChanged', this.formatTableData_);
 	}
 
 	handleTableClicked_() {
+		if (dom.hasClass(event.target, 'table-action-remove')) {
+			var row = parseInt(dom.parent(event.target, 'tr').getAttribute('data-row'), 10);
+			this.selectedTacticIds.splice(row, 1);
+			this.selectedTacticIds = this.selectedTacticIds;
+		}
 	}
 
 	formatTableData_() {
 		var data = [];
-		this.tableDataIds_ = [];
 		for (var i = 0; i < this.selectedTacticIds.length; i++) {
 			var id = this.selectedTacticIds[i];
 			data.push([
@@ -43,7 +49,6 @@ class TacticsTable extends Component {
 					cssClass: 'glyphicon glyphicon-trash table-action-icon table-action-remove'
 				}
 			]);
-			this.tableDataIds_.push(id);
 		}
 		this.tableData = data;
 	}

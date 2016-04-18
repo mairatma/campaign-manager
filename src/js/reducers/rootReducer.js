@@ -6,7 +6,7 @@ import editCampaignId from './editCampaignId';
 import sourceUrl from './sourceUrl';
 
 function baseUrl(state) {
-	return state || [];
+	return state || '/';
 }
 
 function destinations(state) {
