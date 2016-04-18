@@ -63,7 +63,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     ie_close('div');
     ie_open('form', null, null,
         'class', 'form-horizontal');
-      $templateAlias2(null, null, opt_ijData);
+      $templateAlias2(opt_data, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'campaign-manager-edit-campaign-journey container-fluid white-bg campaign-manager session');
         ie_open('h2');
@@ -139,8 +139,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'EditCampaign.render';
 }
 
-exports.render.params = ["editCampaignId","destinations","sourceUrl","tactics"];
-exports.render.types = {"editCampaignId":"any","destinations":"any","sourceUrl":"any","tactics":"any"};
+exports.render.params = ["campaigns","destinations","editCampaignId","sourceUrl","tactics"];
+exports.render.types = {"campaigns":"any","destinations":"any","editCampaignId":"any","sourceUrl":"any","tactics":"any"};
 templates = exports;
 return exports;
 

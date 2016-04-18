@@ -1,6 +1,6 @@
 'use strict';
 
-import { object } from 'metal';
+import { core, object } from 'metal';
 import store from '../../store/store';
 import templates from './EditCampaign.soy';
 import Actions from '../../actions/Actions';
@@ -30,6 +30,7 @@ class EditCampaign extends Component {
 	save() {
 		var data = this.getData_();
 		store.dispatch(Actions.saveCampaign(object.mixin(data, {
+			id: core.isNumber(this.editCampaignId) ? this.editCampaignId : undefined,
 			budget: parseInt(data.budget, 10) || 0,
 			startDate: this.buildDate_(data.startDate, data.startDateTime),
 			endDate: this.buildDate_(data.endDate, data.endDateTime),
@@ -38,10 +39,7 @@ class EditCampaign extends Component {
 					count: data['generation.count']
 				}
 			},
-			influencedCustomers: 0,
-			influencedWins: 0,
 			journey: parseInt(data.journey, 10),
-			leadsCount: 0,
 			tacticIds: data.tacticIds.split(',').map(id => parseInt(id, 10))
 		})));
 	}

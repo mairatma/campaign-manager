@@ -18,10 +18,11 @@ class CampaignTable extends Component {
 	handleTableClicked_(event) {
 		if (dom.hasClass(event.target, 'glyphicon')) {
 			var row = parseInt(dom.parent(event.target, 'tr').getAttribute('data-row'), 10);
+			var id = this.tableDataIds_[row];
 			if (dom.hasClass(event.target, 'table-action-remove')) {
-				store.dispatch(Actions.removeCampaign(this.tableDataIds_[row]));
+				store.dispatch(Actions.removeCampaign(id));
 			} else {
-				store.dispatch(Actions.startCampaignEdition(row, this.currentUrl));
+				store.dispatch(Actions.startCampaignEdition(id, this.currentUrl));
 			}
 		}
 	}

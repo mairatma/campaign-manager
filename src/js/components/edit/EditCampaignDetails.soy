@@ -1,14 +1,17 @@
 {namespace EditCampaignDetails}
 
 /**
+ * @param campaigns
+ * @param? editCampaignId
  */
 {template .render}
+	{let $campaign: isNonnull($editCampaignId) ? $campaigns[$editCampaignId] : [] /}
 	<div class="campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next">
 		<h2>Details</h2>
 		<div class="form-group">
 			<label for="" class="col-md-1 control-label">Name:</label>
 			<div class="col-md-4">
-				<input type="text" class="form-control" name="name">
+				<input type="text" class="form-control" name="name" value="{$campaign.name ?: ''}">
 			</div>
 
 			<br class="hidden-md hidden-lg">

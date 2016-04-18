@@ -42,6 +42,8 @@ var iattr = IncrementalDom.attr;
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
+  var campaign__soy85 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
   ie_open('div', null, null,
       'class', 'campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next');
     ie_open('h2');
@@ -59,7 +61,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_open('input', null, null,
             'type', 'text',
             'class', 'form-control',
-            'name', 'name');
+            'name', 'name',
+            'value', ($$temp = campaign__soy85.name) == null ? '' : $$temp);
         ie_close('input');
       ie_close('div');
       ie_open('br', null, null,
@@ -154,12 +157,12 @@ function $date(opt_data, opt_ignored, opt_ijData) {
     ie_open('select', null, null,
         'class', 'form-control',
         'name', name + 'Time');
-      for (var i102 = 0; i102 < 24; i102++) {
+      for (var i105 = 0; i105 < 24; i105++) {
         ie_open('option', null, null,
-            'value', i102);
-          itext((goog.asserts.assert((i102 > 12 ? i102 - 12 : i102) != null), i102 > 12 ? i102 - 12 : i102));
+            'value', i105);
+          itext((goog.asserts.assert((i105 > 12 ? i105 - 12 : i105) != null), i105 > 12 ? i105 - 12 : i105));
           itext(':00 ');
-          itext((goog.asserts.assert((i102 >= 12 ? 'PM' : 'AM') != null), i102 >= 12 ? 'PM' : 'AM'));
+          itext((goog.asserts.assert((i105 >= 12 ? 'PM' : 'AM') != null), i105 >= 12 ? 'PM' : 'AM'));
         ie_close('option');
       }
     ie_close('select');
@@ -179,8 +182,8 @@ if (goog.DEBUG) {
   $date.soyTemplateName = 'EditCampaignDetails.date';
 }
 
-exports.render.params = ["label","name"];
-exports.render.types = {"label":"string","name":"string"};
+exports.render.params = ["label","name","campaigns","editCampaignId"];
+exports.render.types = {"label":"string","name":"string","campaigns":"any","editCampaignId":"any"};
 templates = exports;
 return exports;
 
