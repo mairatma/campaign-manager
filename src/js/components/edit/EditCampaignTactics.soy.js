@@ -14,10 +14,14 @@ goog.loadModule(function(exports) {
 
 goog.module('EditCampaignTactics.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.asserts');
+/** @suppress {extraRequire} */
+goog.require('soy.asserts');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
 var IncrementalDom = goog.require('incrementaldom');
@@ -83,12 +87,12 @@ if (goog.DEBUG) {
 function $join(opt_data, opt_ignored, opt_ijData) {
   var output = '';
   var ids = goog.asserts.assertArray(opt_data.ids, "expected parameter 'ids' of type list<int|string>.");
-  var idList324 = ids;
-  var idListLen324 = idList324.length;
-  for (var idIndex324 = 0; idIndex324 < idListLen324; idIndex324++) {
-    var idData324 = idList324[idIndex324];
-    output += (idIndex324 > 0) ? ',' : '';
-    output += idData324;
+  var idList152 = ids;
+  var idListLen152 = idList152.length;
+  for (var idIndex152 = 0; idIndex152 < idListLen152; idIndex152++) {
+    var idData152 = idList152[idIndex152];
+    output += (idIndex152 > 0) ? ',' : '';
+    output += idData152;
   }
   return output;
 }
@@ -98,6 +102,7 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["ids","destinations","selectedTacticIds","tactics"];
+exports.render.types = {"ids":"list<string|int>","destinations":"any","selectedTacticIds":"any","tactics":"any"};
 templates = exports;
 return exports;
 

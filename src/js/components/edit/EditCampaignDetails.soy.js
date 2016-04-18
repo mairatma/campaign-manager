@@ -14,10 +14,14 @@ goog.loadModule(function(exports) {
 
 goog.module('EditCampaignDetails.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.asserts');
+/** @suppress {extraRequire} */
+goog.require('soy.asserts');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
 var IncrementalDom = goog.require('incrementaldom');
@@ -39,7 +43,7 @@ var iattr = IncrementalDom.attr;
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
-  var campaign__soy257 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
+  var campaign__soy85 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
   ie_open('div', null, null,
       'class', 'campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next');
     ie_open('h2');
@@ -58,7 +62,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'type', 'text',
             'class', 'form-control',
             'name', 'name',
-            'value', ($$temp = campaign__soy257.name) == null ? '' : $$temp);
+            'value', ($$temp = campaign__soy85.name) == null ? '' : $$temp);
         ie_close('input');
       ie_close('div');
       ie_open('br', null, null,
@@ -74,7 +78,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'type', 'text',
             'class', 'form-control',
             'name', 'budget',
-            'value', ($$temp = campaign__soy257.budget) == null ? '' : $$temp);
+            'value', ($$temp = campaign__soy85.budget) == null ? '' : $$temp);
         ie_close('input');
       ie_close('div');
       ie_open('div', null, null,
@@ -101,19 +105,19 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'rows', '8',
             'cols', '40',
             'name', 'description');
-          itext((goog.asserts.assert((($$temp = campaign__soy257.description) == null ? '' : $$temp) != null), ($$temp = campaign__soy257.description) == null ? '' : $$temp));
+          itext((goog.asserts.assert((($$temp = campaign__soy85.description) == null ? '' : $$temp) != null), ($$temp = campaign__soy85.description) == null ? '' : $$temp));
         ie_close('textarea');
       ie_close('div');
     ie_close('div');
     ie_open('div', null, null,
         'class', 'form-group');
-      $date({label: 'Starts on:', name: 'startDate', obj: ($$temp = campaign__soy257.startDate) == null ? null : $$temp}, null, opt_ijData);
+      $date({label: 'Starts on:', name: 'startDate', obj: ($$temp = campaign__soy85.startDate) == null ? null : $$temp}, null, opt_ijData);
       ie_open('br', null, null,
           'class', 'hidden-md hidden-lg');
       ie_close('br');
       ie_void('div', null, null,
           'class', 'col-md-2');
-      $date({label: 'Ends:', name: 'endDate', obj: ($$temp = campaign__soy257.endDate) == null ? null : $$temp}, null, opt_ijData);
+      $date({label: 'Ends:', name: 'endDate', obj: ($$temp = campaign__soy85.endDate) == null ? null : $$temp}, null, opt_ijData);
     ie_close('div');
   ie_close('div');
 }
@@ -158,14 +162,14 @@ function $date(opt_data, opt_ignored, opt_ijData) {
     ie_open('select', null, null,
         'class', 'form-control',
         'name', name + 'Time');
-      for (var i285 = 0; i285 < 24; i285++) {
+      for (var i113 = 0; i113 < 24; i113++) {
         ie_open_start('option');
-            iattr('value', i285);
-            $selectedOption({value: opt_data.obj ? opt_data.obj.hours : '', current: i285}, null, opt_ijData);
+            iattr('value', i113);
+            $selectedOption({value: opt_data.obj ? opt_data.obj.hours : '', current: i113}, null, opt_ijData);
         ie_open_end();
-          itext((goog.asserts.assert((i285 > 12 ? i285 - 12 : i285) != null), i285 > 12 ? i285 - 12 : i285));
+          itext((goog.asserts.assert((i113 > 12 ? i113 - 12 : i113) != null), i113 > 12 ? i113 - 12 : i113));
           itext(':00 ');
-          itext((goog.asserts.assert((i285 >= 12 ? 'PM' : 'AM') != null), i285 >= 12 ? 'PM' : 'AM'));
+          itext((goog.asserts.assert((i113 >= 12 ? 'PM' : 'AM') != null), i113 >= 12 ? 'PM' : 'AM'));
         ie_close('option');
       }
     ie_close('select');
@@ -204,8 +208,11 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["campaigns","editCampaignId"];
+exports.render.types = {"campaigns":"any","editCampaignId":"any"};
 exports.date.params = ["label","name","obj"];
+exports.date.types = {"label":"string","name":"string","obj":"any"};
 exports.selectedOption.params = ["value","current"];
+exports.selectedOption.types = {"value":"any","current":"any"};
 templates = exports;
 return exports;
 

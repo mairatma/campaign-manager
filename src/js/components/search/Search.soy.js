@@ -14,7 +14,9 @@ goog.loadModule(function(exports) {
 
 goog.module('Search.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -62,6 +64,7 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["value"];
+exports.render.types = {"value":"any"};
 templates = exports;
 return exports;
 

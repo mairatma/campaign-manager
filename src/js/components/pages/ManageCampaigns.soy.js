@@ -14,7 +14,9 @@ goog.loadModule(function(exports) {
 
 goog.module('ManageCampaigns.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -61,7 +63,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           $templateAlias2({events: {valueChanged: opt_data.search}}, null, opt_ijData);
         ie_close('div');
       ie_close('div');
-      var param246 = function() {
+      var param318 = function() {
         ie_open('div', null, null,
             'class', 'form-inline select pull-right');
           ie_open('label');
@@ -95,7 +97,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
         $templateAlias4({campaigns: opt_data.filteredCampaigns ? opt_data.filteredCampaigns : [], currentUrl: opt_data.currentUrl}, null, opt_ijData);
       };
-      $templateAlias3({children: param246}, null, opt_ijData);
+      $templateAlias3({children: param318}, null, opt_ijData);
     ie_close('div');
   ie_close('div');
 }
@@ -105,6 +107,7 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["currentUrl","filteredCampaigns","search","sort"];
+exports.render.types = {"currentUrl":"any","filteredCampaigns":"any","search":"any","sort":"any"};
 templates = exports;
 return exports;
 

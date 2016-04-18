@@ -14,7 +14,9 @@ goog.loadModule(function(exports) {
 
 goog.module('Dashboard.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -50,13 +52,13 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', 'campaign-manager container-fluid');
     ie_open('div', null, null,
         'class', 'campaign-manager-dashboard');
-      $templateAlias1({includeAddCampaignButton: true, includeTabs: true}, null, opt_ijData);
+      $templateAlias1({currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true}, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'row');
         ie_open('div', null, null,
             'id', 'campaign-manager-active-card',
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param142 = function() {
+          var param214 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-4');
               ie_open('img', null, null,
@@ -76,12 +78,12 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param142, key: 'card0', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param214, key: 'card0', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'id', 'campaign-manager-amount-card',
             'class', 'col-md-4 campaign-manager-group campaign-manager-card-wrapper');
-          var param152 = function() {
+          var param224 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-6');
               ie_open('div', null, null,
@@ -119,12 +121,12 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param152, key: 'card1-0', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param224, key: 'card1-0', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'id', 'campaign-manager-leads-card',
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param162 = function() {
+          var param234 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-5');
               ie_open('div', null, null,
@@ -157,7 +159,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('p');
             ie_close('div');
           };
-          $templateAlias2({children: param162, key: 'card2', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param234, key: 'card2', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
@@ -198,7 +200,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Dashboard.render';
 }
 
-exports.render.params = ["baseUrl","campaigns","totalInfluencedWins","totalInfluencedCustomers","totalLeadsCount","totalBudget"];
+exports.render.params = ["baseUrl","campaigns","currentUrl","totalInfluencedWins","totalInfluencedCustomers","totalLeadsCount","totalBudget"];
+exports.render.types = {"baseUrl":"any","campaigns":"any","currentUrl":"any","totalInfluencedWins":"any","totalInfluencedCustomers":"any","totalLeadsCount":"any","totalBudget":"any"};
 templates = exports;
 return exports;
 

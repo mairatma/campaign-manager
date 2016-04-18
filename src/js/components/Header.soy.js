@@ -14,7 +14,9 @@ goog.loadModule(function(exports) {
 
 goog.module('Header.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -61,7 +63,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     if (opt_data.includeTabs) {
       ie_open('div', null, null,
           'class', 'col-md-12');
-        $templateAlias1({tabs: [{name: 'Dashboard', href: '/'}, {name: 'Manage Campaigns', href: '/manage-campaigns'}], selectedIndex: opt_data.currentUrl == '/manage-campaigns' ? 1 : 0}, null, opt_ijData);
+        $templateAlias1({tabs: [{name: 'Dashboard', href: '/dashboard'}, {name: 'Manage Campaigns', href: '/manage-campaigns'}], selectedIndex: opt_data.currentUrl == '/manage-campaigns' ? 1 : 0}, null, opt_ijData);
       ie_close('div');
     }
   ie_close('div');
@@ -72,6 +74,7 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["currentUrl","includeTabs","includeAddCampaignButton"];
+exports.render.types = {"currentUrl":"any","includeTabs":"any","includeAddCampaignButton":"any"};
 templates = exports;
 return exports;
 

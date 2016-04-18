@@ -14,7 +14,9 @@ goog.loadModule(function(exports) {
 
 goog.module('EditCampaignGoal.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -38,7 +40,7 @@ var iattr = IncrementalDom.attr;
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var campaign__soy304 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
+  var campaign__soy132 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
   ie_open('div', null, null,
       'class', 'campaign-manager-edit-campaign-goal container-fluid campaign-manager session');
     ie_open('div', null, null,
@@ -71,7 +73,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               'type', 'text',
               'class', 'form-control',
               'name', 'generation.count',
-              'value', campaign__soy304.goal ? campaign__soy304.goal.generation.count : 0);
+              'value', campaign__soy132.goal ? campaign__soy132.goal.generation.count : 0);
           ie_close('input');
         ie_close('div');
         ie_open('label', null, null,
@@ -110,6 +112,7 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["campaigns","editCampaignId"];
+exports.render.types = {"campaigns":"any","editCampaignId":"any"};
 templates = exports;
 return exports;
 

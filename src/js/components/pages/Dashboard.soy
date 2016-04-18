@@ -3,6 +3,7 @@
 /**
  * @param baseUrl
  * @param campaigns
+ * @param currentUrl
  * @param? totalInfluencedWins
  * @param? totalInfluencedCustomers
  * @param? totalLeadsCount
@@ -12,6 +13,7 @@
 	<div class="campaign-manager container-fluid">
 		<div class="campaign-manager-dashboard">
 			{call Header.render}
+				{param currentUrl: $currentUrl /}
 				{param includeAddCampaignButton: true /}
 				{param includeTabs: true /}
 			{/call}
