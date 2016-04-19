@@ -117,14 +117,14 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           ie_open('div', null, null,
               'class', 'col-sm-10');
             ie_open('a', null, null,
-                'href', opt_data.sourceUrl,
+                'href', opt_data.basePath + opt_data.sourceUrl,
                 'class', 'btn btn-lg btn-success',
                 'data-onclick', 'save');
               itext((goog.asserts.assert((opt_data.editCampaignId != null ? 'Save' : 'Create') != null), opt_data.editCampaignId != null ? 'Save' : 'Create'));
               itext(' Campaign');
             ie_close('a');
             ie_open('a', null, null,
-                'href', opt_data.sourceUrl,
+                'href', opt_data.basePath + opt_data.sourceUrl,
                 'class', 'btn btn-lg btn-lighter');
               itext('Cancel');
             ie_close('a');
@@ -139,8 +139,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'EditCampaign.render';
 }
 
-exports.render.params = ["campaigns","destinations","editCampaignId","sourceUrl","tactics"];
-exports.render.types = {"campaigns":"any","destinations":"any","editCampaignId":"any","sourceUrl":"any","tactics":"any"};
+exports.render.params = ["basePath","campaigns","destinations","editCampaignId","sourceUrl","tactics"];
+exports.render.types = {"basePath":"any","campaigns":"any","destinations":"any","editCampaignId":"any","sourceUrl":"any","tactics":"any"};
 templates = exports;
 return exports;
 
