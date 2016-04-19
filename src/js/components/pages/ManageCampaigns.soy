@@ -42,6 +42,7 @@
 						</select>
 					</div>
 					{call CampaignTable.render}
+						{param basePath: $basePath /}
 						{param campaigns: $filteredCampaigns ? $filteredCampaigns : [] /}
 						{param currentUrl: $currentUrl /}
 					{/call}
