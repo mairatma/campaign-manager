@@ -1,6 +1,7 @@
 {namespace EditCampaign}
 
 /**
+ * @param basePath
  * @param campaigns
  * @param destinations
  * @param? editCampaignId
@@ -44,7 +45,7 @@
 					{param campaigns: $campaigns /}
 					{param editCampaignId: $editCampaignId /}
 				{/call}
-				
+
 				{call EditCampaignTactics.render}
 					{param destinations: $destinations /}
 					{param selectedTacticIds: isNonnull($editCampaignId) ? $campaigns[$editCampaignId].tacticIds : [] /}
@@ -54,10 +55,10 @@
 				<div class="container-fluid campaign-manager white-bg session">
 					<div class="form-group">
 						<div class="col-sm-10">
-							<a href="{$sourceUrl}" class="btn btn-lg btn-success" data-onclick="save">
+							<a href="{$basePath}{$sourceUrl}" class="btn btn-lg btn-success" data-onclick="save">
 								{isNonnull($editCampaignId) ? 'Save' : 'Create'} Campaign
 							</a>
-							<a href="{$sourceUrl}" class="btn btn-lg btn-lighter">Cancel</a>
+							<a href="{$basePath}{$sourceUrl}" class="btn btn-lg btn-lighter">Cancel</a>
 						</div>
 					</div>
 				</div>
