@@ -150,11 +150,15 @@ function $date(opt_data, opt_ignored, opt_ijData) {
   ie_close('label');
   ie_open('div', null, null,
       'class', 'col-md-2');
+    var date__soy109 = opt_data.obj ? opt_data.obj.date : 0;
+    var month__soy110 = opt_data.obj ? opt_data.obj.month : 0;
+    var dateWithZero__soy111 = date__soy109 < 10 ? '0' + date__soy109 : date__soy109;
+    var monthWithZero__soy112 = month__soy110 < 10 ? '0' + month__soy110 : month__soy110;
     ie_open('input', null, null,
         'type', 'date',
         'class', 'form-control',
         'name', name,
-        'value', opt_data.obj ? opt_data.obj.month + '/' + opt_data.obj.date + '/' + opt_data.obj.year : '');
+        'value', opt_data.obj ? opt_data.obj.year + '-' + monthWithZero__soy112 + '-' + dateWithZero__soy111 : '');
     ie_close('input');
   ie_close('div');
   ie_open('div', null, null,
@@ -162,14 +166,14 @@ function $date(opt_data, opt_ignored, opt_ijData) {
     ie_open('select', null, null,
         'class', 'form-control',
         'name', name + 'Time');
-      for (var i115 = 0; i115 < 24; i115++) {
+      for (var i120 = 0; i120 < 24; i120++) {
         ie_open_start('option');
-            iattr('value', i115);
-            $selectedOption({value: opt_data.obj ? opt_data.obj.hours : '', current: i115}, null, opt_ijData);
+            iattr('value', i120);
+            $selectedOption({value: opt_data.obj ? opt_data.obj.hours : '', current: i120}, null, opt_ijData);
         ie_open_end();
-          itext((goog.asserts.assert((i115 > 12 ? i115 - 12 : i115) != null), i115 > 12 ? i115 - 12 : i115));
+          itext((goog.asserts.assert((i120 > 12 ? i120 - 12 : i120) != null), i120 > 12 ? i120 - 12 : i120));
           itext(':00 ');
-          itext((goog.asserts.assert((i115 >= 12 ? 'PM' : 'AM') != null), i115 >= 12 ? 'PM' : 'AM'));
+          itext((goog.asserts.assert((i120 >= 12 ? 'PM' : 'AM') != null), i120 >= 12 ? 'PM' : 'AM'));
         ie_close('option');
       }
     ie_close('select');

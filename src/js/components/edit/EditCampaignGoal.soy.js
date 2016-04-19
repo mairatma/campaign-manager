@@ -40,7 +40,7 @@ var iattr = IncrementalDom.attr;
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var campaign__soy134 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
+  var campaign__soy139 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
   ie_open('div', null, null,
       'class', 'campaign-manager-edit-campaign-goal container-fluid campaign-manager session');
     ie_open('div', null, null,
@@ -73,7 +73,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               'type', 'text',
               'class', 'form-control',
               'name', 'generation.count',
-              'value', campaign__soy134.goal ? campaign__soy134.goal.generation.count : 0);
+              'value', campaign__soy139.goal ? campaign__soy139.goal.generation.count : 0);
           ie_close('input');
         ie_close('div');
         ie_open('label', null, null,
