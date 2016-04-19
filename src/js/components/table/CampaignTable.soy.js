@@ -69,43 +69,43 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var MONTHS__soy293 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        var campaignList315 = opt_data.campaigns;
-        var campaignListLen315 = campaignList315.length;
-        for (var campaignIndex315 = 0; campaignIndex315 < campaignListLen315; campaignIndex315++) {
-          var campaignData315 = campaignList315[campaignIndex315];
+        var MONTHS__soy294 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var campaignList318 = opt_data.campaigns;
+        var campaignListLen318 = campaignList318.length;
+        for (var campaignIndex318 = 0; campaignIndex318 < campaignListLen318; campaignIndex318++) {
+          var campaignData318 = campaignList318[campaignIndex318];
           ie_open('tr', null, null,
-              'data-id', campaignData315.id);
+              'data-id', campaignData318.id);
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((campaignData315.name) != null), campaignData315.name));
+                itext((goog.asserts.assert((campaignData318.name) != null), campaignData318.name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((MONTHS__soy293[campaignData315.startDate.month - 1]) != null), MONTHS__soy293[campaignData315.startDate.month - 1]));
+                itext((goog.asserts.assert((MONTHS__soy294[campaignData318.startDate.month - 1]) != null), MONTHS__soy294[campaignData318.startDate.month - 1]));
                 itext(' ');
-                itext((goog.asserts.assert((campaignData315.startDate.date) != null), campaignData315.startDate.date));
+                itext((goog.asserts.assert((campaignData318.startDate.date) != null), campaignData318.startDate.date));
                 itext(', ');
-                itext((goog.asserts.assert((campaignData315.startDate.year) != null), campaignData315.startDate.year));
+                itext((goog.asserts.assert((campaignData318.startDate.year) != null), campaignData318.startDate.year));
                 itext(' to ');
-                itext((goog.asserts.assert((MONTHS__soy293[campaignData315.endDate.month - 1]) != null), MONTHS__soy293[campaignData315.endDate.month - 1]));
+                itext((goog.asserts.assert((MONTHS__soy294[campaignData318.endDate.month - 1]) != null), MONTHS__soy294[campaignData318.endDate.month - 1]));
                 itext(' ');
-                itext((goog.asserts.assert((campaignData315.endDate.date) != null), campaignData315.endDate.date));
+                itext((goog.asserts.assert((campaignData318.endDate.date) != null), campaignData318.endDate.date));
                 itext(', ');
-                itext((goog.asserts.assert((campaignData315.endDate.year) != null), campaignData315.endDate.year));
+                itext((goog.asserts.assert((campaignData318.endDate.year) != null), campaignData318.endDate.year));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
                 itext('Lead Generation - ');
-                itext((goog.asserts.assert((campaignData315.goal.generation.count) != null), campaignData315.goal.generation.count));
+                itext((goog.asserts.assert((campaignData318.goal.generation.count) != null), campaignData318.goal.generation.count));
                 itext(' new contacts in 2 weeks');
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('a', null, null,
-                  'href', '/edit-campaign/' + campaignData315.id,
+                  'href', opt_data.basePath + '/edit-campaign/' + campaignData318.id,
                   'data-onclick', 'edit_');
                 ie_void('span', null, null,
                     'class', 'glyphicon glyphicon-cog table-action-icon table-action-edit');
@@ -127,8 +127,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'CampaignTable.render';
 }
 
-exports.render.params = ["campaigns"];
-exports.render.types = {"campaigns":"any"};
+exports.render.params = ["basePath","campaigns"];
+exports.render.types = {"basePath":"any","campaigns":"any"};
 templates = exports;
 return exports;
 
