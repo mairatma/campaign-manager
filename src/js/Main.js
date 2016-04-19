@@ -13,7 +13,7 @@ class Main {
 		Router.route('/manage-campaigns', ManageCampaigns, store.getState, true);
 		Router.route('/create-campaign', EditCampaign, store.getState, true);
 		Router.route(/\/edit-campaign(\/\d*)?/, EditCampaign, store.getState, true);
-		Router.router().navigate('/dashboard', true);
+		Router.router().navigate(opt_baseUrl + '/dashboard', true);
 
 		store.subscribe(Main.refreshState);
 		return this;
