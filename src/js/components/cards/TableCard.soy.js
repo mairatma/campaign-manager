@@ -14,7 +14,9 @@ goog.loadModule(function(exports) {
 
 goog.module('TableCard.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -91,6 +93,7 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["headers","data","title"];
+exports.render.types = {"headers":"any","data":"any","title":"any"};
 templates = exports;
 return exports;
 

@@ -14,10 +14,14 @@ goog.loadModule(function(exports) {
 
 goog.module('EditCampaignTactics.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.asserts');
+/** @suppress {extraRequire} */
+goog.require('soy.asserts');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
 var IncrementalDom = goog.require('incrementaldom');
@@ -98,6 +102,7 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["ids","destinations","selectedTacticIds","tactics"];
+exports.render.types = {"ids":"list<string|int>","destinations":"any","selectedTacticIds":"any","tactics":"any"};
 templates = exports;
 return exports;
 

@@ -14,7 +14,9 @@ goog.loadModule(function(exports) {
 
 goog.module('EditCampaign.incrementaldom');
 
+/** @suppress {extraRequire} */
 var soy = goog.require('soy');
+/** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
 goog.require('goog.i18n.bidi');
@@ -138,6 +140,7 @@ if (goog.DEBUG) {
 }
 
 exports.render.params = ["campaigns","destinations","editCampaignId","sourceUrl","tactics"];
+exports.render.types = {"campaigns":"any","destinations":"any","editCampaignId":"any","sourceUrl":"any","tactics":"any"};
 templates = exports;
 return exports;
 
