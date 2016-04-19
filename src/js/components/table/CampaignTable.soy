@@ -1,6 +1,7 @@
 {namespace CampaignTable}
 
 /**
+ * @param basePath
  * @param campaigns
  */
 {template .render}
@@ -30,7 +31,7 @@
 							<span>Lead Generation - {$campaign.goal.generation.count} new contacts in 2 weeks</span>
 						</td>
 						<td>
-							<a href="/edit-campaign/{$campaign.id}" data-onclick="edit_">
+							<a href="{$basePath}/edit-campaign/{$campaign.id}" data-onclick="edit_">
 								<span class="glyphicon glyphicon-cog table-action-icon table-action-edit"></span>
 							</a>
 						</td>
