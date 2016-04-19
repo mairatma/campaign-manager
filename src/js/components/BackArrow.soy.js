@@ -41,7 +41,7 @@ var iattr = IncrementalDom.attr;
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
-      'href', opt_data.sourceUrl,
+      'href', opt_data.basePath + opt_data.sourceUrl,
       'class', 'back-arrow');
     ie_void('span', null, null,
         'class', 'glyphicon glyphicon-menu-left');
@@ -52,8 +52,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'BackArrow.render';
 }
 
-exports.render.params = ["sourceUrl"];
-exports.render.types = {"sourceUrl":"any"};
+exports.render.params = ["basePath","sourceUrl"];
+exports.render.types = {"basePath":"any","sourceUrl":"any"};
 templates = exports;
 return exports;
 

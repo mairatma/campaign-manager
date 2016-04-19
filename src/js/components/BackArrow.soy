@@ -1,10 +1,11 @@
 {namespace BackArrow}
 
 /**
+ * @param basePath
  * @param sourceUrl
  */
 {template .render}
-	<a href="{$sourceUrl}" class="back-arrow">
+	<a href="{$basePath}{$sourceUrl}" class="back-arrow">
 		<span class="glyphicon glyphicon-menu-left"></span>
 	</a>
 {/template}

@@ -69,43 +69,43 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var MONTHS__soy292 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        var campaignList314 = opt_data.campaigns;
-        var campaignListLen314 = campaignList314.length;
-        for (var campaignIndex314 = 0; campaignIndex314 < campaignListLen314; campaignIndex314++) {
-          var campaignData314 = campaignList314[campaignIndex314];
+        var MONTHS__soy293 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var campaignList315 = opt_data.campaigns;
+        var campaignListLen315 = campaignList315.length;
+        for (var campaignIndex315 = 0; campaignIndex315 < campaignListLen315; campaignIndex315++) {
+          var campaignData315 = campaignList315[campaignIndex315];
           ie_open('tr', null, null,
-              'data-id', campaignData314.id);
+              'data-id', campaignData315.id);
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((campaignData314.name) != null), campaignData314.name));
+                itext((goog.asserts.assert((campaignData315.name) != null), campaignData315.name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((MONTHS__soy292[campaignData314.startDate.month - 1]) != null), MONTHS__soy292[campaignData314.startDate.month - 1]));
+                itext((goog.asserts.assert((MONTHS__soy293[campaignData315.startDate.month - 1]) != null), MONTHS__soy293[campaignData315.startDate.month - 1]));
                 itext(' ');
-                itext((goog.asserts.assert((campaignData314.startDate.date) != null), campaignData314.startDate.date));
+                itext((goog.asserts.assert((campaignData315.startDate.date) != null), campaignData315.startDate.date));
                 itext(', ');
-                itext((goog.asserts.assert((campaignData314.startDate.year) != null), campaignData314.startDate.year));
+                itext((goog.asserts.assert((campaignData315.startDate.year) != null), campaignData315.startDate.year));
                 itext(' to ');
-                itext((goog.asserts.assert((MONTHS__soy292[campaignData314.endDate.month - 1]) != null), MONTHS__soy292[campaignData314.endDate.month - 1]));
+                itext((goog.asserts.assert((MONTHS__soy293[campaignData315.endDate.month - 1]) != null), MONTHS__soy293[campaignData315.endDate.month - 1]));
                 itext(' ');
-                itext((goog.asserts.assert((campaignData314.endDate.date) != null), campaignData314.endDate.date));
+                itext((goog.asserts.assert((campaignData315.endDate.date) != null), campaignData315.endDate.date));
                 itext(', ');
-                itext((goog.asserts.assert((campaignData314.endDate.year) != null), campaignData314.endDate.year));
+                itext((goog.asserts.assert((campaignData315.endDate.year) != null), campaignData315.endDate.year));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
                 itext('Lead Generation - ');
-                itext((goog.asserts.assert((campaignData314.goal.generation.count) != null), campaignData314.goal.generation.count));
+                itext((goog.asserts.assert((campaignData315.goal.generation.count) != null), campaignData315.goal.generation.count));
                 itext(' new contacts in 2 weeks');
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('a', null, null,
-                  'href', '/edit-campaign/' + campaignData314.id,
+                  'href', '/edit-campaign/' + campaignData315.id,
                   'data-onclick', 'edit_');
                 ie_void('span', null, null,
                     'class', 'glyphicon glyphicon-cog table-action-icon table-action-edit');
