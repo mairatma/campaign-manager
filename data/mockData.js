@@ -1,7 +1,7 @@
 'use strict';
 
 var data = {
-	basePath: '',
+	basePath: '/campaign-manager',
 	baseResourceUrl: 'src/',
 	campaigns: [
 		{
