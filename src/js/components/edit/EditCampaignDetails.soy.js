@@ -43,7 +43,7 @@ var iattr = IncrementalDom.attr;
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
-  var campaign__soy85 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
+  var campaign__soy87 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
   ie_open('div', null, null,
       'class', 'campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next');
     ie_open('h2');
@@ -62,7 +62,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'type', 'text',
             'class', 'form-control',
             'name', 'name',
-            'value', ($$temp = campaign__soy85.name) == null ? '' : $$temp);
+            'value', ($$temp = campaign__soy87.name) == null ? '' : $$temp);
         ie_close('input');
       ie_close('div');
       ie_open('br', null, null,
@@ -78,7 +78,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'type', 'text',
             'class', 'form-control',
             'name', 'budget',
-            'value', ($$temp = campaign__soy85.budget) == null ? '' : $$temp);
+            'value', ($$temp = campaign__soy87.budget) == null ? '' : $$temp);
         ie_close('input');
       ie_close('div');
       ie_open('div', null, null,
@@ -105,19 +105,19 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'rows', '8',
             'cols', '40',
             'name', 'description');
-          itext((goog.asserts.assert((($$temp = campaign__soy85.description) == null ? '' : $$temp) != null), ($$temp = campaign__soy85.description) == null ? '' : $$temp));
+          itext((goog.asserts.assert((($$temp = campaign__soy87.description) == null ? '' : $$temp) != null), ($$temp = campaign__soy87.description) == null ? '' : $$temp));
         ie_close('textarea');
       ie_close('div');
     ie_close('div');
     ie_open('div', null, null,
         'class', 'form-group');
-      $date({label: 'Starts on:', name: 'startDate', obj: ($$temp = campaign__soy85.startDate) == null ? null : $$temp}, null, opt_ijData);
+      $date({label: 'Starts on:', name: 'startDate', obj: ($$temp = campaign__soy87.startDate) == null ? null : $$temp}, null, opt_ijData);
       ie_open('br', null, null,
           'class', 'hidden-md hidden-lg');
       ie_close('br');
       ie_void('div', null, null,
           'class', 'col-md-2');
-      $date({label: 'Ends:', name: 'endDate', obj: ($$temp = campaign__soy85.endDate) == null ? null : $$temp}, null, opt_ijData);
+      $date({label: 'Ends:', name: 'endDate', obj: ($$temp = campaign__soy87.endDate) == null ? null : $$temp}, null, opt_ijData);
     ie_close('div');
   ie_close('div');
 }
@@ -162,14 +162,14 @@ function $date(opt_data, opt_ignored, opt_ijData) {
     ie_open('select', null, null,
         'class', 'form-control',
         'name', name + 'Time');
-      for (var i113 = 0; i113 < 24; i113++) {
+      for (var i115 = 0; i115 < 24; i115++) {
         ie_open_start('option');
-            iattr('value', i113);
-            $selectedOption({value: opt_data.obj ? opt_data.obj.hours : '', current: i113}, null, opt_ijData);
+            iattr('value', i115);
+            $selectedOption({value: opt_data.obj ? opt_data.obj.hours : '', current: i115}, null, opt_ijData);
         ie_open_end();
-          itext((goog.asserts.assert((i113 > 12 ? i113 - 12 : i113) != null), i113 > 12 ? i113 - 12 : i113));
+          itext((goog.asserts.assert((i115 > 12 ? i115 - 12 : i115) != null), i115 > 12 ? i115 - 12 : i115));
           itext(':00 ');
-          itext((goog.asserts.assert((i113 >= 12 ? 'PM' : 'AM') != null), i113 >= 12 ? 'PM' : 'AM'));
+          itext((goog.asserts.assert((i115 >= 12 ? 'PM' : 'AM') != null), i115 >= 12 ? 'PM' : 'AM'));
         ie_close('option');
       }
     ie_close('select');

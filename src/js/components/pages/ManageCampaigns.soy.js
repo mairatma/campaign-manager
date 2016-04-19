@@ -48,12 +48,11 @@ var $templateAlias2 = Soy.getTemplate('Search.incrementaldom', 'render');
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  opt_data = opt_data || {};
   ie_open('div', null, null,
       'class', 'campaign-manager container-fluid');
     ie_open('div', null, null,
         'class', 'campaign-manager-manage-campaigns');
-      $templateAlias1({currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true}, null, opt_ijData);
+      $templateAlias1({basePath: opt_data.basePath, currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true}, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'row');
         ie_void('div', null, null,
@@ -63,7 +62,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           $templateAlias2({events: {valueChanged: opt_data.search}}, null, opt_ijData);
         ie_close('div');
       ie_close('div');
-      var param318 = function() {
+      var param270 = function() {
         ie_open('div', null, null,
             'class', 'form-inline select pull-right');
           ie_open('label');
@@ -97,7 +96,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
         $templateAlias4({campaigns: opt_data.filteredCampaigns ? opt_data.filteredCampaigns : [], currentUrl: opt_data.currentUrl}, null, opt_ijData);
       };
-      $templateAlias3({children: param318}, null, opt_ijData);
+      $templateAlias3({children: param270}, null, opt_ijData);
     ie_close('div');
   ie_close('div');
 }
@@ -106,8 +105,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'ManageCampaigns.render';
 }
 
-exports.render.params = ["currentUrl","filteredCampaigns","search","sort"];
-exports.render.types = {"currentUrl":"any","filteredCampaigns":"any","search":"any","sort":"any"};
+exports.render.params = ["basePath","currentUrl","filteredCampaigns","search","sort"];
+exports.render.types = {"basePath":"any","currentUrl":"any","filteredCampaigns":"any","search":"any","sort":"any"};
 templates = exports;
 return exports;
 

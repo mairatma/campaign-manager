@@ -42,15 +42,15 @@ var iattr = IncrementalDom.attr;
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('ul', null, null,
       'class', 'campaign-manager-tabs nav nav-tabs');
-    var tabList31 = opt_data.tabs;
-    var tabListLen31 = tabList31.length;
-    for (var tabIndex31 = 0; tabIndex31 < tabListLen31; tabIndex31++) {
-      var tabData31 = tabList31[tabIndex31];
+    var tabList33 = opt_data.tabs;
+    var tabListLen33 = tabList33.length;
+    for (var tabIndex33 = 0; tabIndex33 < tabListLen33; tabIndex33++) {
+      var tabData33 = tabList33[tabIndex33];
       ie_open('li', null, null,
-          'class', opt_data.selectedIndex == tabIndex31 ? 'active' : '');
+          'class', opt_data.selectedIndex == tabIndex33 ? 'active' : '');
         ie_open('a', null, null,
-            'href', tabData31.href);
-          itext((goog.asserts.assert((tabData31.name) != null), tabData31.name));
+            'href', tabData33.href);
+          itext((goog.asserts.assert((tabData33.name) != null), tabData33.name));
         ie_close('a');
       ie_close('li');
     }
