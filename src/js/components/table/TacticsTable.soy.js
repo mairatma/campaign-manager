@@ -73,33 +73,33 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-        var idList319 = opt_data.selectedTacticIds;
-        var idListLen319 = idList319.length;
-        for (var idIndex319 = 0; idIndex319 < idListLen319; idIndex319++) {
-          var idData319 = idList319[idIndex319];
+        var idList333 = opt_data.selectedTacticIds;
+        var idListLen333 = idList333.length;
+        for (var idIndex333 = 0; idIndex333 < idListLen333; idIndex333++) {
+          var idData333 = idList333[idIndex333];
           ie_open('tr', null, null,
-              'data-row', idIndex319);
+              'data-row', idIndex333);
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((opt_data.destinations[opt_data.tactics[idData319].destinationId].name) != null), opt_data.destinations[opt_data.tactics[idData319].destinationId].name));
+                itext((goog.asserts.assert((opt_data.destinations[opt_data.tactics[idData333].destinationId].name) != null), opt_data.destinations[opt_data.tactics[idData333].destinationId].name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_open('span');
-                itext((goog.asserts.assert((opt_data.tactics[idData319].name) != null), opt_data.tactics[idData319].name));
+                itext((goog.asserts.assert((opt_data.tactics[idData333].name) != null), opt_data.tactics[idData333].name));
               ie_close('span');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData319].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+                  'class', opt_data.tactics[idData333].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData319].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+                  'class', opt_data.tactics[idData333].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,
-                  'class', opt_data.tactics[idData319].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
+                  'class', opt_data.tactics[idData333].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
             ie_close('td');
             ie_open('td');
               ie_void('span', null, null,

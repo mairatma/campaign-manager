@@ -44,7 +44,7 @@ var $templateAlias1 = Soy.getTemplate('Card.incrementaldom', 'render');
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager-image-card');
-    var param44 = function() {
+    var param46 = function() {
       ie_open('div', null, null,
           'class', 'campaign-manager-card-title');
         itext((goog.asserts.assert((opt_data.title) != null), opt_data.title));
@@ -59,7 +59,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('img');
       ie_close('div');
     };
-    $templateAlias1({children: param44}, null, opt_ijData);
+    $templateAlias1({children: param46}, null, opt_ijData);
   ie_close('div');
 }
 exports.render = $render;

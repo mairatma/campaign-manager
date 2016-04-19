@@ -1021,7 +1021,11 @@ babelHelpers;
 	var sourceUrl = this.CM.sourceUrl;
 
 
-	function baseUrl(state) {
+	function basePath(state) {
+		return state || '';
+	}
+
+	function baseResourceUrl(state) {
 		return state || '/';
 	}
 
@@ -1046,7 +1050,8 @@ babelHelpers;
 	}
 
 	var combined = Redux.combineReducers({
-		baseUrl: baseUrl,
+		basePath: basePath,
+		baseResourceUrl: baseResourceUrl,
 		campaigns: campaigns,
 		editCampaignId: editCampaignId,
 		destinations: destinations,
@@ -11514,12 +11519,12 @@ babelHelpers;
     function $render(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null, 'class', 'campaign-manager container-fluid');
       ie_open('div', null, null, 'class', 'campaign-manager-dashboard');
-      $templateAlias1({ currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true }, null, opt_ijData);
+      $templateAlias1({ basePath: opt_data.basePath, currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true }, null, opt_ijData);
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'id', 'campaign-manager-active-card', 'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param162 = function param162() {
+      var param94 = function param94() {
         ie_open('div', null, null, 'class', 'col-md-4');
-        ie_open('img', null, null, 'src', opt_data.baseUrl + 'images/target.png', 'height', '100');
+        ie_open('img', null, null, 'src', opt_data.baseResourceUrl + 'images/target.png', 'height', '100');
         ie_close('img');
         ie_close('div');
         ie_open('div', null, null, 'class', 'col-md-8');
@@ -11531,10 +11536,10 @@ babelHelpers;
         ie_close('div');
         ie_close('div');
       };
-      $templateAlias2({ children: param162, key: 'card0', cssClass: 'clearfix' }, null, opt_ijData);
+      $templateAlias2({ children: param94, key: 'card0', cssClass: 'clearfix' }, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null, 'id', 'campaign-manager-amount-card', 'class', 'col-md-4 campaign-manager-group campaign-manager-card-wrapper');
-      var param172 = function param172() {
+      var param104 = function param104() {
         ie_open('div', null, null, 'class', 'col-md-6');
         ie_open('div', null, null, 'class', 'campaign-manager-amount-value');
         ie_open('span', null, null, 'class', 'highlight');
@@ -11562,10 +11567,10 @@ babelHelpers;
         ie_close('div');
         ie_close('div');
       };
-      $templateAlias2({ children: param172, key: 'card1-0', cssClass: 'clearfix' }, null, opt_ijData);
+      $templateAlias2({ children: param104, key: 'card1-0', cssClass: 'clearfix' }, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null, 'id', 'campaign-manager-leads-card', 'class', 'col-md-4 campaign-manager-card-wrapper');
-      var param182 = function param182() {
+      var param114 = function param114() {
         ie_open('div', null, null, 'class', 'col-md-5');
         ie_open('div', null, null, 'class', 'highlight big');
         itext((goog.asserts.assert(opt_data.totalLeadsCount != null), opt_data.totalLeadsCount));
@@ -11578,7 +11583,7 @@ babelHelpers;
         ie_close('p');
         ie_close('div');
         ie_open('div', null, null, 'class', 'col-md-2 hidden-sm campaign-manager-card-people');
-        ie_open('img', null, null, 'src', opt_data.baseUrl + 'images/people.png');
+        ie_open('img', null, null, 'src', opt_data.baseResourceUrl + 'images/people.png');
         ie_close('img');
         ie_close('div');
         ie_open('div', null, null, 'class', 'col-md-5');
@@ -11590,23 +11595,23 @@ babelHelpers;
         ie_close('p');
         ie_close('div');
       };
-      $templateAlias2({ children: param182, key: 'card2', cssClass: 'clearfix' }, null, opt_ijData);
+      $templateAlias2({ children: param114, key: 'card2', cssClass: 'clearfix' }, null, opt_ijData);
       ie_close('div');
       ie_close('div');
       ie_open('div', null, null, 'class', 'row row-destinations');
       ie_open('div', null, null, 'class', 'col-md-4 campaign-manager-card-wrapper');
-      $templateAlias3({ count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Destinations views', key: 'card3' }, null, opt_ijData);
+      $templateAlias3({ count: 2894, imageUrl: opt_data.baseResourceUrl + 'images/chart.png', title: 'Destinations views', key: 'card3' }, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null, 'class', 'col-md-4 campaign-manager-card-wrapper');
       $templateAlias4({ headers: ['Name', 'Views', 'CTR'], data: [['Destination name 001', '12k', '7%'], ['Destination name 001', '12k', '7%'], ['Destination name 001', '12k', '7%'], ['Destination name 001', '12k', '7%'], ['Destination name 001', '12k', '7%']], title: 'Top 5 Destinations', key: 'card4' }, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null, 'class', 'col-md-4 campaign-manager-card-wrapper');
-      $templateAlias3({ count: 8934, imageUrl: opt_data.baseUrl + 'images/chartWithLabels.png', title: 'Destinations conversions', key: 'card5' }, null, opt_ijData);
+      $templateAlias3({ count: 8934, imageUrl: opt_data.baseResourceUrl + 'images/chartWithLabels.png', title: 'Destinations conversions', key: 'card5' }, null, opt_ijData);
       ie_close('div');
       ie_close('div');
       ie_open('div', null, null, 'class', 'row row-promotions');
       ie_open('div', null, null, 'class', 'col-md-4 campaign-manager-card-wrapper');
-      $templateAlias3({ count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Banner Ads views', key: 'card6' }, null, opt_ijData);
+      $templateAlias3({ count: 2894, imageUrl: opt_data.baseResourceUrl + 'images/chart.png', title: 'Banner Ads views', key: 'card6' }, null, opt_ijData);
       ie_close('div');
       ie_open('div', null, null, 'class', 'col-md-4 campaign-manager-card-wrapper');
       $templateAlias4({ headers: ['Name', '# Promotions', '# Reach', 'CTR'], data: [['SMS', '150', '150', '7%'], ['Email', '860', '860', '5%'], ['Push', '75', '260', '3%']], title: 'One to One promotions', key: 'card7' }, null, opt_ijData);
@@ -11623,8 +11628,8 @@ babelHelpers;
       $render.soyTemplateName = 'Dashboard.render';
     }
 
-    exports.render.params = ["baseUrl", "campaigns", "currentUrl", "totalInfluencedWins", "totalInfluencedCustomers", "totalLeadsCount", "totalBudget"];
-    exports.render.types = { "baseUrl": "any", "campaigns": "any", "currentUrl": "any", "totalInfluencedWins": "any", "totalInfluencedCustomers": "any", "totalLeadsCount": "any", "totalBudget": "any" };
+    exports.render.params = ["baseResourceUrl", "basePath", "campaigns", "currentUrl", "totalInfluencedWins", "totalInfluencedCustomers", "totalLeadsCount", "totalBudget"];
+    exports.render.types = { "baseResourceUrl": "any", "basePath": "any", "campaigns": "any", "currentUrl": "any", "totalInfluencedWins": "any", "totalInfluencedCustomers": "any", "totalLeadsCount": "any", "totalBudget": "any" };
     templates = exports;
     return exports;
   });
@@ -11694,10 +11699,9 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
       ie_open('div', null, null, 'class', 'campaign-manager-header row');
       ie_open('div', null, null, 'class', 'col-md-12');
-      ie_open('a', null, null, 'href', '/create-campaign', 'class', 'btn btn-primary campaign-manager-button-new pull-right', 'data-onclick', 'startCampaignCreation_');
+      ie_open('a', null, null, 'href', opt_data.basePath + '/create-campaign', 'class', 'btn btn-primary campaign-manager-button-new pull-right', 'data-onclick', 'startCampaignCreation_');
       itext('New Campaign');
       ie_close('button');
       if (opt_data.includeAddCampaignButton) {
@@ -11708,7 +11712,7 @@ babelHelpers;
       ie_close('div');
       if (opt_data.includeTabs) {
         ie_open('div', null, null, 'class', 'col-md-12');
-        $templateAlias1({ tabs: [{ name: 'Dashboard', href: '/dashboard' }, { name: 'Manage Campaigns', href: '/manage-campaigns' }], selectedIndex: opt_data.currentUrl == '/manage-campaigns' ? 1 : 0 }, null, opt_ijData);
+        $templateAlias1({ tabs: [{ name: 'Dashboard', href: opt_data.basePath + '/dashboard' }, { name: 'Manage Campaigns', href: opt_data.basePath + '/manage-campaigns' }], selectedIndex: opt_data.currentUrl == opt_data.basePath + '/manage-campaigns' ? 1 : 0 }, null, opt_ijData);
         ie_close('div');
       }
       ie_close('div');
@@ -11718,8 +11722,8 @@ babelHelpers;
       $render.soyTemplateName = 'Header.render';
     }
 
-    exports.render.params = ["currentUrl", "includeTabs", "includeAddCampaignButton"];
-    exports.render.types = { "currentUrl": "any", "includeTabs": "any", "includeAddCampaignButton": "any" };
+    exports.render.params = ["basePath", "currentUrl", "includeTabs", "includeAddCampaignButton"];
+    exports.render.types = { "basePath": "any", "currentUrl": "any", "includeTabs": "any", "includeAddCampaignButton": "any" };
     templates = exports;
     return exports;
   });
@@ -11877,7 +11881,7 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null, 'class', 'campaign-manager-image-card');
-      var param44 = function param44() {
+      var param46 = function param46() {
         ie_open('div', null, null, 'class', 'campaign-manager-card-title');
         itext((goog.asserts.assert(opt_data.title != null), opt_data.title));
         ie_open('span', null, null, 'class', 'highlight count');
@@ -11889,7 +11893,7 @@ babelHelpers;
         ie_close('img');
         ie_close('div');
       };
-      $templateAlias1({ children: param44 }, null, opt_ijData);
+      $templateAlias1({ children: param46 }, null, opt_ijData);
       ie_close('div');
     }
     exports.render = $render;
@@ -11969,35 +11973,35 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null, 'class', 'campaign-manager-table-card');
-      var param57 = function param57() {
+      var param59 = function param59() {
         ie_open('div', null, null, 'class', 'campaign-manager-card-title');
         itext((goog.asserts.assert(opt_data.title != null), opt_data.title));
         ie_close('div');
         ie_open('table', null, null, 'class', 'table table-clean');
         ie_open('thead');
         ie_open('tr');
-        var headerList66 = opt_data.headers;
-        var headerListLen66 = headerList66.length;
-        for (var headerIndex66 = 0; headerIndex66 < headerListLen66; headerIndex66++) {
-          var headerData66 = headerList66[headerIndex66];
-          ie_open('th', null, null, 'class', 'light-gray ' + (headerIndex66 == 0 ? '' : 'text-center'));
-          itext((goog.asserts.assert(headerData66 != null), headerData66));
+        var headerList68 = opt_data.headers;
+        var headerListLen68 = headerList68.length;
+        for (var headerIndex68 = 0; headerIndex68 < headerListLen68; headerIndex68++) {
+          var headerData68 = headerList68[headerIndex68];
+          ie_open('th', null, null, 'class', 'light-gray ' + (headerIndex68 == 0 ? '' : 'text-center'));
+          itext((goog.asserts.assert(headerData68 != null), headerData68));
           ie_close('th');
         }
         ie_close('tr');
         ie_close('thead');
         ie_open('tbody');
-        var rowList78 = opt_data.data;
-        var rowListLen78 = rowList78.length;
-        for (var rowIndex78 = 0; rowIndex78 < rowListLen78; rowIndex78++) {
-          var rowData78 = rowList78[rowIndex78];
+        var rowList80 = opt_data.data;
+        var rowListLen80 = rowList80.length;
+        for (var rowIndex80 = 0; rowIndex80 < rowListLen80; rowIndex80++) {
+          var rowData80 = rowList80[rowIndex80];
           ie_open('tr');
-          var cellList75 = rowData78;
-          var cellListLen75 = cellList75.length;
-          for (var cellIndex75 = 0; cellIndex75 < cellListLen75; cellIndex75++) {
-            var cellData75 = cellList75[cellIndex75];
-            ie_open('td', null, null, 'class', cellIndex75 == 0 ? '' : 'text-center');
-            itext((goog.asserts.assert(cellData75 != null), cellData75));
+          var cellList77 = rowData80;
+          var cellListLen77 = cellList77.length;
+          for (var cellIndex77 = 0; cellIndex77 < cellListLen77; cellIndex77++) {
+            var cellData77 = cellList77[cellIndex77];
+            ie_open('td', null, null, 'class', cellIndex77 == 0 ? '' : 'text-center');
+            itext((goog.asserts.assert(cellData77 != null), cellData77));
             ie_close('td');
           }
           ie_close('tr');
@@ -12005,7 +12009,7 @@ babelHelpers;
         ie_close('tbody');
         ie_close('table');
       };
-      $templateAlias1({ children: param57 }, null, opt_ijData);
+      $templateAlias1({ children: param59 }, null, opt_ijData);
       ie_close('div');
     }
     exports.render = $render;
@@ -12321,7 +12325,7 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       var $$temp;
-      var campaign__soy85 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
+      var campaign__soy210 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
       ie_open('div', null, null, 'class', 'campaign-manager-edit-campaign-details container-fluid white-bg campaign-manager session session-merged-next');
       ie_open('h2');
       itext('Details');
@@ -12331,7 +12335,7 @@ babelHelpers;
       itext('Name:');
       ie_close('label');
       ie_open('div', null, null, 'class', 'col-md-4');
-      ie_open('input', null, null, 'type', 'text', 'class', 'form-control', 'name', 'name', 'value', ($$temp = campaign__soy85.name) == null ? '' : $$temp);
+      ie_open('input', null, null, 'type', 'text', 'class', 'form-control', 'name', 'name', 'value', ($$temp = campaign__soy210.name) == null ? '' : $$temp);
       ie_close('input');
       ie_close('div');
       ie_open('br', null, null, 'class', 'hidden-md hidden-lg');
@@ -12340,7 +12344,7 @@ babelHelpers;
       itext('Budget:');
       ie_close('label');
       ie_open('div', null, null, 'class', 'col-md-2');
-      ie_open('input', null, null, 'type', 'text', 'class', 'form-control', 'name', 'budget', 'value', ($$temp = campaign__soy85.budget) == null ? '' : $$temp);
+      ie_open('input', null, null, 'type', 'text', 'class', 'form-control', 'name', 'budget', 'value', ($$temp = campaign__soy210.budget) == null ? '' : $$temp);
       ie_close('input');
       ie_close('div');
       ie_open('div', null, null, 'class', 'col-md-2');
@@ -12357,16 +12361,16 @@ babelHelpers;
       ie_close('label');
       ie_open('div', null, null, 'class', 'col-md-11');
       ie_open('textarea', null, null, 'class', 'form-control', 'rows', '8', 'cols', '40', 'name', 'description');
-      itext((goog.asserts.assert((($$temp = campaign__soy85.description) == null ? '' : $$temp) != null), ($$temp = campaign__soy85.description) == null ? '' : $$temp));
+      itext((goog.asserts.assert((($$temp = campaign__soy210.description) == null ? '' : $$temp) != null), ($$temp = campaign__soy210.description) == null ? '' : $$temp));
       ie_close('textarea');
       ie_close('div');
       ie_close('div');
       ie_open('div', null, null, 'class', 'form-group');
-      $date({ label: 'Starts on:', name: 'startDate', obj: ($$temp = campaign__soy85.startDate) == null ? null : $$temp }, null, opt_ijData);
+      $date({ label: 'Starts on:', name: 'startDate', obj: ($$temp = campaign__soy210.startDate) == null ? null : $$temp }, null, opt_ijData);
       ie_open('br', null, null, 'class', 'hidden-md hidden-lg');
       ie_close('br');
       ie_void('div', null, null, 'class', 'col-md-2');
-      $date({ label: 'Ends:', name: 'endDate', obj: ($$temp = campaign__soy85.endDate) == null ? null : $$temp }, null, opt_ijData);
+      $date({ label: 'Ends:', name: 'endDate', obj: ($$temp = campaign__soy210.endDate) == null ? null : $$temp }, null, opt_ijData);
       ie_close('div');
       ie_close('div');
     }
@@ -12395,19 +12399,23 @@ babelHelpers;
       itext((goog.asserts.assert(label != null), label));
       ie_close('label');
       ie_open('div', null, null, 'class', 'col-md-2');
-      ie_open('input', null, null, 'type', 'date', 'class', 'form-control', 'name', name, 'value', opt_data.obj ? opt_data.obj.month + '/' + opt_data.obj.date + '/' + opt_data.obj.year : '');
+      var date__soy232 = opt_data.obj ? opt_data.obj.date : 0;
+      var month__soy233 = opt_data.obj ? opt_data.obj.month : 0;
+      var dateWithZero__soy234 = date__soy232 < 10 ? '0' + date__soy232 : date__soy232;
+      var monthWithZero__soy235 = month__soy233 < 10 ? '0' + month__soy233 : month__soy233;
+      ie_open('input', null, null, 'type', 'date', 'class', 'form-control', 'name', name, 'value', opt_data.obj ? opt_data.obj.year + '-' + monthWithZero__soy235 + '-' + dateWithZero__soy234 : '');
       ie_close('input');
       ie_close('div');
       ie_open('div', null, null, 'class', 'col-md-1');
       ie_open('select', null, null, 'class', 'form-control', 'name', name + 'Time');
-      for (var i113 = 0; i113 < 24; i113++) {
+      for (var i243 = 0; i243 < 24; i243++) {
         ie_open_start('option');
-        iattr('value', i113);
-        $selectedOption({ value: opt_data.obj ? opt_data.obj.hours : '', current: i113 }, null, opt_ijData);
+        iattr('value', i243);
+        $selectedOption({ value: opt_data.obj ? opt_data.obj.hours : '', current: i243 }, null, opt_ijData);
         ie_open_end();
-        itext((goog.asserts.assert((i113 > 12 ? i113 - 12 : i113) != null), i113 > 12 ? i113 - 12 : i113));
+        itext((goog.asserts.assert((i243 > 12 ? i243 - 12 : i243) != null), i243 > 12 ? i243 - 12 : i243));
         itext(':00 ');
-        itext((goog.asserts.assert((i113 >= 12 ? 'PM' : 'AM') != null), i113 >= 12 ? 'PM' : 'AM'));
+        itext((goog.asserts.assert((i243 >= 12 ? 'PM' : 'AM') != null), i243 >= 12 ? 'PM' : 'AM'));
         ie_close('option');
       }
       ie_close('select');
@@ -12515,7 +12523,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var campaign__soy132 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
+      var campaign__soy262 = opt_data.editCampaignId != null ? opt_data.campaigns[opt_data.editCampaignId] : [];
       ie_open('div', null, null, 'class', 'campaign-manager-edit-campaign-goal container-fluid campaign-manager session');
       ie_open('div', null, null, 'class', 'campaign-manager-card');
       ie_open('h2');
@@ -12537,7 +12545,7 @@ babelHelpers;
       ie_close('select');
       ie_close('div');
       ie_open('div', null, null, 'class', 'col-md-2');
-      ie_open('input', null, null, 'type', 'text', 'class', 'form-control', 'name', 'generation.count', 'value', campaign__soy132.goal ? campaign__soy132.goal.generation.count : 0);
+      ie_open('input', null, null, 'type', 'text', 'class', 'form-control', 'name', 'generation.count', 'value', campaign__soy262.goal ? campaign__soy262.goal.generation.count : 0);
       ie_close('input');
       ie_close('div');
       ie_open('label', null, null, 'for', '', 'class', 'col-md-2 control-label');
@@ -12714,17 +12722,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
       ie_open('div', null, null, 'class', 'campaign-manager container-fluid');
       ie_open('div', null, null, 'class', 'campaign-manager-manage-campaigns');
-      $templateAlias1({ currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true }, null, opt_ijData);
+      $templateAlias1({ basePath: opt_data.basePath, currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true }, null, opt_ijData);
       ie_open('div', null, null, 'class', 'row');
       ie_void('div', null, null, 'class', 'col-md-4');
       ie_open('div', null, null, 'class', 'col-md-4');
       $templateAlias2({ events: { valueChanged: opt_data.search } }, null, opt_ijData);
       ie_close('div');
       ie_close('div');
-      var param266 = function param266() {
+      var param199 = function param199() {
         ie_open('div', null, null, 'class', 'form-inline select pull-right');
         ie_open('label');
         itext('View Mode:');
@@ -12750,7 +12757,7 @@ babelHelpers;
         ie_close('div');
         $templateAlias4({ campaigns: opt_data.filteredCampaigns ? opt_data.filteredCampaigns : [], currentUrl: opt_data.currentUrl }, null, opt_ijData);
       };
-      $templateAlias3({ children: param266 }, null, opt_ijData);
+      $templateAlias3({ children: param199 }, null, opt_ijData);
       ie_close('div');
       ie_close('div');
     }
@@ -12759,8 +12766,8 @@ babelHelpers;
       $render.soyTemplateName = 'ManageCampaigns.render';
     }
 
-    exports.render.params = ["currentUrl", "filteredCampaigns", "search", "sort"];
-    exports.render.types = { "currentUrl": "any", "filteredCampaigns": "any", "search": "any", "sort": "any" };
+    exports.render.params = ["basePath", "currentUrl", "filteredCampaigns", "search", "sort"];
+    exports.render.types = { "basePath": "any", "currentUrl": "any", "filteredCampaigns": "any", "search": "any", "sort": "any" };
     templates = exports;
     return exports;
   });
@@ -12850,41 +12857,41 @@ babelHelpers;
       ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-      var MONTHS__soy278 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      var campaignList300 = opt_data.campaigns;
-      var campaignListLen300 = campaignList300.length;
-      for (var campaignIndex300 = 0; campaignIndex300 < campaignListLen300; campaignIndex300++) {
-        var campaignData300 = campaignList300[campaignIndex300];
-        ie_open('tr', null, null, 'data-id', campaignData300.id);
+      var MONTHS__soy292 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      var campaignList314 = opt_data.campaigns;
+      var campaignListLen314 = campaignList314.length;
+      for (var campaignIndex314 = 0; campaignIndex314 < campaignListLen314; campaignIndex314++) {
+        var campaignData314 = campaignList314[campaignIndex314];
+        ie_open('tr', null, null, 'data-id', campaignData314.id);
         ie_open('td');
         ie_open('span');
-        itext((goog.asserts.assert(campaignData300.name != null), campaignData300.name));
+        itext((goog.asserts.assert(campaignData314.name != null), campaignData314.name));
         ie_close('span');
         ie_close('td');
         ie_open('td');
         ie_open('span');
-        itext((goog.asserts.assert(MONTHS__soy278[campaignData300.startDate.month - 1] != null), MONTHS__soy278[campaignData300.startDate.month - 1]));
+        itext((goog.asserts.assert(MONTHS__soy292[campaignData314.startDate.month - 1] != null), MONTHS__soy292[campaignData314.startDate.month - 1]));
         itext(' ');
-        itext((goog.asserts.assert(campaignData300.startDate.date != null), campaignData300.startDate.date));
+        itext((goog.asserts.assert(campaignData314.startDate.date != null), campaignData314.startDate.date));
         itext(', ');
-        itext((goog.asserts.assert(campaignData300.startDate.year != null), campaignData300.startDate.year));
+        itext((goog.asserts.assert(campaignData314.startDate.year != null), campaignData314.startDate.year));
         itext(' to ');
-        itext((goog.asserts.assert(MONTHS__soy278[campaignData300.endDate.month - 1] != null), MONTHS__soy278[campaignData300.endDate.month - 1]));
+        itext((goog.asserts.assert(MONTHS__soy292[campaignData314.endDate.month - 1] != null), MONTHS__soy292[campaignData314.endDate.month - 1]));
         itext(' ');
-        itext((goog.asserts.assert(campaignData300.endDate.date != null), campaignData300.endDate.date));
+        itext((goog.asserts.assert(campaignData314.endDate.date != null), campaignData314.endDate.date));
         itext(', ');
-        itext((goog.asserts.assert(campaignData300.endDate.year != null), campaignData300.endDate.year));
+        itext((goog.asserts.assert(campaignData314.endDate.year != null), campaignData314.endDate.year));
         ie_close('span');
         ie_close('td');
         ie_open('td');
         ie_open('span');
         itext('Lead Generation - ');
-        itext((goog.asserts.assert(campaignData300.goal.generation.count != null), campaignData300.goal.generation.count));
+        itext((goog.asserts.assert(campaignData314.goal.generation.count != null), campaignData314.goal.generation.count));
         itext(' new contacts in 2 weeks');
         ie_close('span');
         ie_close('td');
         ie_open('td');
-        ie_open('a', null, null, 'href', '/edit-campaign/' + campaignData300.id, 'data-onclick', 'edit_');
+        ie_open('a', null, null, 'href', '/edit-campaign/' + campaignData314.id, 'data-onclick', 'edit_');
         ie_void('span', null, null, 'class', 'glyphicon glyphicon-cog table-action-icon table-action-edit');
         ie_close('a');
         ie_close('td');
@@ -17911,14 +17918,13 @@ babelHelpers;
 		}
 
 		Main.run = function run() {
-			var opt_baseUrl = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
-
-			Router.router().setBasePath(opt_baseUrl);
+			var basePath = store.getState().basePath;
+			Router.router().setBasePath(basePath);
 			Router.route('/dashboard', Dashboard, store.getState, true);
 			Router.route('/manage-campaigns', ManageCampaigns, store.getState, true);
 			Router.route('/create-campaign', EditCampaign, store.getState, true);
 			Router.route(/\/edit-campaign(\/\d*)?/, EditCampaign, store.getState, true);
-			Router.router().navigate(opt_baseUrl + '/dashboard', true);
+			Router.router().navigate(basePath + '/dashboard', true);
 
 			store.subscribe(Main.refreshState);
 			return this;
@@ -18085,13 +18091,13 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       ie_open('ul', null, null, 'class', 'campaign-manager-tabs nav nav-tabs');
-      var tabList31 = opt_data.tabs;
-      var tabListLen31 = tabList31.length;
-      for (var tabIndex31 = 0; tabIndex31 < tabListLen31; tabIndex31++) {
-        var tabData31 = tabList31[tabIndex31];
-        ie_open('li', null, null, 'class', opt_data.selectedIndex == tabIndex31 ? 'active' : '');
-        ie_open('a', null, null, 'href', tabData31.href);
-        itext((goog.asserts.assert(tabData31.name != null), tabData31.name));
+      var tabList33 = opt_data.tabs;
+      var tabListLen33 = tabList33.length;
+      for (var tabIndex33 = 0; tabIndex33 < tabListLen33; tabIndex33++) {
+        var tabData33 = tabList33[tabIndex33];
+        ie_open('li', null, null, 'class', opt_data.selectedIndex == tabIndex33 ? 'active' : '');
+        ie_open('a', null, null, 'href', tabData33.href);
+        itext((goog.asserts.assert(tabData33.name != null), tabData33.name));
         ie_close('a');
         ie_close('li');
       }
@@ -18212,12 +18218,12 @@ babelHelpers;
     function $join(opt_data, opt_ignored, opt_ijData) {
       var output = '';
       var ids = goog.asserts.assertArray(opt_data.ids, "expected parameter 'ids' of type list<int|string>.");
-      var idList152 = ids;
-      var idListLen152 = idList152.length;
-      for (var idIndex152 = 0; idIndex152 < idListLen152; idIndex152++) {
-        var idData152 = idList152[idIndex152];
-        output += idIndex152 > 0 ? ',' : '';
-        output += idData152;
+      var idList282 = ids;
+      var idListLen282 = idList282.length;
+      for (var idIndex282 = 0; idIndex282 < idListLen282; idIndex282++) {
+        var idData282 = idList282[idIndex282];
+        output += idIndex282 > 0 ? ',' : '';
+        output += idData282;
       }
       return output;
     }
@@ -18473,29 +18479,29 @@ babelHelpers;
       ie_close('tr');
       ie_close('thead');
       ie_open('tbody');
-      var idList319 = opt_data.selectedTacticIds;
-      var idListLen319 = idList319.length;
-      for (var idIndex319 = 0; idIndex319 < idListLen319; idIndex319++) {
-        var idData319 = idList319[idIndex319];
-        ie_open('tr', null, null, 'data-row', idIndex319);
+      var idList333 = opt_data.selectedTacticIds;
+      var idListLen333 = idList333.length;
+      for (var idIndex333 = 0; idIndex333 < idListLen333; idIndex333++) {
+        var idData333 = idList333[idIndex333];
+        ie_open('tr', null, null, 'data-row', idIndex333);
         ie_open('td');
         ie_open('span');
-        itext((goog.asserts.assert(opt_data.destinations[opt_data.tactics[idData319].destinationId].name != null), opt_data.destinations[opt_data.tactics[idData319].destinationId].name));
+        itext((goog.asserts.assert(opt_data.destinations[opt_data.tactics[idData333].destinationId].name != null), opt_data.destinations[opt_data.tactics[idData333].destinationId].name));
         ie_close('span');
         ie_close('td');
         ie_open('td');
         ie_open('span');
-        itext((goog.asserts.assert(opt_data.tactics[idData319].name != null), opt_data.tactics[idData319].name));
+        itext((goog.asserts.assert(opt_data.tactics[idData333].name != null), opt_data.tactics[idData333].name));
         ie_close('span');
         ie_close('td');
         ie_open('td');
-        ie_void('span', null, null, 'class', opt_data.tactics[idData319].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+        ie_void('span', null, null, 'class', opt_data.tactics[idData333].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
         ie_close('td');
         ie_open('td');
-        ie_void('span', null, null, 'class', opt_data.tactics[idData319].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
+        ie_void('span', null, null, 'class', opt_data.tactics[idData333].oneToOnePromos.length > 0 ? 'glyphicon glyphicon-ok' : '');
         ie_close('td');
         ie_open('td');
-        ie_void('span', null, null, 'class', opt_data.tactics[idData319].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
+        ie_void('span', null, null, 'class', opt_data.tactics[idData333].promotionalAds.length > 0 ? 'glyphicon glyphicon-ok' : '');
         ie_close('td');
         ie_open('td');
         ie_void('span', null, null, 'class', 'glyphicon glyphicon-trash table-action-icon table-action-remove', 'data-onclick', 'remove_');

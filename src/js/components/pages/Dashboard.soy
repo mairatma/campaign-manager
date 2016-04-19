@@ -1,7 +1,8 @@
 {namespace Dashboard}
 
 /**
- * @param baseUrl
+ * @param baseResourceUrl
+ * @param basePath
  * @param campaigns
  * @param currentUrl
  * @param? totalInfluencedWins
@@ -13,6 +14,7 @@
 	<div class="campaign-manager container-fluid">
 		<div class="campaign-manager-dashboard">
 			{call Header.render}
+				{param basePath: $basePath /}
 				{param currentUrl: $currentUrl /}
 				{param includeAddCampaignButton: true /}
 				{param includeTabs: true /}
@@ -23,7 +25,7 @@
 					{call Card.render}
 						{param children kind="html"}
 							<div class="col-md-4">
-								<img src="{$baseUrl}images/target.png" height="100">
+								<img src="{$baseResourceUrl}images/target.png" height="100">
 							</div>
 							<div class="col-md-8">
 								<div class="highlight big">{length($campaigns)}</div>
@@ -67,7 +69,7 @@
 								</p>
 							</div>
 							<div class="col-md-2 hidden-sm campaign-manager-card-people">
-								<img src="{$baseUrl}images/people.png">
+								<img src="{$baseResourceUrl}images/people.png">
 							</div>
 							<div class="col-md-5">
 								<div class="highlight big">{$totalInfluencedCustomers}</div>
@@ -84,7 +86,7 @@
 				<div class="col-md-4 campaign-manager-card-wrapper">
 					{call ImageCard.render}
 						{param count: 2894 /}
-						{param imageUrl: $baseUrl + 'images/chart.png' /}
+						{param imageUrl: $baseResourceUrl + 'images/chart.png' /}
 						{param title: 'Destinations views' /}
 						{param key: 'card3' /}
 					{/call}
@@ -106,7 +108,7 @@
 				<div class="col-md-4 campaign-manager-card-wrapper">
 					{call ImageCard.render}
 						{param count: 8934 /}
-						{param imageUrl: $baseUrl + 'images/chartWithLabels.png' /}
+						{param imageUrl: $baseResourceUrl + 'images/chartWithLabels.png' /}
 						{param title: 'Destinations conversions' /}
 						{param key: 'card5' /}
 					{/call}
@@ -117,7 +119,7 @@
 				<div class="col-md-4 campaign-manager-card-wrapper">
 					{call ImageCard.render}
 						{param count: 2894 /}
-						{param imageUrl: $baseUrl + 'images/chart.png' /}
+						{param imageUrl: $baseResourceUrl + 'images/chart.png' /}
 						{param title: 'Banner Ads views' /}
 						{param key: 'card6' /}
 					{/call}

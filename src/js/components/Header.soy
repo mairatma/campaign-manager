@@ -2,6 +2,7 @@
 
 /**
  * This renders the main element.
+ * @param basePath
  * @param? currentUrl
  * @param? includeTabs
  * @param? includeAddCampaignButton
@@ -10,7 +11,7 @@
 	<div class="campaign-manager-header row">
 		<div class="col-md-12">
 			<a
-				href="/create-campaign"
+				href="{$basePath}/create-campaign"
 				class="btn btn-primary campaign-manager-button-new pull-right"
 				data-onclick="startCampaignCreation_">
 				New Campaign
@@ -25,14 +26,14 @@
 					{param tabs: [
 						[
 							'name': 'Dashboard',
-							'href': '/dashboard'
+							'href': $basePath + '/dashboard'
 						],
 						[
 							'name': 'Manage Campaigns',
-							'href': '/manage-campaigns'
+							'href': $basePath + '/manage-campaigns'
 						]
 					] /}
-					{param selectedIndex: $currentUrl == '/manage-campaigns' ? 1 : 0 /}
+					{param selectedIndex: $currentUrl == ($basePath + '/manage-campaigns') ? 1 : 0 /}
 				{/call}
 			</div>
 		{/if}

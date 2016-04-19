@@ -1,7 +1,8 @@
 'use strict';
 
 var data = {
-	baseUrl: 'src/',
+	basePath: '',
+	baseResourceUrl: 'src/',
 	campaigns: [
 		{
 			id: 0,

@@ -52,17 +52,17 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', 'campaign-manager container-fluid');
     ie_open('div', null, null,
         'class', 'campaign-manager-dashboard');
-      $templateAlias1({currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true}, null, opt_ijData);
+      $templateAlias1({basePath: opt_data.basePath, currentUrl: opt_data.currentUrl, includeAddCampaignButton: true, includeTabs: true}, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'row');
         ie_open('div', null, null,
             'id', 'campaign-manager-active-card',
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param162 = function() {
+          var param94 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-4');
               ie_open('img', null, null,
-                  'src', opt_data.baseUrl + 'images/target.png',
+                  'src', opt_data.baseResourceUrl + 'images/target.png',
                   'height', '100');
               ie_close('img');
             ie_close('div');
@@ -78,12 +78,12 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param162, key: 'card0', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param94, key: 'card0', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'id', 'campaign-manager-amount-card',
             'class', 'col-md-4 campaign-manager-group campaign-manager-card-wrapper');
-          var param172 = function() {
+          var param104 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-6');
               ie_open('div', null, null,
@@ -121,12 +121,12 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('div');
             ie_close('div');
           };
-          $templateAlias2({children: param172, key: 'card1-0', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param104, key: 'card1-0', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'id', 'campaign-manager-leads-card',
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          var param182 = function() {
+          var param114 = function() {
             ie_open('div', null, null,
                 'class', 'col-md-5');
               ie_open('div', null, null,
@@ -144,7 +144,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('div', null, null,
                 'class', 'col-md-2 hidden-sm campaign-manager-card-people');
               ie_open('img', null, null,
-                  'src', opt_data.baseUrl + 'images/people.png');
+                  'src', opt_data.baseResourceUrl + 'images/people.png');
               ie_close('img');
             ie_close('div');
             ie_open('div', null, null,
@@ -159,14 +159,14 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               ie_close('p');
             ie_close('div');
           };
-          $templateAlias2({children: param182, key: 'card2', cssClass: 'clearfix'}, null, opt_ijData);
+          $templateAlias2({children: param114, key: 'card2', cssClass: 'clearfix'}, null, opt_ijData);
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
           'class', 'row row-destinations');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          $templateAlias3({count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Destinations views', key: 'card3'}, null, opt_ijData);
+          $templateAlias3({count: 2894, imageUrl: opt_data.baseResourceUrl + 'images/chart.png', title: 'Destinations views', key: 'card3'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
@@ -174,14 +174,14 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          $templateAlias3({count: 8934, imageUrl: opt_data.baseUrl + 'images/chartWithLabels.png', title: 'Destinations conversions', key: 'card5'}, null, opt_ijData);
+          $templateAlias3({count: 8934, imageUrl: opt_data.baseResourceUrl + 'images/chartWithLabels.png', title: 'Destinations conversions', key: 'card5'}, null, opt_ijData);
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
           'class', 'row row-promotions');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
-          $templateAlias3({count: 2894, imageUrl: opt_data.baseUrl + 'images/chart.png', title: 'Banner Ads views', key: 'card6'}, null, opt_ijData);
+          $templateAlias3({count: 2894, imageUrl: opt_data.baseResourceUrl + 'images/chart.png', title: 'Banner Ads views', key: 'card6'}, null, opt_ijData);
         ie_close('div');
         ie_open('div', null, null,
             'class', 'col-md-4 campaign-manager-card-wrapper');
@@ -200,8 +200,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Dashboard.render';
 }
 
-exports.render.params = ["baseUrl","campaigns","currentUrl","totalInfluencedWins","totalInfluencedCustomers","totalLeadsCount","totalBudget"];
-exports.render.types = {"baseUrl":"any","campaigns":"any","currentUrl":"any","totalInfluencedWins":"any","totalInfluencedCustomers":"any","totalLeadsCount":"any","totalBudget":"any"};
+exports.render.params = ["baseResourceUrl","basePath","campaigns","currentUrl","totalInfluencedWins","totalInfluencedCustomers","totalLeadsCount","totalBudget"];
+exports.render.types = {"baseResourceUrl":"any","basePath":"any","campaigns":"any","currentUrl":"any","totalInfluencedWins":"any","totalInfluencedCustomers":"any","totalLeadsCount":"any","totalBudget":"any"};
 templates = exports;
 return exports;
 

@@ -63,11 +63,15 @@
 	{@param name: string}
 	<label for="" class="col-md-1 control-label">{$label}</label>
 	<div class="col-md-2">
+		{let $date: $obj ? $obj.date : 0 /}
+		{let $month: $obj ? $obj.month : 0 /}
+		{let $dateWithZero: $date < 10 ? ('0' + $date) : $date /}
+		{let $monthWithZero: $month < 10 ? ('0' + $month) : $month /}
 		<input
 			type="date"
 			class="form-control"
 			name="{$name}"
-			value="{$obj ? $obj.month + '/' + $obj.date + '/' + $obj.year : ''}">
+			value="{$obj ? $obj.year + '-' + $monthWithZero + '-' + $dateWithZero : ''}">
 	</div>
 	<div class="col-md-1">
 		<select class="form-control" name="{$name}Time">

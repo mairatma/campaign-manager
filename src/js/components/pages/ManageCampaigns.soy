@@ -1,6 +1,7 @@
 {namespace ManageCampaigns}
 
 /**
+ * @param basePath
  * @param? currentUrl
  * @param? filteredCampaigns
  * @param? search
@@ -10,6 +11,7 @@
 	<div class="campaign-manager container-fluid">
 		<div class="campaign-manager-manage-campaigns">
 			{call Header.render}
+				{param basePath: $basePath /}
 				{param currentUrl: $currentUrl /}
 				{param includeAddCampaignButton: true /}
 				{param includeTabs: true /}

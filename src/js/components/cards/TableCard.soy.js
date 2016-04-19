@@ -44,7 +44,7 @@ var $templateAlias1 = Soy.getTemplate('Card.incrementaldom', 'render');
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'campaign-manager-table-card');
-    var param57 = function() {
+    var param59 = function() {
       ie_open('div', null, null,
           'class', 'campaign-manager-card-title');
         itext((goog.asserts.assert((opt_data.title) != null), opt_data.title));
@@ -53,30 +53,30 @@ function $render(opt_data, opt_ignored, opt_ijData) {
           'class', 'table table-clean');
         ie_open('thead');
           ie_open('tr');
-            var headerList66 = opt_data.headers;
-            var headerListLen66 = headerList66.length;
-            for (var headerIndex66 = 0; headerIndex66 < headerListLen66; headerIndex66++) {
-              var headerData66 = headerList66[headerIndex66];
+            var headerList68 = opt_data.headers;
+            var headerListLen68 = headerList68.length;
+            for (var headerIndex68 = 0; headerIndex68 < headerListLen68; headerIndex68++) {
+              var headerData68 = headerList68[headerIndex68];
               ie_open('th', null, null,
-                  'class', 'light-gray ' + (headerIndex66 == 0 ? '' : 'text-center'));
-                itext((goog.asserts.assert((headerData66) != null), headerData66));
+                  'class', 'light-gray ' + (headerIndex68 == 0 ? '' : 'text-center'));
+                itext((goog.asserts.assert((headerData68) != null), headerData68));
               ie_close('th');
             }
           ie_close('tr');
         ie_close('thead');
         ie_open('tbody');
-          var rowList78 = opt_data.data;
-          var rowListLen78 = rowList78.length;
-          for (var rowIndex78 = 0; rowIndex78 < rowListLen78; rowIndex78++) {
-            var rowData78 = rowList78[rowIndex78];
+          var rowList80 = opt_data.data;
+          var rowListLen80 = rowList80.length;
+          for (var rowIndex80 = 0; rowIndex80 < rowListLen80; rowIndex80++) {
+            var rowData80 = rowList80[rowIndex80];
             ie_open('tr');
-              var cellList75 = rowData78;
-              var cellListLen75 = cellList75.length;
-              for (var cellIndex75 = 0; cellIndex75 < cellListLen75; cellIndex75++) {
-                var cellData75 = cellList75[cellIndex75];
+              var cellList77 = rowData80;
+              var cellListLen77 = cellList77.length;
+              for (var cellIndex77 = 0; cellIndex77 < cellListLen77; cellIndex77++) {
+                var cellData77 = cellList77[cellIndex77];
                 ie_open('td', null, null,
-                    'class', cellIndex75 == 0 ? '' : 'text-center');
-                  itext((goog.asserts.assert((cellData75) != null), cellData75));
+                    'class', cellIndex77 == 0 ? '' : 'text-center');
+                  itext((goog.asserts.assert((cellData77) != null), cellData77));
                 ie_close('td');
               }
             ie_close('tr');
@@ -84,7 +84,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('tbody');
       ie_close('table');
     };
-    $templateAlias1({children: param57}, null, opt_ijData);
+    $templateAlias1({children: param59}, null, opt_ijData);
   ie_close('div');
 }
 exports.render = $render;

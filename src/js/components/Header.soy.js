@@ -42,13 +42,12 @@ var $templateAlias1 = Soy.getTemplate('Tabs.incrementaldom', 'render');
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  opt_data = opt_data || {};
   ie_open('div', null, null,
       'class', 'campaign-manager-header row');
     ie_open('div', null, null,
         'class', 'col-md-12');
       ie_open('a', null, null,
-          'href', '/create-campaign',
+          'href', opt_data.basePath + '/create-campaign',
           'class', 'btn btn-primary campaign-manager-button-new pull-right',
           'data-onclick', 'startCampaignCreation_');
         itext('New Campaign');
@@ -63,7 +62,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     if (opt_data.includeTabs) {
       ie_open('div', null, null,
           'class', 'col-md-12');
-        $templateAlias1({tabs: [{name: 'Dashboard', href: '/dashboard'}, {name: 'Manage Campaigns', href: '/manage-campaigns'}], selectedIndex: opt_data.currentUrl == '/manage-campaigns' ? 1 : 0}, null, opt_ijData);
+        $templateAlias1({tabs: [{name: 'Dashboard', href: opt_data.basePath + '/dashboard'}, {name: 'Manage Campaigns', href: opt_data.basePath + '/manage-campaigns'}], selectedIndex: opt_data.currentUrl == opt_data.basePath + '/manage-campaigns' ? 1 : 0}, null, opt_ijData);
       ie_close('div');
     }
   ie_close('div');
@@ -73,8 +72,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Header.render';
 }
 
-exports.render.params = ["currentUrl","includeTabs","includeAddCampaignButton"];
-exports.render.types = {"currentUrl":"any","includeTabs":"any","includeAddCampaignButton":"any"};
+exports.render.params = ["basePath","currentUrl","includeTabs","includeAddCampaignButton"];
+exports.render.types = {"basePath":"any","currentUrl":"any","includeTabs":"any","includeAddCampaignButton":"any"};
 templates = exports;
 return exports;
 
