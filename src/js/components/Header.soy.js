@@ -62,7 +62,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     if (opt_data.includeTabs) {
       ie_open('div', null, null,
           'class', 'col-md-12');
-        $templateAlias1({tabs: [{name: 'Dashboard', href: opt_data.basePath + '/dashboard'}, {name: 'Manage Campaigns', href: opt_data.basePath + '/manage-campaigns'}], selectedIndex: opt_data.currentUrl == opt_data.basePath + '/manage-campaigns' ? 1 : 0}, null, opt_ijData);
+        $templateAlias1({tabs: [{name: 'Dashboard', href: opt_data.basePath + '/dashboard'}, {name: 'Manage Campaigns', href: opt_data.basePath + '/manage-campaigns'}], selectedIndex: opt_data.currentUrl == '/manage-campaigns' ? 1 : 0}, null, opt_ijData);
       ie_close('div');
     }
   ie_close('div');
